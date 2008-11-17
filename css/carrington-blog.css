@@ -355,6 +355,10 @@ hr.divider {
 address.author {
 	display: inline;
 }
+.entry-content,
+.entry-summary {
+	overflow:auto;
+}
 
 .full {
 	background:url(../images/divider-ornament-wide.gif) no-repeat center bottom;
