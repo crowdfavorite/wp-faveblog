@@ -52,7 +52,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 						<?php
 						global $user_ID;
 						if($user_ID) {
-							echo '<li class="secondary"><a href="' . site_url('wp-login.php?action=logout', 'login') . '">' . __('Log Out', 'carrington') . '</a></li>';
+							echo '<li class="secondary"><a href="' . wp_logout_url() . '">' . __('Log Out', 'carrington') . '</a></li>';
 						} else {
 							echo '<li class="secondary"><a href="' . site_url('wp-login.php', 'login') . '">' . __('Log In', 'carrington') . '</a></li>';
 						}
