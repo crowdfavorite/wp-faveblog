@@ -49,14 +49,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 				<div id="navigation">
 					<ul>
 						<?php wp_list_pages('title_li='); ?>
-						<?php
-						global $user_ID;
-						if($user_ID) {
-							echo '<li class="secondary"><a href="' . wp_logout_url() . '">' . __('Log Out', 'carrington') . '</a></li>';
-						} else {
-							echo '<li class="secondary"><a href="' . site_url('wp-login.php', 'login') . '">' . __('Log In', 'carrington') . '</a></li>';
-						}
-						 ?>
+						<li class="secondary"><?php wp_loginout(); ?></li>
 						<?php wp_register('<li class="secondary">', '</li>'); ?> 
 					</ul>
 				</div><!-- #navigation -->

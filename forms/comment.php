@@ -27,7 +27,7 @@ if ('open' == $post->comment_status) {
 	// if you need to be regestered to post comments..
 	if ( get_option('comment_registration') && !$user_ID ) { ?>
 
-<p id="you-must-be-logged-in-to-comment"><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'carrington'), get_bloginfo('wpurl').'/wp-login.php?redirect_to='.get_permalink()); ?></p>
+<p id="you-must-be-logged-in-to-comment"><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'carrington'), get_bloginfo('wpurl').'/wp-login.php?redirect_to='.urlencode(get_permalink())); ?></p>
 
 <?php
 	}
@@ -45,7 +45,7 @@ if ('open' == $post->comment_status) {
 <?php // if you're logged in...
 		if ($user_ID) {
 ?>
-	<p class="logged-in section"><?php printf(__('Logged in as <a href="%s">%s</a>.', 'carrington'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); ?> <a href="<?php bloginfo('wpurl'); ?>/wp-login.php?action=logout" title="<?php _e('Log out of this account', 'carrington'); ?>"><?php _e('Logout &rarr;', 'carrington'); ?></a></p>
+	<p class="logged-in section"><?php printf(__('Logged in as <a href="%s">%s</a>.', 'carrington'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); ?> <a href="<?php cfct_logout_url(get_permalink()) ?>" title="<?php _e('Log out of this account', 'carrington'); ?>"><?php _e('Logout &rarr;', 'carrington'); ?></a></p>
 <?php
 		}
 		else { 
