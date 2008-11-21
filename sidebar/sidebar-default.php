@@ -28,24 +28,7 @@ global $post;
 		<a class="feed" title="RSS 2.0 feed for posts" rel="alternate" href="<?php bloginfo('rss2_url') ?>"><?php _e('Site <acronym title="Really Simple Syndication">RSS</acronym> feed', 'carrington'); ?></a>
 	</div><!--.widget-->
 <?php
-$about_text = get_option('cfct_about_text');
-remove_filter('the_content', 'st_add_widget');
-remove_filter('the_excerpt', 'st_add_widget');
-if (!empty($about_text)) {
-	$about_text = apply_filters('the_content', $about_text);
-}
-else {
-	$about_query = new WP_Query('pagename=about');
-	$orig_post = $post;
-	while ($about_query->have_posts()) {
-		$about_query->the_post();
-		$about_text = get_the_excerpt().sprintf(__('<a class="more" href="%s">more &rarr;</a>', 'carrington'), get_permalink());
-	}
-}
-if (function_exists('st_add_widget')) {
-	add_filter('the_content', 'st_add_widget');
-	add_filter('the_excerpt', 'st_add_widget');
-}
+$about_text = cfct_about_text();
 if (!empty($about_text)) {
 ?>
 	<div id="carrington-about" class="widget">
