@@ -29,11 +29,7 @@ if (empty($post->post_password) || $_COOKIE['wp-postpass_' . COOKIEHASH] == $pos
 
 <h2 class="comments"><?php echo $comment_title; ?></h2>
 
-<?php
-
-__('Stay in touch with the conversation, subscribe to the <a href="'.get_post_comments_feed_link($post->ID, '').'">RSS feed for the comments on this post</a>.'),'carrington');
-
-?>
+<p><?php printf(__('Stay in touch with the conversation, subscribe to the <a class="feed" rel="alternate" href="%s"><acronym title="Really Simple Syndication">RSS</acronym> feed for comments on this post</a>.', 'carrington'), get_post_comments_feed_link($post->ID, '')); ?></p>
 
 <?php 
 
