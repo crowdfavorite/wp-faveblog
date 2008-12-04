@@ -45,11 +45,9 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment">&larr; back to &#8220;<?php echo get_the_title($post->post_parent); ?>&#8221;</a>
 </div>
 
-<div class="previous-attachment"><?php previous_image_link() ?></div>
-
 <div id="content" class="figure">
 	<div class="entry-attachment">
-		<a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'full' ); ?></a>
+		<a title="Link to original file" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'full' ); ?></a>
 	</div>
  	<div class="figure-info">
 		<div class="caption">
@@ -60,12 +58,9 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 			<?php the_content() ?>
 		</div>
 	</div>
-</div>
-
-<div class="next-attachment"><?php next_image_link() ?></div>
-
-<div id="footer">
-	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment">&larr; back to &#8220;<?php echo get_the_title($post->post_parent); ?>&#8221;</a>
+	
+	<div class="next-attachment"><?php next_image_link() ?></div>
+	<div class="previous-attachment"><?php previous_image_link() ?></div>
 </div>
 
 <?php endwhile; else: ?>
@@ -73,5 +68,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 		<p>Sorry, no attachments matched your criteria.</p>
 
 <?php endif; ?>
+
+<?php wp_footer() ?>
 </body>
 </html>

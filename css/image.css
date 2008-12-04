@@ -1,5 +1,5 @@
 body {
-	background-color:#000;
+	background:#222;
 	color:#ccc;
 }
 
@@ -10,31 +10,34 @@ a:visited {
 }
 
 #header,
-#footer {clear:both;}
+#footer {
+	background:#51555c url(../images/header-gradient.gif) repeat-x center bottom;
+	clear:both;
+}
 
 #header a,
 #footer a {
-	background:#111;
+	background: url(../images/header-texture.jpg) no-repeat center bottom;
+	border-bottom:1px solid #333;
 	display:block;
 	padding:10px;
+	text-transform:uppercase;
 }
-#header a:hover,
-#footer a:hover {background:#222;}
 
 #content {
-	float:left;
-	margin:20px 0;
-	width:50%;
+	margin:40px auto;
+	position:relative;
+	width:90%;
 }
 
+.entry-attachment img {
+	border:2px solid #333;
+}
 .figure-info {
-	background:#0f0f0f;
-	border-radius:5px;
-	-webkit-border-radius:5px;
-	-khtml-border-radius:5px;
-	-moz-border-radius:5px;
-	margin:20px 0 0;
-	padding:10px;
+	background:transparent url(../images/divider-ornament-wide.gif) no-repeat scroll center top;
+	margin:20px auto 0;
+	padding:25px 10px;
+	width:33em;
 }
 .figure-info .title {
  	margin:0;
@@ -43,8 +46,7 @@ a:visited {
 	color:#777;
 }
 .figure-info .caption p {
-	font-size: 1.16666667em; /* 14 */
-	line-height: 1.28571429;
+	font:italic 1.16666667em/1.28571429 georgia, serif;
 	margin-bottom:1.28571429em;
 	margin-top:.25em;
 }
@@ -53,28 +55,21 @@ a:visited {
 	text-align:center;
 }
 
-.previous-attachment,
-.next-attachment {
-	float:left;
-	padding:50px 0;
+.previous-attachment a,
+.next-attachment a{
+	border:2px solid #333;
+	position:absolute;
+	top:0px;
 	text-align:center;
-	width:25%;
+	width:50px;
+	height:50px;
+	overflow:hidden;
 }
-
-.previous-attachment img,
-.next-attachment img{
-	background:#222 url(../images/attachment-next.png) no-repeat right center;
-	padding:8px;
-	border-radius:5px;
-	-webkit-border-radius:5px;
-	-khtml-border-radius:5px;
-	-moz-border-radius:5px;
+.previous-attachment a:hover,
+.next-attachment a:hover {
+	width:auto;
+	height:auto;
 }
-.previous-attachment img {
-	background-image:url(../images/attachment-previous.png);
-	background-position:left center;
-	padding-left:50px;
-}
-.next-attachment img {
-	padding-right:50px;
+.next-attachment a{
+	right:0;
 }
