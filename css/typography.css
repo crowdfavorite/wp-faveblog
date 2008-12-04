@@ -164,7 +164,7 @@ textarea {
 }
 ul,
 ol,
-dl {
+dd {
 	margin: 0 0 1.5em 2em;
 }
 li ul,
