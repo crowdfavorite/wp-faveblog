@@ -1,5 +1,5 @@
 body {
-	background:#222;
+	background:#181818;
 	color:#ccc;
 }
 
@@ -20,6 +20,7 @@ a:visited {
 	background: url(../images/header-texture.jpg) no-repeat center bottom;
 	border-bottom:1px solid #333;
 	display:block;
+	font-size:11.5px;
 	padding:10px;
 	text-transform:uppercase;
 }
@@ -31,16 +32,17 @@ a:visited {
 }
 
 .entry-attachment img {
-	border:2px solid #333;
+	border:2px solid #111;
 }
 .figure-info {
-	background:transparent url(../images/divider-ornament-wide.gif) no-repeat scroll center top;
+	background:transparent url(../images/divider-ornament-wide-darker.png) no-repeat scroll center top;
 	margin:20px auto 0;
-	padding:25px 10px;
+	padding:25px 40px;
 	width:33em;
 }
 .figure-info .title {
  	margin:0;
+	word-wrap: break-word; /* works in IE, Safari and FF 3.1 beta */
 }
 .figure-info .caption {
 	color:#777;
@@ -55,12 +57,33 @@ a:visited {
 	text-align:center;
 }
 
-.previous-attachment a,
-.next-attachment a{
-	border:2px solid #333;
+.previous-attachment,
+.next-attachment {
+	background:url(../images/50px-flourish-left.png) no-repeat 10px bottom;
+	padding-bottom:13px;
 	position:absolute;
 	top:0px;
-	text-align:center;
+}
+.next-attachment{
+	background:url(../images/50px-flourish-right.png) no-repeat right bottom;
+	right:0;
+}
+.previous-attachment span,
+.next-attachment span {
+	background:#111 url(../images/arrow-bullet-dark-left.gif) no-repeat left center;
+	display:block;
+	padding-left:10px;
+}
+.next-attachment span {
+	background-image:url(../images/arrow-bullet-dark-right.gif);
+	background-position:right center;
+	padding:0 10px 0 0;
+}
+
+.previous-attachment a,
+.next-attachment a{
+	border:2px solid #111;
+	display:block;
 	width:50px;
 	height:50px;
 	overflow:hidden;
@@ -69,7 +92,4 @@ a:visited {
 .next-attachment a:hover {
 	width:auto;
 	height:auto;
-}
-.next-attachment a{
-	right:0;
 }

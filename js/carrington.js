@@ -45,5 +45,7 @@ jQuery(document).ready(function($) {
 		cfct.ajax_post_content();
 		cfct.ajax_post_comments();
 	}
+	// FF absolute positioning fix
 	$('#navigation li a, #all-categories li a').removeAttr('title');
+	
 });
