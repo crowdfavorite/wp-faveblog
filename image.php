@@ -61,14 +61,10 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 <?php
 	if(cfct_get_adjacent_image_link(false) != '') {
-		echo '<div class="next-attachment"><span>';
-		next_image_link();
-		echo '</span></div>';
+		echo '<div class="next-attachment"><span>',next_image_link(),'</span></div>';
 	}
 	if(cfct_get_adjacent_image_link(true) != '') {
-		echo '<div class="previous-attachment"><span>';
-		previous_image_link();
-		echo '</span></div>';
+		echo '<div class="previous-attachment"><span>',previous_image_link(),'</span></div>';
 	}
 	
 ?>
