@@ -1,6 +1,4 @@
 body {
-	background:#000;
-	color:#ccc;
 }
 
 a,
@@ -33,10 +31,10 @@ a:visited {
 }
 
 .entry-attachment img {
-	border:1px solid #0c0c0c;
+	border:1px solid #eee;
 }
 .figure-info {
-	background:transparent url(../images/divider-ornament-wide-darker.png) no-repeat scroll center top;
+	background:transparent url(../images/divider-ornament-wide.gif) no-repeat scroll center top;
 	margin:20px auto 0;
 	padding:25px 40px;
 	width:33em;
@@ -60,19 +58,19 @@ a:visited {
 
 .previous-attachment,
 .next-attachment {
-	background:url(../images/150px-flourish-left-darker.png) no-repeat right bottom;
+	background:url(../images/150px-flourish-left.png) no-repeat right bottom;
 	padding-bottom:13px;
 	position:absolute;
 	top:0px;
 }
 .next-attachment{
-	background:url(../images/150px-flourish-right-darker.png) no-repeat left bottom;
+	background:url(../images/150px-flourish-right.png) no-repeat left bottom;
 	right:0;
 }
 
 .previous-attachment a,
 .next-attachment a{
-	border:1px solid #0c0c0c;
+	border:1px solid #eee;
 	display:block;
 	width:50px;
 	height:50px;
