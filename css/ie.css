@@ -51,5 +51,5 @@ address.author {
 /* lo-fi png fix */
 #footer p#developer-link a,
 #footer p#developer-link a:visited {
-	background-image: url(../images/by-crowd-favorite.gif);
+	background-image: url(../images/ie/by-crowd-favorite.gif);
 }
