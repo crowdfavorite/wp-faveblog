@@ -92,7 +92,7 @@ This directory holds the templates used for displaying atomic post content.
 Supported filenames:
 
 - *content-default.php* (default.php also supported) - Used when there are no other templates that match for a given post/page.
-- *author-{username}.php* - Used when a user with that username authors a post/page. For example, a template with a file name of _author-jsmith.php_ would be used for a poat/page by user _jsmith_. Any WordPres username can take the place of {username} in the file name.
+- *author-{username}.php* - Used when a user with that username authors a post/page. For example, a template with a file name of _author-jsmith.php_ would be used for a post/page by user _jsmith_. Any WordPress username can take the place of {username} in the file name.
 - *meta-{key}-{value}.php* - Used when there is a custom field for the post/page matching the key and value listed in the file name. This is useful if you want to be able to flag posts as "featured" or similar, and give those posts some custom treatment. In this example, you could add a custom field of "featured" with a value of "yes" to a post/page and it would use a template of _meta-featured-yes.php_ if that template exists.
 - *cat-{slug}.php* - Used when a post is in a given category. The category is matched by the "slug" - for example a post in category "General" (with a category slug of "general") could use a template of _cat-general.php_.
 - *role-{role}.php* - Used when a post/page is authored by a user with a particular role. The {role} is an all lowercase representation of the role string - for example, an author with an "Administrator" role might use a template of _role-administrator.php_. This is primarily useful if you have a set of authors that are given a Contributor role; or a Guest Columnist role or similar. Any WordPress role can take the place of {role} in the file name.
@@ -112,7 +112,7 @@ Note: "default.php" is a supported default file name for all directories, howeve
 
 ## Actions and Filters
 
-Because Carrington is as much a theme framework as a theme itself, it includes a core set of functions that enable the override template hierarchy. These functions include actions and filters where appropriate so that their functionality can be customized and overridden as needed. Thess actions and filters use the same hook and filter system used in the WordPress core.
+Because Carrington is as much a theme framework as a theme itself, it includes a core set of functions that enable the override template hierarchy. These functions include actions and filters where appropriate so that their functionality can be customized and overridden as needed. These actions and filters use the same hook and filter system used in the WordPress core.
 
 - `cfct_settings_form` (action) - allows you to add your own fields to the Carrington Settings form.
 - `cfct_settings_form_after` (action) - allows you to add your content after the Carrington Settings form. Useful if you want to add a second form to the page, or some other content.
