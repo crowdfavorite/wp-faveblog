@@ -74,11 +74,11 @@ if ('open' == $post->comment_status) {
 <?php 
 		} 
 ?>
-	<p class="actions">
+	<div class="section actions">
 		<input name="submit" type="submit" id="submit" value="<?php _e('Post comment', 'carrington'); ?>" tabindex="5" />
 		<span id="comment-form-trackback"><?php printf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', 'carrington'), get_trackback_url()); ?></span>
 		<input type="hidden" name="comment_post_ID" value="<?php echo $post->ID; ?>" />
-	</p><!--/controls-->
+	</div><!--/controls-->
 <?php
 do_action('comment_form', $post->ID);
 ?>

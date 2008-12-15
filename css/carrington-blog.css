@@ -495,19 +495,23 @@ ol.pings-list {
 	list-style:none;
 	margin:0;
 }
-ol.comments-list li {
+ol.comments-list li.hentry {
 	border-top:1px dotted #cecfd1;
+
+}
+#content ol.comments-list li.hentry{
+	margin:0; /* Override article list styles */
 }
 .comment {
 	overflow:hidden;
 	padding:10px; /* 2 units + 4px for gravatar */
-	position:relative;
 }
 .comment .info {
 	display:block;
 	float:left;
-	padding: 2px 0 0 46px;
-	width:180px;
+	padding: 2px 10px 0 46px;
+	position:relative;
+	width:150px;
 }
 .comment .info .comment-author {
 	font-size: 1.16666667em; /* 14 */
@@ -515,9 +519,9 @@ ol.comments-list li {
 	line-height: 1.28571429;
 }
 .comment .comment-author .photo img{
+	left: 0;
 	position:absolute;
-	left: 10px;
-	top: 10px;
+	top: 0;
 }
 .comment .info .said,
 .comment .info .on {
@@ -532,7 +536,13 @@ ol.comments-list li {
 }
 .comment .comment-content {
 	float: left;
-	width: 300px;
+	width: 324px;
+}
+
+.comment .notification {
+	background:#EFEFF1 url(../images/watermark-light.gif);
+	margin:0 0 10px;
+	padding:10px;
 }
 
 /* author comments */
@@ -584,22 +594,23 @@ form#comment-form {
 	padding:10px 9px;
 }
 #comment-form .section {
-	clear:both;
-	padding-left:154px;
+	margin:0;
+	overflow:hidden;
+	padding-left:204px;
 }
 #comment-form p.section {
 	margin-bottom:10px;
-	margin-top:10px;
 }
+
 #comment-form .section label {
 	color:#51555c;
 	font-weight:bold;
-	margin-left:-150px;
+	margin-left:-158px;
 	float:left;
 	text-align:right;
-	width:130px;
+	width:148px;
 }
-#comment-form .section input {
+#comment-form p.section input {
 	width:162px;
 }
 #comment-form #comment-form-comment label {
@@ -617,10 +628,7 @@ form#comment-form {
 #comment-form textarea{
 	display:block;
 	height:9em;
-	width:370px;
-}
-#comment-form p.actions {
-	margin:0 6px 0 150px;
+	width:314px;
 }
 
 /* =====Sidebar and Widgets===== */
