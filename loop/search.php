@@ -24,7 +24,7 @@ if (have_posts()) {
 		cfct_excerpt();
 	}
 } else {
-	echo '<p>', _e('Sorry, we couldn\'t find anything that matched your search terms.'), '</p>';
+	echo '<p>', _e('Sorry, we couldn\'t find anything that matched your search terms.', 'carrington'), '</p>';
 }
 
 ?>
