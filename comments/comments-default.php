@@ -19,13 +19,13 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 global $post, $wp_query, $comments, $comment;
-if (empty($post->post_password) || $_COOKIE['wp-postpass_' . COOKIEHASH] == $post->post_password) {
-	$comments = $wp_query->comments;
-	$comment_count = count($comments);
-	$comment_count == 1 ? $comment_title = __('One Response', 'carrington') : $comment_title = sprintf(__('%d Responses', 'carrington'), $comment_count);
-}
 
 if ($comments || 'open' == $post->comment_status) {
+	if (empty($post->post_password) || $_COOKIE['wp-postpass_' . COOKIEHASH] == $post->post_password) {
+		$comments = $wp_query->comments;
+		$comment_count = count($comments);
+		$comment_count == 1 ? $comment_title = __('One Response', 'carrington') : $comment_title = sprintf(__('%d Responses', 'carrington'), $comment_count);
+	}
 
 ?>
 
@@ -59,8 +59,7 @@ if ($comments || 'open' == $post->comment_status) {
 		}
 	}
 	
-	cfct_form('comment'); 
-
+	cfct_form('comment');
 }
 
 ?>
