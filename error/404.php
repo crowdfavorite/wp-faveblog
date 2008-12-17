@@ -22,7 +22,7 @@ get_header();
 
 ?>
 <div id="content">
-<p>Sorry, we're not sure what you're looking for here.</p>
+<p><?php _e('Sorry, we\'re not sure what you\'re looking for here.', 'carrington'); ?></p>
 
 <?php
 

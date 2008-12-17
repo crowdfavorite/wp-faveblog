@@ -18,13 +18,6 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
-if (have_posts()) {
-	while (have_posts()) {
-		the_post();
-		cfct_excerpt();
-	}
-} else {
-	cfct_misc('no-results');
-}
+echo '<p>', _e('Sorry, we couldn\'t find any results that matched your request.', 'carrington'), '</p>';
 
 ?>
