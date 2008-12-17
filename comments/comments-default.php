@@ -25,6 +25,8 @@ if (empty($post->post_password) || $_COOKIE['wp-postpass_' . COOKIEHASH] == $pos
 	$comment_count == 1 ? $comment_title = __('One Response', 'carrington') : $comment_title = sprintf(__('%d Responses', 'carrington'), $comment_count);
 }
 
+if ($comments || 'open' == $post->comment_status) {
+
 ?>
 
 <h2 class="comments"><?php echo $comment_title; ?></h2>
@@ -33,30 +35,32 @@ if (empty($post->post_password) || $_COOKIE['wp-postpass_' . COOKIEHASH] == $pos
 
 <?php 
 
-if ($comments) {
-	$comment_count = 0;
-	$ping_count = 0;
-	foreach ($comments as $comment) {
-		if (get_comment_type() == 'comment') {
-			$comment_count++;
+	if ($comments) {
+		$comment_count = 0;
+		$ping_count = 0;
+		foreach ($comments as $comment) {
+			if (get_comment_type() == 'comment') {
+				$comment_count++;
+			}
+			else {
+				$ping_count++;
+			}
 		}
-		else {
-			$ping_count++;
+		if ($comment_count) {
+			cfct_template_file('comments', 'comments-loop');
 		}
-	}
-	if ($comment_count) {
-		cfct_template_file('comments', 'comments-loop');
-	}
-	if ($ping_count) {
+		if ($ping_count) {
 
 ?>
 <h3 class="pings"><?php _e('Continuing the Discussion', 'carrington'); ?></h3>
 <?php
 
-		cfct_template_file('comments', 'pings-loop');
+			cfct_template_file('comments', 'pings-loop');
+		}
 	}
-}
+	
+	cfct_form('comment'); 
 
-cfct_form('comment'); 
+}
 
 ?>
