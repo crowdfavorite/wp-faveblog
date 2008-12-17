@@ -23,6 +23,8 @@ if (have_posts()) {
 		the_post();
 		cfct_excerpt();
 	}
+} else {
+	echo '<p>', _e('Sorry, we couldn\'t find anything that matched your search terms.'), '</p>';
 }
 
 ?>
