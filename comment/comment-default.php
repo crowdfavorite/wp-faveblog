@@ -21,7 +21,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 global $comment;
 
 ?>
-<div id="div-comment-<?php comment_ID(); ?>">
+<div id="div-comment-<?php comment_ID(); ?>" class="<?php cfct_comment_class(); ?>">
 <?php
 if ($comment->comment_approved == '0') {
 ?>
