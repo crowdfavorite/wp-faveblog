@@ -31,7 +31,7 @@ get_header();
 
 cfct_loop();
 
-cfct_comments();
+comments_template();
 
 ?>
 </div><!--#content-->
