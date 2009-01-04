@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -23,6 +23,6 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 <form method="get" id="search" action="<?php bloginfo('home'); ?>/">
 	<div>
 		<input type="text" id="search-input" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="15" />
-		<input type="submit" name="submit_button" value="<?php _e('Search', 'carrington'); ?>" />
+		<input type="submit" name="submit_button" value="<?php _e('Search', 'carrington-blog'); ?>" />
 	</div>
 </form>

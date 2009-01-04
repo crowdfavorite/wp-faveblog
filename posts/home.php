@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.

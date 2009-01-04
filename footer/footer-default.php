@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -23,11 +23,11 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 		<hr class="divider" />
 		<div id="footer">
 			<div class="wrapper">		
-				<p id="generator-link"><?php _e('Proudly powered by <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a></span> and <span id="theme-link"><a href="http://carringtontheme.com" title="Carrington theme for WordPress">Carrington</a></span>.', 'carrington'); ?></p>
+				<p id="generator-link"><?php _e('Proudly powered by <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a></span> and <span id="theme-link"><a href="http://carringtontheme.com" title="Carrington theme for WordPress">Carrington</a></span>.', 'carrington-blog'); ?></p>
 <?php
 if (cfct_get_option('cfct_credit') == 'yes') {
 ?>
-				<p id="developer-link"><?php printf(__('<a href="http://crowdfavorite.com" title="Custom WordPress development, design and backup services." rel="developer designer">%s</a>', 'carrington'), 'Carrington Theme by Crowd Favorite'); ?></p>
+				<p id="developer-link"><?php printf(__('<a href="http://crowdfavorite.com" title="Custom WordPress development, design and backup services." rel="developer designer">%s</a>', 'carrington-blog'), 'Carrington Theme by Crowd Favorite'); ?></p>
 <?php
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -26,7 +26,7 @@ $tag_title = '<a href="'.get_tag_link(intval(get_query_var('tag_id'))).'" title=
 ?>
 
 <div id="content">
-	<h1 class="page-title"><?php printf(__('Tag Archives: %s', 'carrington'), $tag_title); ?></h1>
+	<h1 class="page-title"><?php printf(__('Tag Archives: %s', 'carrington-blog'), $tag_title); ?></h1>
 
 <?php
 	cfct_loop();

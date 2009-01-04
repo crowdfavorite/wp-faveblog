@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -17,6 +17,6 @@
 
 ?>
 <div class="pagination">
-	<span class="previous"><?php next_posts_link(__('&laquo; Older posts', 'carrington')) ?></span>
-	<span class="next"><?php previous_posts_link(__('Newer posts &raquo;', 'carrington')) ?></span>
+	<span class="previous"><?php next_posts_link(__('&laquo; Older posts', 'carrington-blog')) ?></span>
+	<span class="next"><?php previous_posts_link(__('Newer posts &raquo;', 'carrington-blog')) ?></span>
 </div>

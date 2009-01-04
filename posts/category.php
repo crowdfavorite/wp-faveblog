@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -25,7 +25,7 @@ $cat_title = '<a href="'.get_category_link(intval(get_query_var('cat'))).'" titl
 ?>
 
 <div id="content">
-	<h1 class="page-title"><?php printf(__('Category Archives: %s', 'carrington'), $cat_title); ?></h1>
+	<h1 class="page-title"><?php printf(__('Category Archives: %s', 'carrington-blog'), $cat_title); ?></h1>
 
 	<div class="description"><?php category_description(); ?></div>
 

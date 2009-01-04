@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -25,8 +25,8 @@ $orig_post = $post;
 
 <div id="sidebar">
 	<div id="carrington-subscribe" class="widget">
-		<h2 class="widget-title"><?php _e('Subscribe', 'carrington'); ?></h2>
-		<a class="feed" title="RSS 2.0 feed for posts" rel="alternate" href="<?php bloginfo('rss2_url') ?>"><?php _e('Site <acronym title="Really Simple Syndication">RSS</acronym> feed', 'carrington'); ?></a>
+		<h2 class="widget-title"><?php _e('Subscribe', 'carrington-blog'); ?></h2>
+		<a class="feed" title="RSS 2.0 feed for posts" rel="alternate" href="<?php bloginfo('rss2_url') ?>"><?php _e('Site <acronym title="Really Simple Syndication">RSS</acronym> feed', 'carrington-blog'); ?></a>
 	</div><!--.widget-->
 <?php
 $about_text = cfct_about_text();
@@ -34,7 +34,7 @@ if (!empty($about_text)) {
 ?>
 	<div id="carrington-about" class="widget">
 		<div class="about">
-			<h2 class="title"><?php printf(__('About %s', 'carrington'), get_bloginfo('name')); ?></h2>
+			<h2 class="title"><?php printf(__('About %s', 'carrington-blog'), get_bloginfo('name')); ?></h2>
 <?php
 	echo $about_text;
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -22,7 +22,7 @@ get_header();
 
 ?>
 <div id="content">
-<p><?php _e('Sorry, we\'re not sure what you\'re looking for here.', 'carrington'); ?></p>
+<p><?php _e('Sorry, we\'re not sure what you\'re looking for here.', 'carrington-blog'); ?></p>
 
 <?php
 

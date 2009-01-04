@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -24,7 +24,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 add_filter('get_comment_author_link', 'cfct_hcard_ping_author_link');
 
-printf(__('<cite class="vcard author entry-title">%s <span class="linked-to-this-post">linked to this post</span></cite>', 'carrington'), get_comment_author_link());
+printf(__('<cite class="vcard author entry-title">%s <span class="linked-to-this-post">linked to this post</span></cite>', 'carrington-blog'), get_comment_author_link());
 
 remove_filter('get_comment_author_link', 'cfct_hcard_ping_author_link');
 
@@ -33,5 +33,5 @@ remove_filter('get_comment_author_link', 'cfct_hcard_ping_author_link');
 		<span class="on"><?php _e('on'); ?></span> <abbr class="published" title="<?php comment_date('Y-m-d\TH:i:sO'); ?>"><?php comment_date(); ?></abbr>
 	</span>
 	<blockquote class="entry-summary" cite="<?php comment_author_url(); ?>"><?php comment_text() ?></blockquote> 
-	<?php edit_comment_link(__('Edit This', 'carrington'), '<div class="comment-editlink">', '</div>'); ?>
+	<?php edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="comment-editlink">', '</div>'); ?>
 </div><!--.ping-->

@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -30,7 +30,7 @@ if (have_posts()) {
 		the_post();
 ?>
 
-	<h1 class="page-title"><?php printf(__('Posts by: <a href="%s">%s</a>', 'carrington'), get_author_posts_url($authordata->ID), get_author_name($authordata->ID)); ?></h1>
+	<h1 class="page-title"><?php printf(__('Posts by: <a href="%s">%s</a>', 'carrington-blog'), get_author_posts_url($authordata->ID), get_author_name($authordata->ID)); ?></h1>
 
 <?php
 		if (!empty($bio)) {
@@ -38,7 +38,7 @@ if (have_posts()) {
 
 	<div class="description author-bio">
 
-		<h2><?php printf(__('About %s', 'carrington'), get_author_name($authordata->ID)); ?></h2>
+		<h2><?php printf(__('About %s', 'carrington-blog'), get_author_name($authordata->ID)); ?></h2>
 	
 <?php 
 			echo apply_filters('the_content', get_the_author_description()); 

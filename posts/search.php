@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -27,7 +27,7 @@ $search_title = '<a href="'.get_bloginfo('url').'/?s='.attribute_escape($s).'" t
 ?>
 
 <div id="content">
-	<h1 class="page-title"><?php printf(__('Search Results for: %s', 'carrington'), $search_title); ?></h1>
+	<h1 class="page-title"><?php printf(__('Search Results for: %s', 'carrington-blog'), $search_title); ?></h1>
 <?php
 	cfct_loop();
 	cfct_misc('nav-posts');

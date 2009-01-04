@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -25,7 +25,7 @@ global $comment;
 <?php
 if ($comment->comment_approved == '0') {
 ?>
-	<div class="notification"><strong><?php _e('Your comment is awaiting moderation.', 'carrington'); ?></strong></div>
+	<div class="notification"><strong><?php _e('Your comment is awaiting moderation.', 'carrington-blog'); ?></strong></div>
 <?php 
 }
 ?>
@@ -38,7 +38,7 @@ if (function_exists('get_avatar')) {
 <?php
 }
 add_filter('get_comment_author_link', 'cfct_hcard_comment_author_link');
-printf(__('%s <span class="said">said</span>', 'carrington'), '<cite class="fn">'.get_comment_author_link().'</cite>');
+printf(__('%s <span class="said">said</span>', 'carrington-blog'), '<cite class="fn">'.get_comment_author_link().'</cite>');
 remove_filter('get_comment_author_link', 'cfct_hcard_comment_author_link');
 ?>
 	</address><!--.vcard-->
@@ -61,6 +61,6 @@ printf(
 );
 ?>
 		</span><!--.date-->
-		<?php edit_comment_link(__('Edit This', 'carrington'), '<div class="comment-editlink">', '</div>'); ?>
+		<?php edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="comment-editlink">', '</div>'); ?>
 	</div>
 </div><!--.comment-->

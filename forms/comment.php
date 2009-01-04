@@ -1,6 +1,6 @@
 <?php
 
-// This file is part of the Carrington Theme for WordPress
+// This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
 // Copyright (c) 2008 Crowd Favorite, Ltd. All rights reserved.
@@ -27,7 +27,7 @@ if ('open' == $post->comment_status) {
 	// if you need to be regestered to post comments..
 	if ( get_option('comment_registration') && !$user_ID ) { ?>
 
-<p id="you-must-be-logged-in-to-comment"><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'carrington'), get_bloginfo('wpurl').'/wp-login.php?redirect_to='.urlencode(get_permalink())); ?></p>
+<p id="you-must-be-logged-in-to-comment"><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'carrington-blog'), get_bloginfo('wpurl').'/wp-login.php?redirect_to='.urlencode(get_permalink())); ?></p>
 
 <?php
 	}
@@ -36,47 +36,47 @@ if ('open' == $post->comment_status) {
 
 <form action="<?php bloginfo('wpurl'); ?>/wp-comments-post.php" method="post" id="comment-form">
 	<div id="comment-form-comment" class="section">
-		<label id="respond" for="comment"><?php _e('Post a comment', 'carrington'); ?></label>
+		<label id="respond" for="comment"><?php _e('Post a comment', 'carrington-blog'); ?></label>
 		<div>
 			<textarea name="comment" id="comment" rows="8" cols="40" tabindex="1"></textarea>
-			<p id="some-html-is-ok"><abbr title="<?php printf(__('You can use: %s', 'carrington'), allowed_tags()); ?>"><?php _e('Some HTML is OK', 'carrington'); ?></abbr></p>
+			<p id="some-html-is-ok"><abbr title="<?php printf(__('You can use: %s', 'carrington-blog'), allowed_tags()); ?>"><?php _e('Some HTML is OK', 'carrington-blog'); ?></abbr></p>
 		</div>
 	</div>
 <?php // if you're logged in...
 		if ($user_ID) {
 ?>
-	<p class="logged-in section"><?php printf(__('Logged in as <a href="%s">%s</a>.', 'carrington'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); ?> <a href="<?php cfct_logout_url(get_permalink()) ?>" title="<?php _e('Log out of this account', 'carrington'); ?>"><?php _e('Logout &rarr;', 'carrington'); ?></a></p>
+	<p class="logged-in section"><?php printf(__('Logged in as <a href="%s">%s</a>.', 'carrington-blog'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); ?> <a href="<?php cfct_logout_url(get_permalink()) ?>" title="<?php _e('Log out of this account', 'carrington-blog'); ?>"><?php _e('Logout &rarr;', 'carrington-blog'); ?></a></p>
 <?php
 		}
 		else { 
 ?>
 	<p id="comment-form-name" class="section">
-		<label for="author"><?php _e('Name', 'carrington'); ?></label>
+		<label for="author"><?php _e('Name', 'carrington-blog'); ?></label>
 		<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="2" />
-		<?php if ($req) : ?><span class="note"><?php _e('(required)', 'carrington'); ?></span><?php endif; ?>
+		<?php if ($req) : ?><span class="note"><?php _e('(required)', 'carrington-blog'); ?></span><?php endif; ?>
 	</p><!--/name-->
 	<p id="comment-form-email" class="section">
-		<label for="email"><?php _e('Email', 'carrington'); ?></label>
+		<label for="email"><?php _e('Email', 'carrington-blog'); ?></label>
 		<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="3" />
 		<span class="note"><?php
 			if ($req) {
-				_e('(required, but never shared)', 'carrington');
+				_e('(required, but never shared)', 'carrington-blog');
 			}
 			else {
-				_e('(never shared)', 'carrington');
+				_e('(never shared)', 'carrington-blog');
 			}
 ?></span>
 	</p><!--/email-->
 	<p id="comment-form-url" class="section">
-		<label title="<?php _e('Your website address', 'carrington'); ?>" for="url"><?php _e('Web', 'carrington'); ?></label>
+		<label title="<?php _e('Your website address', 'carrington-blog'); ?>" for="url"><?php _e('Web', 'carrington-blog'); ?></label>
 		<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="4" />
 	</p><!--/url-->
 <?php 
 		} 
 ?>
 	<div class="section actions">
-		<input name="submit" type="submit" id="submit" value="<?php _e('Post comment', 'carrington'); ?>" tabindex="5" />
-		<span id="comment-form-trackback"><?php printf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', 'carrington'), get_trackback_url()); ?></span>
+		<input name="submit" type="submit" id="submit" value="<?php _e('Post comment', 'carrington-blog'); ?>" tabindex="5" />
+		<span id="comment-form-trackback"><?php printf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', 'carrington-blog'), get_trackback_url()); ?></span>
 		<input type="hidden" name="comment_post_ID" value="<?php echo $post->ID; ?>" />
 	</div><!--/controls-->
 <?php
