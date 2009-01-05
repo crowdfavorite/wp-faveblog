@@ -39,24 +39,39 @@ $cfct_options = array(
 	'cfct_list_limit_3',
 	'cfct_ajax_load',
 	'cfct_posts_per_archive_page',
+	'cfct_custom_colors',
+	'cfct_header_image_type',
 );
 
 $cfct_color_options = array(
-	'cfct_header_color' => '51555c',
+	'cfct_header_background_color' => '51555c',
 	'cfct_header_text_color' => 'cecfd1',
 	'cfct_header_link_color' => 'ffffff',
-	'cfct_header_nav_color' => 'e9eaea',
+	'cfct_header_nav_background_color' => 'e9eaea',
 	'cfct_header_nav_link_color' => 'a00004',
-	'cfct_footer_color' => '51555c',
-	'cfct_footer_text_color' => 'ffffff',
+	'cfct_page_title_color' => '51555c',
+	'cfct_page_subtitle_color' => '51555c',
 	'cfct_link_color' => 'a00004',
-	'cfct_h1_color' => '51555c',
-	'cfct_h2_color' => '51555c',
+	'cfct_footer_background_color' => '51555c',
+	'cfct_footer_text_color' => 'ffffff',
 );
 
 foreach ($cfct_color_options as $k => $default) {
 	$cfct_options[] = $k;
 }
+
+function cfct_blog_option_defaults($options) {
+	$options['cfct_list_limit_1'] = CFCT_HOME_LIST_LENGTH;
+	$options['cfct_latest_limit_1'] = CFCT_HOME_LATEST_LENGTH;
+	$options['cfct_list_limit_2'] = CFCT_HOME_LIST_LENGTH;
+	$options['cfct_latest_limit_2'] = CFCT_HOME_LATEST_LENGTH;
+	$options['cfct_list_limit_3'] = CFCT_HOME_LIST_LENGTH;
+	$options['cfct_latest_limit_3'] = CFCT_HOME_LATEST_LENGTH;
+	$options['cfct_ajax_load'] = 'yes';
+	$options['cfct_custom_colors'] = 'no';
+	return $options;
+}
+add_filter('cfct_option_defaults', 'cfct_blog_option_defaults');
 
 function cfct_blog_init() {
 	if (cfct_get_option('cfct_ajax_load') == 'yes') {
@@ -81,6 +96,22 @@ var CFCT_URL = "'.get_bloginfo('url').'";
 var CFCT_AJAX_LOAD = '.$ajax_load.';
 </script>
 	';
+	if (cfct_get_option('cfct_custom_colors') == 'yes') {
+
+// TODO
+// output custom CSS overrides
+// header background color
+// header text color
+// header link color
+// header nav background color
+// header nav link color
+// h1 color
+// h2 color
+// link color
+// footer background color
+// footer text color
+
+	}
 }
 add_action('wp_head', 'cfct_blog_head');
 
@@ -88,23 +119,31 @@ function cfct_blog_settings_form() {
 	global $cfct_color_options;
 	$options = array(
 		'yes' => __('Yes', 'carrington-blog'),
-		'no' => __('No', 'carrington-blog')
+		'no' => __('No', 'carrington-blog'),
 	);
 	$ajax_load_options = '';
-	$credit_options = '';
+	$color_options = '';
 	foreach ($options as $k => $v) {
-		if ($k == get_option('cfct_ajax_load')) {
+		if ($k == cfct_get_option('cfct_ajax_load')) {
 			$ajax_load_selected = 'selected="selected"';
 		}
 		else {
 			$ajax_load_selected = '';
 		}
 		$ajax_load_options .= "\n\t<option value='$k' $ajax_load_selected>$v</option>";
+		if ($k == cfct_get_option('cfct_custom_colors')) {
+			$color_options_selected = 'selected="selected"';
+		}
+		else {
+			$color_options_selected = '';
+		}
+		$color_options .= "\n\t<option value='$k' $color_options_selected>$v</option>";
 	}
 	$cfct_posts_per_archive_page = get_option('cfct_posts_per_archive_page');
 	if (intval($cfct_posts_per_archive_page) == 0) {
 		$cfct_posts_per_archive_page = 25;
 	}
+	cfct_get_option('cfct_custom_colors') == 'no' ? $colors_class = 'hidden' : $colors_class = '';
 	$html = '
 		<table class="form-table">
 			<tbody>
@@ -112,6 +151,12 @@ function cfct_blog_settings_form() {
 					<th scope="row">'.sprintf(__('Design', 'carrington-blog'), $key).'</td>
 					<td>
 						<fieldset>
+							<p>
+								<label for="cfct_custom_colors">'.__('Customize Colors:', 'carrington-blog').'</label>
+								<select name="cfct_custom_colors" id="cfct_custom_colors">'.$color_options.'</select>
+							</p>
+							<fieldset class="'.$colors_class.'" id="cfct_color_options_panel">
+								<legend>Custom Colors</legend>
 	';
 	foreach ($cfct_color_options as $option => $default) {
 		$value = get_option($option);
@@ -122,16 +167,19 @@ function cfct_blog_settings_form() {
 			$option
 		));
 		$html .= '
-							<p>
-								<label for="'.$option.'">'.__($label.':', 'carrington-blog').'</label>
-								#<input type="text" name="'.$option.'" id="'.$option.'" value="'.$value.'" size="6" maxlength="6" class="cfct_colorpicker" />
-							</p>
+								<p>
+									<label for="'.$option.'">'.__($label.':', 'carrington-blog').'</label>
+									#<input type="text" name="'.$option.'" id="'.$option.'" value="'.$value.'" size="6" maxlength="6" class="cfct_colorpicker" />
+								</p>
 		';
 	}
 	$html .= '
-							<p class="submit">
-								<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
-							</p>
+								<p class="submit">
+									<input type="hidden" name="cfct_header_image_type" id="cfct_header_image_type" value="dark" />
+									<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
+								</p>
+							</fieldset>
+							<p>TODO: Header Image</p>
 						</fieldset>
 					</td>
 				</tr>
@@ -190,6 +238,14 @@ jQuery(function($) {
 			});
 		});
 	});
+	$('#cfct_custom_colors').change(function() {
+		if ($(this).val() == 'yes') {
+			$('#cfct_color_options_panel').slideDown();
+		}
+		else {
+			$('#cfct_color_options_panel').slideUp();
+		}
+	});
 	$('#reset_colors').click(function() {
 		cfct_reset_colors();
 		return false;
@@ -202,6 +258,12 @@ cfct_reset_colors = function() {
 	}
 ?>
 }
+cfct_set_header_image_type = function() {
+	var rgb = getRGB(jQuery('#cfct_header_background_color').val());
+	var brightness = (rgb.r + rgb.g + rgb.b) / 3;
+	brightness > 127 ? img = 'dark' : img = 'light';
+	jQuery('#cfct_header_image_type').val(img);
+}
 cfct_color_preview = function(elem, hex) {
 	var rgb = getRGB(hex);
 	var brightness = (rgb.r + rgb.g + rgb.b) / 3;
@@ -210,6 +272,7 @@ cfct_color_preview = function(elem, hex) {
 		backgroundColor: '#' + hex,
 		color: color
 	});
+	cfct_set_header_image_type();
 }
 // hex to decimal code found here and used with minor modification: http://www.telerik.com/community/forums/aspnet-ajax/colorpicker/calculate-color-contrast-in-javascript.aspx
 function getDec(hexChar) {
@@ -261,6 +324,13 @@ function cfct_blog_admin_css() {
 <style type="text/css">
 .colorpicker input[type="text"] {
 	-moz-box-sizing:content-box;
+}
+#cfct_color_options_panel {
+	border: 1px solid #ccc;
+	padding: 0 20px;
+}
+#cfct_color_options_panel legend {
+	padding: 0 5px;
 }
 </style>
 <?php
