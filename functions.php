@@ -41,6 +41,7 @@ $cfct_options = array(
 	'cfct_posts_per_archive_page',
 	'cfct_custom_colors',
 	'cfct_header_image_type',
+	'cfct_footer_image_type',
 );
 
 $cfct_color_options = array(
@@ -49,11 +50,13 @@ $cfct_color_options = array(
 	'cfct_header_link_color' => 'ffffff',
 	'cfct_header_nav_background_color' => 'e9eaea',
 	'cfct_header_nav_link_color' => 'a00004',
+	'cfct_header_nav_text_color' => '51555c',
 	'cfct_page_title_color' => '51555c',
 	'cfct_page_subtitle_color' => '51555c',
 	'cfct_link_color' => 'a00004',
 	'cfct_footer_background_color' => '51555c',
-	'cfct_footer_text_color' => 'ffffff',
+	'cfct_footer_text_color' => '999999',
+	'cfct_footer_link_color' => 'CECFD1',
 );
 
 foreach ($cfct_color_options as $k => $default) {
@@ -97,20 +100,61 @@ var CFCT_AJAX_LOAD = '.$ajax_load.';
 </script>
 	';
 	if (cfct_get_option('cfct_custom_colors') == 'yes') {
-
-// TODO
-// output custom CSS overrides
-// header background color
-// header text color
-// header link color
-// header nav background color
-// header nav link color
-// h1 color
-// h2 color
-// link color
-// footer background color
-// footer text color
-
+		get_option('cfct_header_image_type') == 'light' ? $img_type = 'light' : $img_type = 'dark';
+?>
+<style type="text/css">
+#header {
+	background-color: #<?php echo get_option('cfct_header_background_color'); ?>;
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/header/gradient-<?php echo $img_type; ?>.png);
+	color: #<?php echo get_option('cfct_header_text_color'); ?>;
+}
+#header a,
+#header a:visited {
+	color: #<?php echo get_option('cfct_header_link_color'); ?>;
+}
+#header .wrapper {
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/header/texture-<?php echo $img_type; ?>.png);
+}
+#sub-header {
+	background-color: #<?php echo get_option('cfct_header_nav_background_color'); ?>;
+	color: #<?php echo get_option('cfct_header_nav_text_color'); ?>;
+}
+#sub-header a,
+#sub-header a:visited {
+	color: #<?php echo get_option('cfct_header_nav_link_color'); ?>;
+}
+h1,
+h1 a,
+h1 a:hover,
+h1 a:visited {
+	color: #<?php echo get_option('cfct_page_title_color'); ?>;
+}
+h2,
+h2 a,
+h2 a:hover,
+h2 a:visited {
+	color: #<?php echo get_option('cfct_page_subtitle_color'); ?>;
+}
+a,
+a:hover,
+a:visited {
+	color: #<?php echo get_option('cfct_link_color'); ?>;
+}
+#footer {
+	background-color: #<?php echo get_option('cfct_footer_background_color'); ?>;
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/footer/gradient-<?php echo $img_type; ?>.png);
+	color: #<?php echo get_option('cfct_footer_text_color'); ?>;
+}
+#footer a,
+#footer a:visited {
+	color: #<?php echo get_option('cfct_footer_link_color'); ?>;
+}
+#footer p#developer-link a,
+#footer p#developer-link a:visited {
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/footer/by-crowd-favorite-<?php echo $img_type; ?>.png);
+}
+</style>
+<?php
 	}
 }
 add_action('wp_head', 'cfct_blog_head');
@@ -176,6 +220,7 @@ function cfct_blog_settings_form() {
 	$html .= '
 								<p class="submit">
 									<input type="hidden" name="cfct_header_image_type" id="cfct_header_image_type" value="dark" />
+									<input type="hidden" name="cfct_footer_image_type" id="cfct_footer_image_type" value="dark" />
 									<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
 								</p>
 							</fieldset>
@@ -258,11 +303,15 @@ cfct_reset_colors = function() {
 	}
 ?>
 }
-cfct_set_header_image_type = function() {
-	var rgb = getRGB(jQuery('#cfct_header_background_color').val());
-	var brightness = (rgb.r + rgb.g + rgb.b) / 3;
-	brightness > 127 ? img = 'dark' : img = 'light';
-	jQuery('#cfct_header_image_type').val(img);
+cfct_set_image_types = function() {
+	areas = ['header', 'footer'];
+	for var i = 0; i < areas.length; i++) {
+		var area = areas[i];
+		var rgb = getRGB(jQuery('#cfct_' + area + '_background_color').val());
+		var brightness = (rgb.r + rgb.g + rgb.b) / 3;
+		brightness > 127 ? img = 'light' : img = 'dark';
+		jQuery('#cfct_' + area + '_image_type').val(img);
+	}
 }
 cfct_color_preview = function(elem, hex) {
 	var rgb = getRGB(hex);
@@ -272,7 +321,7 @@ cfct_color_preview = function(elem, hex) {
 		backgroundColor: '#' + hex,
 		color: color
 	});
-	cfct_set_header_image_type();
+	cfct_set_image_types();
 }
 // hex to decimal code found here and used with minor modification: http://www.telerik.com/community/forums/aspnet-ajax/colorpicker/calculate-color-contrast-in-javascript.aspx
 function getDec(hexChar) {

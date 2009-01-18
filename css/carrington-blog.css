@@ -21,17 +21,16 @@ h1.page-title {
 	margin:1.92857144em 0 .58333334em 0;
 }
 
-.pagination {
+.pagination, .pagination_single {
 	background:url(../images/grey-to-white-gradient.png) repeat-x top;
+	margin-top: 20px;
 	overflow:hidden;
 }
-.pagination .previous a,
-.pagination .previous a:visited{
+.pagination .previous a, .pagination_single .previous {
 	float:left;
 	padding:18px;
 }
-.pagination .next a,
-.pagination .next a:visited {
+.pagination .next a, .pagination_single .next {
 	float:right;
 	padding:18px;
 }
@@ -44,6 +43,13 @@ h1.page-title {
 .loading span {
 	display: block;
 	padding: 17px 32px 0;
+}
+div.close {
+	background: url(../images/watermark-light.gif) top center;
+	border-bottom: 1px solid #ddd;
+	margin-top: -1.6em;
+	padding: 8px 0 6px;
+	text-align: center;
 }
 
 /* =====Structure===== 
@@ -80,11 +86,12 @@ hr.divider {
 	width: 960px;
 }
 #header {
-	background: #51555c url(../images/header-gradient.gif) repeat-x bottom;
+	background: #51555c url(../images/header/gradient-dark.png) repeat-x bottom;
 	color: #cecfd1;
+	min-width: 980px;
 }
 #header .wrapper {
-	background: url(../images/header-texture.jpg) no-repeat center bottom;
+	background: url(../images/header/texture-dark.png) no-repeat center bottom;
 	overflow: hidden;
 	padding: 13px 10px 10px;
 }
@@ -177,10 +184,9 @@ hr.divider {
 
 #sub-header {
 	background: #e9eaea url(../images/sub-header-border-bottom.gif) repeat-x bottom;
-	border-top: 3px solid #dddfdf;
 	float:left;
-	margin-top: 1px;
-	padding: 7px 0 10px;
+	min-width: 980px;
+	padding: 10px 0;
 	width:100%;
 }
 #sub-header form#search {
@@ -279,10 +285,11 @@ hr.divider {
 	margin-right:12px;
 }
 #footer {
-	background: #51555c url(../images/footer-gradient.gif) repeat-x top;
+	background: #51555c url(../images/footer/gradient-dark.png) repeat-x top;
 	clear: both;
 	color: #999;
-	padding: 32px 0 42px;
+	min-width: 980px;
+	padding: 32px 0 200px;
 }
 #footer a,
 #footer a:visited {
@@ -303,11 +310,11 @@ hr.divider {
 }
 #footer p#developer-link a,
 #footer p#developer-link a:visited {
-	background:url(../images/by-crowd-favorite.png) no-repeat left top;
+	background:url(../images/footer/by-crowd-favorite.png) no-repeat left top;
 	float:right;
 	height:30px;
 	text-indent:-32697px;
-	width:250px;
+	width:240px;
 }
 
 /* =====Posts===== */
