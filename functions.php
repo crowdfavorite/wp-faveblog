@@ -76,6 +76,7 @@ function cfct_blog_option_defaults($options) {
 }
 add_filter('cfct_option_defaults', 'cfct_blog_option_defaults');
 
+
 function cfct_blog_init() {
 	if (cfct_get_option('cfct_ajax_load') == 'yes') {
 		cfct_ajax_load();
@@ -83,13 +84,29 @@ function cfct_blog_init() {
 }
 add_action('init', 'cfct_blog_init');
 
+if (function_exists('register_sidebar')) {
+	register_sidebar(
+		array(
+			'name' => 'Primary Sidebar',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h2 class="title">',
+			'after_title' => '</h2>'
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => 'Secondary Sidebar',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h2 class="title">',
+			'after_title' => '</h2>'
+		)
+	);
+}
+
 wp_enqueue_script('jquery');
 wp_enqueue_script('carrington', get_bloginfo('template_directory').'/js/carrington.js', 'jquery', '1.0');
-
-if (is_admin()) {
-	wp_enqueue_script('jquery-colorpicker', get_bloginfo('template_directory').'/js/colorpicker.js', 'jquery', '1.0');
-	wp_enqueue_style('jquery-colorpicker', get_bloginfo('template_directory').'/css/colorpicker.css');
-}
 
 function cfct_blog_head() {
 	cfct_get_option('cfct_ajax_load') == 'no' ? $ajax_load = 'false' : $ajax_load = 'true';
@@ -305,7 +322,7 @@ cfct_reset_colors = function() {
 }
 cfct_set_image_types = function() {
 	areas = ['header', 'footer'];
-	for var i = 0; i < areas.length; i++) {
+	for (var i = 0; i < areas.length; i++) {
 		var area = areas[i];
 		var rgb = getRGB(jQuery('#cfct_' + area + '_background_color').val());
 		var brightness = (rgb.r + rgb.g + rgb.b) / 3;
@@ -322,45 +339,6 @@ cfct_color_preview = function(elem, hex) {
 		color: color
 	});
 	cfct_set_image_types();
-}
-// hex to decimal code found here and used with minor modification: http://www.telerik.com/community/forums/aspnet-ajax/colorpicker/calculate-color-contrast-in-javascript.aspx
-function getDec(hexChar) {
-	if (typeof hexChar == 'undefined') {
-		return 0;
-	}
-	switch(hexChar.toUpperCase()) {
-		case '0': return 0;
-		case '1': return 1;
-		case '2': return 2;
-		case '3': return 3;
-		case '4': return 4;
-		case '5': return 5;
-		case '6': return 6;
-		case '7': return 7;
-		case '8': return 8;
-		case '9': return 9;
-		case 'A': return 10;
-		case 'B': return 11;
-		case 'C': return 12;
-		case 'D': return 13;
-		case 'E': return 14;
-		case 'F': return 15;
-	};
-}
-function hexToDec(hex) {
-	var colorChars = hex.split('');
-	var dec = (getDec(colorChars[0]) * 16) + getDec(colorChars[1]);
-	return dec;
-}
-function getRGB(color) {
-	// remove the '#'
-	if (color.indexOf('#') != -1) {
-		color = color.substring(color.indexOf('#') + 1);
-	}
-	var r = hexToDec(color.substr(0, 2));
-	var g = hexToDec(color.substr(2, 2));
-	var b = hexToDec(color.substr(4, 2));
-	return { r: r, g: g, b: b};
 }
 </script>
 <?php

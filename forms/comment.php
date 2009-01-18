@@ -45,7 +45,7 @@ if ('open' == $post->comment_status) {
 <?php // if you're logged in...
 		if ($user_ID) {
 ?>
-	<p class="logged-in section"><?php printf(__('Logged in as <a href="%s">%s</a>.', 'carrington-blog'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); ?> <a href="<?php cfct_logout_url(get_permalink()) ?>" title="<?php _e('Log out of this account', 'carrington-blog'); ?>"><?php _e('Logout &rarr;', 'carrington-blog'); ?></a></p>
+	<p class="logged-in section"><?php printf(__('Logged in as <a href="%s">%s</a>. ', 'carrington-blog'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); wp_loginout() ?> </p>
 <?php
 		}
 		else { 
