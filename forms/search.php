@@ -18,9 +18,16 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
+if (get_option('permalink_structure') != '') {
+	$onsubmit = "location.href=this.action+'search/'+encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;";
+}
+else {
+	$onsubmit = '';
+}
+
 ?>
 
-<form method="get" id="search" action="<?php bloginfo('home'); ?>/">
+<form method="get" id="search" action="<?php echo trailingslashit(get_bloginfo('home')); ?>" onsubmit="<?php echo $onsubmit; ?>">
 	<div>
 		<input type="text" id="search-input" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="15" />
 		<input type="submit" name="submit_button" value="<?php _e('Search', 'carrington-blog'); ?>" />

@@ -186,7 +186,7 @@ hr.divider {
 	background: #e9eaea url(../images/sub-header-border-bottom.gif) repeat-x bottom;
 	float:left;
 	min-width: 980px;
-	padding: 10px 0;
+	padding: 9px 0 10px;
 	width:100%;
 }
 #sub-header form#search {
