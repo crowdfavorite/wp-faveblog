@@ -22,7 +22,12 @@ get_header();
 
 $s = get_query_var('s');
 
-$search_title = '<a href="'.get_bloginfo('url').'/?s='.attribute_escape($s).'" title="">'.htmlspecialchars($s).'</a>';
+if (get_option('permalink_structure') != '') {
+	$search_title = '<a href="'.trailingslashit(get_bloginfo('url')).'search/'.urlencode($s).'">'.htmlspecialchars($s).'</a>';
+}
+else {
+	$search_title = '<a href="'.trailingslashit(get_bloginfo('url')).'?s='.urlencode($s).'">'.htmlspecialchars($s).'</a>';
+}
 
 ?>
 
