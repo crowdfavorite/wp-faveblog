@@ -19,7 +19,7 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 
 load_theme_textdomain('carrington-blog');
 
-define('CFCT_DEBUG', false);
+define('CFCT_DEBUG', true);
 define('CFCT_PATH', trailingslashit(TEMPLATEPATH));
 define('CFCT_HOME_LIST_LENGTH', 5);
 define('CFCT_HOME_LATEST_LENGTH', 250);

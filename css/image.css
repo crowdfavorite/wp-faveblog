@@ -11,13 +11,13 @@ a:visited {
 
 #header,
 #footer {
-	background:#51555c url(../images/header-gradient.gif) repeat-x center bottom;
+	background:#51555c url(../img/header-gradient.gif) repeat-x center bottom;
 	clear:both;
 }
 
 #header a,
 #footer a {
-	background: url(../images/header-texture.jpg) no-repeat center bottom;
+	background: url(../img/header-texture.jpg) no-repeat center bottom;
 	border-bottom:1px solid #333;
 	display:block;
 	font-size:11.5px;
@@ -36,7 +36,7 @@ a:visited {
 	border:1px solid #0c0c0c;
 }
 .figure-info {
-	background:transparent url(../images/divider-ornament-wide-darker.png) no-repeat scroll center top;
+	background:transparent url(../img/divider-ornament-wide-darker.png) no-repeat scroll center top;
 	margin:20px auto 0;
 	padding:25px 40px;
 	width:33em;
@@ -60,13 +60,13 @@ a:visited {
 
 .previous-attachment,
 .next-attachment {
-	background:url(../images/150px-flourish-left-darker.png) no-repeat right bottom;
+	background:url(../img/150px-flourish-left-darker.png) no-repeat right bottom;
 	padding-bottom:13px;
 	position:absolute;
 	top:0px;
 }
 .next-attachment{
-	background:url(../images/150px-flourish-right-darker.png) no-repeat left bottom;
+	background:url(../img/150px-flourish-right-darker.png) no-repeat left bottom;
 	right:0;
 }
 
