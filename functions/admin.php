@@ -19,27 +19,29 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 
 function cfct_blog_settings_form() {
 	global $cfct_color_options;
-	$options = array(
+	$ajax_load_options = '';
+	$color_options = '';
+	$lightbox_options = '';
+	$values = array(
 		'yes' => __('Yes', 'carrington-blog'),
 		'no' => __('No', 'carrington-blog'),
 	);
-	$ajax_load_options = '';
-	$color_options = '';
-	foreach ($options as $k => $v) {
-		if ($k == cfct_get_option('cfct_ajax_load')) {
-			$ajax_load_selected = 'selected="selected"';
+	$settings = array(
+		'cfct_ajax_load',
+		'cfct_custom_colors',
+		'cfct_lightbox',
+	);
+	foreach ($values as $k => $v) {
+		foreach ($settings as $setting) {
+			$options = $setting.'_options';
+			if ($k == cfct_get_option($setting)) {
+				$selected = 'selected="selected"';
+			}
+			else {
+				$selected = '';
+			}
+			$$options .= "\n\t<option value='$k' $selected>$v</option>";
 		}
-		else {
-			$ajax_load_selected = '';
-		}
-		$ajax_load_options .= "\n\t<option value='$k' $ajax_load_selected>$v</option>";
-		if ($k == cfct_get_option('cfct_custom_colors')) {
-			$color_options_selected = 'selected="selected"';
-		}
-		else {
-			$color_options_selected = '';
-		}
-		$color_options .= "\n\t<option value='$k' $color_options_selected>$v</option>";
 	}
 	$cfct_posts_per_archive_page = get_option('cfct_posts_per_archive_page');
 	if (intval($cfct_posts_per_archive_page) == 0) {
@@ -55,7 +57,7 @@ function cfct_blog_settings_form() {
 						<fieldset>
 							<p>
 								<label for="cfct_custom_colors">'.__('Customize Colors:', 'carrington-blog').'</label>
-								<select name="cfct_custom_colors" id="cfct_custom_colors">'.$color_options.'</select>
+								<select name="cfct_custom_colors" id="cfct_custom_colors">'.$cfct_custom_colors_options.'</select>
 							</p>
 							<fieldset class="'.$colors_class.'" id="cfct_color_options_panel">
 								<legend>Custom Colors</legend>
@@ -96,7 +98,11 @@ function cfct_blog_settings_form() {
 						<fieldset>
 							<p>
 								<label for="cfct_ajax_load">'.__('Load archives and comments with AJAX:', 'carrington-blog').'</label>
-								<select name="cfct_ajax_load" id="cfct_ajax_load">'.$ajax_load_options.'</select>
+								<select name="cfct_ajax_load" id="cfct_ajax_load">'.$cfct_ajax_load_options.'</select>
+							</p>
+							<p>
+								<label for="cfct_lightbox">'.__('Use a lightbox effect for image galleries:', 'carrington').'</label>
+								<select name="cfct_lightbox" id="cfct_lightbox">'.$cfct_lightbox_options.'</select>
 							</p>
 							<p>
 								<label for="cfct_posts_per_archive_page">'.__('Posts shown on archives pages:', 'carrington-blog').'</label>

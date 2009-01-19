@@ -19,7 +19,7 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 
 load_theme_textdomain('carrington-blog');
 
-define('CFCT_DEBUG', true);
+define('CFCT_DEBUG', false);
 define('CFCT_PATH', trailingslashit(TEMPLATEPATH));
 define('CFCT_HOME_LIST_LENGTH', 5);
 define('CFCT_HOME_LATEST_LENGTH', 250);
@@ -38,6 +38,7 @@ $cfct_options = array(
 	'cfct_latest_limit_3',
 	'cfct_list_limit_3',
 	'cfct_ajax_load',
+	'cfct_lightbox',
 	'cfct_posts_per_archive_page',
 	'cfct_custom_colors',
 	'cfct_header_image_type',
@@ -81,6 +82,10 @@ function cfct_blog_init() {
 	if (cfct_get_option('cfct_ajax_load') == 'yes') {
 		cfct_ajax_load();
 	}
+	if (cfct_get_option('cfct_lightbox') != 'no') {
+		wp_enqueue_script('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/jquery.lightbox.js', 'jquery', '1.0');
+		wp_enqueue_style('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/css/lightbox.css');
+	}
 }
 add_action('init', 'cfct_blog_init');
 
@@ -95,6 +100,24 @@ var CFCT_URL = "'.get_bloginfo('url').'";
 var CFCT_AJAX_LOAD = '.$ajax_load.';
 </script>
 	';
+	if (cfct_get_option('cfct_lightbox') != 'no') {
+		echo '
+<script type="text/javascript">
+jQuery(function($) {
+	$("a.lightbox").each(function() {
+		var url = $(this).attr("rel");
+		var post_id = $(this).parents("div.post").attr("id");
+		$(this).attr("href", url).attr("rel", post_id);
+	});
+	$("a.lightbox").lightbox({
+		fitToScreen: true,
+		fileLoadingImage : "'.get_bloginfo('template_directory').'/carrington-core/lightbox/images/loading.gif",
+		fileBottomNavCloseImage : "'.get_bloginfo('template_directory').'/carrington-core/lightbox/images/closelabel.gif"
+	});
+});
+</script>
+		';
+	}
 	if (cfct_get_option('cfct_custom_colors') == 'yes') {
 		get_option('cfct_header_image_type') == 'light' ? $img_type = 'light' : $img_type = 'dark';
 ?>
