@@ -84,7 +84,8 @@ function cfct_blog_init() {
 	}
 	if (cfct_get_option('cfct_lightbox') != 'no') {
 		wp_enqueue_script('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/jquery.lightbox.js', 'jquery', '1.0');
-		wp_enqueue_style('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/css/lightbox.css');
+// in the future we'll use this, but for now we want 2.5 compatibility
+//		wp_enqueue_style('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/css/lightbox.css');
 	}
 }
 add_action('init', 'cfct_blog_init');
@@ -93,6 +94,10 @@ wp_enqueue_script('jquery');
 wp_enqueue_script('carrington', get_bloginfo('template_directory').'/js/carrington.js', 'jquery', '1.0');
 
 function cfct_blog_head() {
+// see enqueued style in cfct_blog_init, we'll activate that in the future
+	echo '
+<link rel="stylesheet" type="text/css" media="screen" href="'.get_bloginfo('template_directory').'/carrington-core/lightbox/css/lightbox.css" />
+	';
 	cfct_get_option('cfct_ajax_load') == 'no' ? $ajax_load = 'false' : $ajax_load = 'true';
 	echo '
 <script type="text/javascript">
