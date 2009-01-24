@@ -124,12 +124,20 @@ jQuery(function($) {
 		';
 	}
 	if (cfct_get_option('cfct_custom_colors') == 'yes') {
-		get_option('cfct_header_image_type') == 'light' ? $img_type = 'light' : $img_type = 'dark';
+		if (get_option('cfct_header_image_type') == 'light') {
+			$header_img_type = 'light';
+			$header_grad_type = 'dark';
+		}
+		else {
+			$header_img_type = 'dark';
+			$header_grad_type = 'light';
+		}
+		get_option('cfct_footer_image_type') == 'light' ? $footer_img_type = 'light' : $footer_img_type = 'dark';
 ?>
 <style type="text/css">
 #header {
 	background-color: #<?php echo get_option('cfct_header_background_color'); ?>;
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/header/gradient-<?php echo $img_type; ?>.png);
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/gradient-<?php echo $header_grad_type; ?>.png);
 	color: #<?php echo get_option('cfct_header_text_color'); ?>;
 }
 #header a,
@@ -137,7 +145,7 @@ jQuery(function($) {
 	color: #<?php echo get_option('cfct_header_link_color'); ?>;
 }
 #header .wrapper {
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/header/texture-<?php echo $img_type; ?>.png);
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/texture-<?php echo $header_img_type; ?>.png);
 }
 #sub-header {
 	background-color: #<?php echo get_option('cfct_header_nav_background_color'); ?>;
@@ -166,7 +174,7 @@ a:visited {
 }
 #footer {
 	background-color: #<?php echo get_option('cfct_footer_background_color'); ?>;
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/footer/gradient-<?php echo $img_type; ?>.png);
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/gradient-<?php echo $footer_img_type; ?>.png);
 	color: #<?php echo get_option('cfct_footer_text_color'); ?>;
 }
 #footer a,
@@ -175,7 +183,7 @@ a:visited {
 }
 #footer p#developer-link a,
 #footer p#developer-link a:visited {
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/footer/by-crowd-favorite-<?php echo $img_type; ?>.png);
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/by-crowd-favorite-<?php echo $img_type; ?>.png);
 }
 </style>
 <?php

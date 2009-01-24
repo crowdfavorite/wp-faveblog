@@ -173,7 +173,7 @@ cfct_set_image_types = function() {
 		var area = areas[i];
 		var rgb = getRGB(jQuery('#cfct_' + area + '_background_color').val());
 		var brightness = (rgb.r + rgb.g + rgb.b) / 3;
-		brightness > 127 ? img = 'light' : img = 'dark';
+		brightness > 127 ? img = 'dark' : img = 'light';
 		jQuery('#cfct_' + area + '_image_type').val(img);
 	}
 }
