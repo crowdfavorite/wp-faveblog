@@ -70,6 +70,45 @@ div.close {
 	padding: 8px 0 6px;
 	text-align: center;
 }
+/* including for compatibility */
+.alignleft {
+	float:left;
+	margin-right:1em;
+	margin-bottom:1em;
+}
+.alignright {
+	float:right;
+	margin-left:1em;
+	margin-bottom:1em;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	/* optional rounded corners for browsers that support it */
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
 
 /* =====Structure===== 
 	Total width: 960
@@ -329,7 +368,7 @@ hr.divider {
 }
 #footer p#developer-link a,
 #footer p#developer-link a:visited {
-	background:url(../img/footer/by-crowd-favorite.png) no-repeat left top;
+	background:url(../img/footer/by-crowd-favorite-light.png) no-repeat left top;
 	float:right;
 	height:30px;
 	text-indent:-32697px;
@@ -699,45 +738,4 @@ form.comment-form {
 	background:url(../img/arrow-bullet.gif) no-repeat left center;
 	border-bottom: 1px dotted #cecfd1;
 	padding:5px 0 5px 10px;
-}
-
-/* including for compatibility */
-
-.alignleft {
-	float:left;
-	margin-right:1em;
-	margin-bottom:1em;
-}
-.alignright {
-	float:right;
-	margin-left:1em;
-	margin-bottom:1em;
-}
-.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-.wp-caption {
-	border: 1px solid #ddd;
-	text-align: center;
-	background-color: #f3f3f3;
-	padding-top: 4px;
-	margin: 10px;
-	/* optional rounded corners for browsers that support it */
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-}
-.wp-caption img {
-	margin: 0;
-	padding: 0;
-	border: 0 none;
-}
-.wp-caption p.wp-caption-text {
-	font-size: 11px;
-	line-height: 17px;
-	padding: 0 4px 5px;
-	margin: 0;
 }
