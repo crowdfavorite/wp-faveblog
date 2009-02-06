@@ -27,9 +27,9 @@ else {
 
 ?>
 
-<form method="get" id="search" action="<?php echo trailingslashit(get_bloginfo('home')); ?>" onsubmit="<?php echo $onsubmit; ?>">
+<form method="get" id="cfct-search" action="<?php echo trailingslashit(get_bloginfo('home')); ?>" onsubmit="<?php echo $onsubmit; ?>">
 	<div>
-		<input type="text" id="search-input" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="15" />
+		<input type="text" id="cfct-search-input" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="15" />
 		<input type="submit" name="submit_button" value="<?php _e('Search', 'carrington-blog'); ?>" />
 	</div>
 </form>

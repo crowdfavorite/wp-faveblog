@@ -208,7 +208,7 @@ hr.divider {
 	padding: 9px 0 10px;
 	width:100%;
 }
-#sub-header form#search {
+#sub-header form#cfct-search {
 	float:right;
 }
 #sub-header #all-categories {
@@ -604,7 +604,7 @@ ol.commentlist li.hentry {
 	padding:0;
 }
 
-form#comment-form {
+form.comment-form {
 	background:#efeff1 url(../img/watermark-light.gif) repeat-x left top;
 	border:1px solid #e9eaea;
 	clear:both;
@@ -612,42 +612,25 @@ form#comment-form {
 	margin-top:1.5em;
 	padding:10px 9px;
 }
-#comment-form .section {
-	margin:0;
-	overflow:hidden;
-	padding-left:204px;
-}
-#comment-form p.section {
+.comment-form .section {
 	margin-bottom:10px;
 }
-
-#comment-form .section label {
+.comment-form .section label {
 	color:#51555c;
 	font-weight:bold;
-	margin-left:-158px;
-	float:left;
-	text-align:right;
-	width:148px;
 }
-#comment-form p.section input {
+.comment-form p.section input {
 	width:162px;
 }
-#comment-form #comment-form-comment label {
+.comment-form .comment-form-comment label {
 	font-size: 1.16666667em; /* 14 */
 	line-height: 1.28571429;
 }
-#comment-form #comment-form-comment div {
-	background:#ddd;
-	float:left;
-	margin-bottom:10px;
-}
-#comment-form p#some-html-is-ok {
-	margin:0 0 0 .5em;
-}
-#comment-form textarea{
+
+.comment-form textarea{
 	display:block;
 	height:9em;
-	width:314px;
+	width:400px;
 }
 
 /* =====Sidebar and Widgets===== */
