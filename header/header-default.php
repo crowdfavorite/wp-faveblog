@@ -32,9 +32,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/carrington-blog.css" />
 	<!--[if lt IE 8]>
-		<style type="text/css" media="screen">
-			@import url(<?php bloginfo('template_directory') ?>/css/ie.css);
-		</style>
+		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" type="text/css" media="screen" />
 	<![endif]-->
 	
 	<!--[if lt IE 7]>
