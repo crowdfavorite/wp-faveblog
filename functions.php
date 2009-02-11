@@ -145,7 +145,7 @@ jQuery(function($) {
 	color: #<?php echo get_option('cfct_header_link_color'); ?>;
 }
 #header .wrapper {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/texture-<?php echo $header_img_type; ?>-8.png);
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/texture-<?php echo $header_img_type; ?>.png);
 }
 #sub-header {
 	background-color: #<?php echo get_option('cfct_header_nav_background_color'); ?>;

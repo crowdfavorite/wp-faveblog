@@ -12,7 +12,7 @@ IEPNGFix.data = IEPNGFix.data || {};
 
 
 // This must be a path to a blank image, relative to the HTML document(s).
-// In production use I suggest '/img/blank.gif' or similar. That's all!
+// In production use I suggest '/images/blank.gif' or similar. That's all!
 IEPNGFix.blankImg = CFCT_BLANKIMG;
 
 

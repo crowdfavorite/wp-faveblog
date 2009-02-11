@@ -38,15 +38,17 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<![endif]-->
 	
 	<!--[if lt IE 7]>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/iepngfix_tilebg.js"></script>
 		<script type="text/javascript">
-			var CFCT_BLANKIMG = '<?php bloginfo('template_url') ?>/img/ie/blank.gif';
+			var CFCT_BLANKIMG = '<?php bloginfo('template_url'); ?>/img/ie/blank.gif';
 		</script>
 		<style type="text/css" media="screen">
 			/* IE6 PNG fix */
 			img,
 			#header,
 			#header .wrapper,
-			#footer{
+			#footer,
+			#footer .wrapper{
 				behavior: url(<?php bloginfo('template_url') ?>/css/iepngfix.htc);
 			}
 		</style>
