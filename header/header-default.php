@@ -30,10 +30,26 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	
 	<?php wp_get_archives('type=monthly&format=link'); ?>
-	
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/carrington-blog.css" />
 	<!--[if lt IE 8]>
-		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" type="text/css" media="screen" charset="utf-8" />
+		<style type="text/css" media="screen">
+			@import url(<?php bloginfo('template_directory') ?>/css/ie.css);
+		</style>
+	<![endif]-->
+	
+	<!--[if lt IE 7]>
+		<script type="text/javascript">
+			var CFCT_BLANKIMG = '<?php bloginfo('template_url') ?>/img/ie/blank.gif';
+		</script>
+		<style type="text/css" media="screen">
+			/* IE6 PNG fix */
+			img,
+			#header,
+			#header .wrapper,
+			#footer{
+				behavior: url(<?php bloginfo('template_url') ?>/css/iepngfix.htc);
+			}
+		</style>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>

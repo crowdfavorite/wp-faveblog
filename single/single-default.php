@@ -28,7 +28,7 @@ get_header();
 ?>
 	<div id="comments">
 <?php
-	comments_template()
+	comments_template();
 ?>
 	</div><!--#comments-->
 
