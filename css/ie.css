@@ -35,12 +35,6 @@ ol.comments-list li.hentry,
 .pagination,
 #carrington-about .about {zoom:1;}
 
-/* Suckerfish dropdowns stick in IE7 without this bit */
-#navigation li:hover,
-#all-categories li:hover {
-    position:static;
-}
-
 /* Since we have to give layout to the .full div, the box model is different, messing with spacing. */
 .full{
 	margin-bottom:0;

@@ -47,13 +47,6 @@ cfct.ajax_post_comments = function() {
 }
 
 jQuery(document).ready(function($) {
-	// suckerfish dropdown fixes for IE
-	$('#navigation li, #all-categories li').mouseover(function() {
-		$(this).addClass('hover');
-	});
-	$('#navigation li, #all-categories li').mouseout(function() {
-		$(this).removeClass('hover');
-	});
 	// :first-child fix for IE
 	$('#navigation li li:first-child, #all-categories li li:first-child').addClass('first');
 	// :hover fix for full articles in IE
