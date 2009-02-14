@@ -21,7 +21,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 if (have_posts()) {
 	while (have_posts()) {
 		the_post();
-		cfct_excerpt();
+		cfct_template_file('excerpt','search');
 	}
 } else {
 	cfct_misc('no-results');

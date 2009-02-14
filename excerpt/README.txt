@@ -31,17 +31,11 @@ Once a template match has been found, no other processing is done.
 
 - excerpt-default.php (or default.php)
 - archive.php
-- author.php
 - author-{username}.php
-- category.php
 - cat-{slug}.php
-- home.php
 - meta-{key}-{value}.php
 - page.php
 - role-{rolename}.php
-- search.php
-- single.php
-- tag.php
 - tag-{slug}.php
 
 
