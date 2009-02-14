@@ -30,20 +30,13 @@ If you want to apply styling/custom HTML to `the_excerpt()`, create/customize te
 ### Supported Override Filenames
 
 - content-default.php (or default.php)
-- archive.php
-- author.php
 - author-{username}.php
-- category.php
 - cat-{slug}.php
-- home.php
 - meta-{key}-{value}.php
 - meta-{key}.php
 - page.php
 - parent-{slug}.php
 - role-{rolename}.php
-- search.php
-- single.php
-- tag.php
 - tag-{slug}.php
 
 
@@ -57,10 +50,4 @@ If you want to apply styling/custom HTML to `the_excerpt()`, create/customize te
 - *parent-{slug}.php* - Used when a page is a child page of a specific parent page. The page is matched by the "slug" - for example a page under a parent page with slug of "example" could use a template of _parent-example.php_.
 - *role-{role}.php* - Used when a post/page is authored by a user with a particular role. The {role} is an all lowercase representation of the role string - for example, an author with an "Administrator" role might use a template of _role-administrator.php_. This is primarily useful if you have a set of authors that are given a Contributor role; or a Guest Columnist role or similar. Any WordPress role can take the place of {role} in the file name.
 - *tag-{slug}.php* - Used when a post has a certain tag applied to it. The tag is matched by the "slug" - for example a post with tag "Reference" (with a tag slug of "reference") could use a template of _tag-reference.php_.
-- *author.php* - Used when the content is being displayed on an "author" page (a page listing posts by author).
-- *category.php* - Used when the content is being displayed on a "category" page (a page listing posts by category).
-- *tag.php* - Used when the content is being displayed on an "tag" page (a page listing posts by tags).
 - *page.php* - Used when the content is being displayed is a page (not a post).
-- *single.php* - Used when the content is being displayed on an "single" page (a page showing only one post).
-- *search.php* - Used when the content is being displayed are search results (a page listing posts matching a user search).
-- *home.php* - Used when the page being displayed is the home page.
