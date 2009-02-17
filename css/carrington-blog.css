@@ -17,12 +17,61 @@
 
 @import url(typography.css);
 
-/* =====UI===== */
-
+/* UI: Shared classnames
+================================================================= */
+.accessibility {
+	left:-32000px;
+	position:absolute;
+}
+.lofi {
+	display:none;
+}
 .clear {
 	clear: both;
 	float: none;
 }
+/* http://www.positioniseverything.net/easyclearing.html */
+
+.clearfix:after {
+	clear: both;
+	content: '.';
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+/* http://www.positioniseverything.net/easyclearing.html */
+.clearfix:after {
+	clear: both;
+	content: '.';
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
 hr.rule-alternate {
 	background:url(../img/divider-ornament.gif) no-repeat center;
 	border:0;
@@ -36,8 +85,66 @@ hr.rule {
 
 h1.page-title {
 	color: #999;
-	font: italic 1.16666667em/1.28571429 Georgia, serif;
-	margin:1.92857144em 0 .58333334em 0;
+	font: italic 14px Georgia, serif;
+	margin:24px 0 9px 0;
+}
+
+/* General horizontal navigation lists with dropdown magic */
+.nav,
+.nav ul,
+.nav li {
+	background:transparent;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.nav ul {
+	background: #e9eaea;
+	border: 1px solid #cecfd1;
+	border-color: #cecfd1 #aaa #aaa #cecfd1;
+	z-index: 9999;
+}
+.nav li {
+	float:left;
+	margin-right:12px;
+}
+.nav li a {
+	display:block;
+}
+.nav li li a {
+	padding:6px 9px;
+}
+.nav li li {
+	background:url(../img/dropdown-divider.gif) no-repeat center top;
+	float: none;
+	margin-right:0;
+	position: relative;
+}
+.nav li li:first-child,
+.nav li li.first-child {
+	background:transparent;
+}
+.nav li li ul {
+	margin-left:200px;
+	top:-1px;
+}
+.nav li.secondary {
+	float:right;
+	margin-left:12px;
+	margin-right:0;
+}
+/* dropdown action */
+.nav li ul,
+.nav li:hover li ul,
+.nav li li:hover li ul {
+	left: -32697px;
+	position: absolute;
+	width: 200px;
+}
+.nav li:hover ul,
+.nav li li:hover ul,
+.nav li li li:hover ul {
+	left: auto;
 }
 
 .pagination, .pagination_single {
@@ -63,7 +170,7 @@ h1.page-title {
 	display: block;
 	padding: 17px 32px 0;
 }
-div.close {
+.close {
 	background: url(../img/watermark-light.gif) top center;
 	border-bottom: 1px solid #ddd;
 	margin-top: -1.6em;
@@ -110,7 +217,8 @@ div.close {
 	margin: 0;
 }
 
-/* =====Structure===== 
+/* Structure
+================================================
 	Total width: 960
 	Columns: 12
 	Column width: 58px
@@ -120,24 +228,9 @@ div.close {
 	#content = 7 units
 	#sidebar = 5 units
 */
-p#top {
-	margin:0;
+.section { /* Full-width areas */
+	min-width: 980px; /* cut-off background fix */
 }
-a#to-content,
-a#to-content:visited {
-	background: #e9eaea;
-	border: 1px dashed #777;
-	left: -32697px;
-	padding: 10px;
-	position: absolute;
-}
-a#to-content:focus {
-	left: 0;
-}
-hr.divider {
-	display:none;
-}
-
 .wrapper {
 	clear: both;
 	margin: 0 auto;
@@ -149,7 +242,7 @@ hr.divider {
 	background-repeat:repeat-x;
 	background-position:left bottom;
 	color: #cecfd1;
-	min-width: 980px;
+
 }
 #header .wrapper {
 	background-image:url(../img/header/texture-dark.png);
@@ -164,164 +257,51 @@ hr.divider {
 }
 #header #blog-title {
 	font-family: "Avenir Light", "Futura Light", helvetica, arial, sans-serif;
-	font-size: 3em;
+	font-size: 36px;
 	font-weight:normal;
 	line-height: 1;
-	margin-bottom: .16666666em;
+	margin-bottom: 9px;
 }
 #header #blog-title a:hover {
 	text-decoration: none;
 }
 
-#navigation ul {
-	list-style:none;
-	margin:0;
-}
-#navigation li ul {
-	background: #e9eaea;
-	border: 1px solid #cecfd1;
-	border-color: #cecfd1 #aaa #aaa #cecfd1;
-	z-index: 9999;
-}
-#navigation li li ul {
-	margin-left: 200px;
-	top: -1px;
-}
-#navigation li {
-	float: left;
-}
-#navigation li li {
-	background:url(../img/dropdown-divider.gif) no-repeat center top;
-	float: none;
-	position: relative;
-}
-#navigation li li:first-child,
-#navigation li li.first {
-	background:transparent;
-}
-#navigation li.secondary {
-	float:right;
-	margin-left:1.5em;
-}
 #navigation a,
 #navigation a:visited {
-	display: block;
 	font-weight: bold;
-	margin-right:1.5em;
 	text-transform: uppercase;
 }
 #navigation .secondary a,
-#navigation .secondary a:visited {
+#navigation .secondary a:visited,
+#navigation li li a,
+#navigation li li a:visited {
 	font-weight:normal;
-	margin-right:0;
 	text-transform:none;
 }
 #navigation li li a,
 #navigation li li a:visited {
 	color: #a00004;
-	font-weight: normal;
-	margin:0;
-	padding: 6px 12px;
-	text-transform: none;
-}
-
-/* dropdown action */
-#navigation li ul,
-#navigation li li ul,
-#navigation li:hover li ul,
-#navigation li li:hover li ul,
-#navigation li.hover li ul,
-#navigation li li.hover li ul {
-	left: -32697px;
-	position: absolute;
-	width: 200px;
-}
-#navigation li:hover ul,
-#navigation li li:hover ul,
-#navigation li li li:hover ul,
-#navigation li.hover ul,
-#navigation li li.hover ul,
-#navigation li li li.hover ul {
-	left: auto;
 }
 
 #sub-header {
 	background: #e9eaea url(../img/sub-header-border-bottom.gif) repeat-x bottom;
-	float:left;
-	min-width: 980px;
 	padding: 9px 0 10px;
-	width:100%;
 }
 #sub-header form#cfct-search {
 	float:right;
 }
-#sub-header #all-categories {
-	float:left;
-	margin-top:3px;
-	width:740px;
+#all-categories {
+	width:720px;
 }
 #all-categories .heading {
 	float: left;
-	margin:0 .5em 0 0;
-}
-#all-categories ul {
-	list-style:none;
-	margin:0;
-}
-#all-categories li {
-	float: left;
-}
-#all-categories li ul {
-	background: #e9eaea;
-	border: 1px solid #cecfd1;
-	border-color: #cecfd1 #aaa #aaa #cecfd1;
-	z-index: 9999;
-}
-#all-categories li li ul {
-	margin-left: 200px;
-	top: -1px;
-}
-#all-categories li li {
-	background:url(../img/dropdown-divider.gif) no-repeat center top;
-	float: none;
-	position: relative;
-}
-#all-categories li li:first-child,
-#all-categories li li.first {
-	background:transparent;
-}
-#all-categories li a,
-#all-categories li a:visited {
-	display: block;
-	margin-right:1em;
-}
-#all-categories li li a,
-#all-categories li li a:visited {
-	color: #a00004;
-	margin:0;
-	padding: 6px 12px;
-}
-/* dropdown action */
-#all-categories li ul,
-#all-categories li li ul,
-#all-categories li:hover li ul,
-#all-categories li li:hover li ul,
-#all-categories li.hover li ul,
-#all-categories li li.hover li ul {
-	left: -32697px;
-	position: absolute;
-	width: 200px;
-	z-index:999;
-}
-#all-categories li:hover ul,
-#all-categories li li:hover ul,
-#all-categories li li li:hover ul,
-#all-categories li.hover ul,
-#all-categories li li.hover ul,
-#all-categories li li li.hover ul {
-	left: auto;
+	font-weight:normal;
+	margin-right:12px;
 }
 
+#main {
+	margin:24px 0;
+}
 #content {
 	float: left;
 	padding-bottom: 3em;
@@ -330,14 +310,8 @@ hr.divider {
 #sidebar {
 	background:url(../img/sidebar-background.gif) no-repeat left top;
 	float: right;
-	margin:1.5em 0 3em;
 	padding:14px;
 	width: 358px;
-}
-#sidebar ul,
-#sidebar ol,
-#sidebar dd {
-	margin-left: .75em;
 }
 #sidebar #primary-sidebar,
 #sidebar #secondary-sidebar {
@@ -348,10 +322,9 @@ hr.divider {
 	margin-right:12px;
 }
 #footer {
-	background: #51555c url(../img/footer/gradient-dark.png) repeat-x top;
+	background: #51555c url(../img/footer/gradient-dark.png) repeat-x left top;
 	clear: both;
 	color: #999;
-	min-width: 980px;
 	padding: 32px 0 64px;
 }
 #footer a,
@@ -381,9 +354,6 @@ hr.divider {
 }
 
 /* =====Posts===== */
-address.author {
-	display: inline;
-}
 .entry-content,
 .entry-summary {
 	overflow:auto;
@@ -391,8 +361,8 @@ address.author {
 
 .full {
 	background:url(../img/divider-ornament-wide.gif) no-repeat center bottom;
-	margin-bottom:1.5em;
-	padding-bottom:1.5em;
+	margin-bottom:24px;
+	padding-bottom:18px;
 	position:relative;
 }
 body.single .full,
@@ -576,8 +546,7 @@ ol.commentlist li.hentry {
 	padding:10px; /* 2 units + 4px for gravatar */
 }
 .comment .author {
-	font-size: 1.16666667em; /* 14 */
-	line-height: 1.28571429;
+	font-size:14px;
 }
 .comment cite.fn {
 	font-weight:bold;
@@ -599,8 +568,6 @@ ol.commentlist li.hentry {
 }
 .comment-meta {
 	color:#999;
-	font-size:11.5px;
-	line-height:12px;
 }
 .comment .notification {
 	background:#EFEFF1 url(../img/watermark-light.gif);
@@ -688,8 +655,7 @@ form.comment-form {
 	margin: 0 0 .58333334em 0;
 }
 .widget li {
-	line-height:1.25em;
-	margin-bottom:.5em;
+	margin:0;
 }
 .widget_search label {
 	display:block;
@@ -736,8 +702,6 @@ form.comment-form {
 }
 #carrington-archives ul {
 	border-top: 1px dotted #cecfd1;
-	list-style:none;
-	margin:0;
 }
 #carrington-archives li {
 	background:url(../img/arrow-bullet.gif) no-repeat left center;

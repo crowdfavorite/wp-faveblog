@@ -48,7 +48,7 @@ cfct.ajax_post_comments = function() {
 
 jQuery(document).ready(function($) {
 	// :first-child fix for IE
-	$('#navigation li li:first-child, #all-categories li li:first-child').addClass('first');
+	$('.nav li:first-child').addClass('first-child');
 	// :hover fix for full articles in IE
 	$('.full').mouseover(function() {
 		$(this).addClass('hover');

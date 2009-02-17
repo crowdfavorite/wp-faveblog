@@ -1,0 +1,13 @@
+/* lo-fi png fix */
+#footer p#developer-link a,
+#footer p#developer-link a:visited {
+	background-image: url(../img/ie/by-crowd-favorite.gif);
+}
+
+/* Hide shadow for IE: pngfix.htc fails to render it correctly. IE6 refuses background:transparent; here is a stupendous fix. */
+#header,
+#footer {
+	background-image:none;
+	background-repeat:no-repeat;
+	background-position:-10px;
+}

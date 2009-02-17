@@ -25,11 +25,11 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<title><?php wp_title( '-', true, 'right' ); echo wp_specialchars( get_bloginfo('name'), 1 ); ?></title>
 	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	
-	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'sandbox' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
-	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'sandbox' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'carrington' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'carrington' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
-	
 	<?php wp_get_archives('type=monthly&format=link'); ?>
+	
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/carrington-blog.css" />
 	<!--[if lt IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" type="text/css" media="screen" />
@@ -43,26 +43,31 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 		<style type="text/css" media="screen">
 			/* IE6 PNG fix */
 			img,
-			#header,
 			#header .wrapper,
-			#footer,
 			#footer .wrapper{
 				behavior: url(<?php bloginfo('template_url') ?>/css/iepngfix.htc);
 			}
 		</style>
+		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie6.css" type="text/css" media="screen" />
 	<![endif]-->
+	
+	<?php
+	// Javascript for threaded comments
+	if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
+	
 	<?php wp_head(); ?>
 </head>
 
-<body class="<?php sandbox_body_class() ?>">
+<body>
 	<div id="page">
-		<p id="top"><a id="to-content" href="#content" title="<?php _e( 'Skip to content', 'sandbox' ) ?>"><?php _e( 'Skip to content', 'carrington' ); ?></a></p>
-		<div id="header">
+		<div id="top"><a class="accessibility" href="#content" title="<?php _e( 'Skip to content', 'sandbox' ) ?>"><?php _e( 'Skip to content', 'carrington' ); ?></a></div>
+		<hr class="lofi" />
+		<div id="header" class="section">
 			<div class="wrapper">
 				<strong id="blog-title"><a href="<?php bloginfo('url') ?>/" title="Home" rel="home"><?php bloginfo('name') ?></a></strong>
 				<p id="blog-description"><?php bloginfo('description'); ?></p>
 				<div id="navigation">
-					<ul>
+					<ul class="nav clearfix">
 						<?php wp_list_pages('title_li='); ?>
 						<li class="secondary"><?php wp_loginout(); ?></li>
 						<?php wp_register('<li class="secondary">', '</li>'); ?> 
@@ -70,16 +75,17 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 				</div><!-- #navigation -->
 			</div><!-- .wrapper -->
 		</div><!-- #header -->
-		<div id="sub-header">
+		<div id="sub-header" class="section">
 			<div class="wrapper">
 				<?php cfct_form('search'); ?>
 				<div id="all-categories">
-					<span class="heading">Categories:</span>
-					<ul>
+					<strong class="heading">Categories:</strong>
+					<ul class="nav clearfix">
 						<?php wp_list_categories('title_li='); ?>
 					</ul>
 				</div><!-- #list-categories -->
 			</div><!-- .wrapper -->
 		</div><!--#sub-header-->
-		<hr class="divider">
-		<div class="wrapper">
+		<hr class="lofi" />
+		<div id="main" class="section">
+			<div class="wrapper">

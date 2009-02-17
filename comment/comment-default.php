@@ -47,7 +47,7 @@ remove_filter('get_comment_author_link', 'cfct_hcard_comment_author_link');
 		<?php comment_text() ?>
 	</div><!--.entry-content-->
 	
-	<div class="comment-meta commentmetadata">
+	<div class="comment-meta commentmetadata small">
 		<span class="date comment-date">
 <?php
 printf(

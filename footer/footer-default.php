@@ -19,9 +19,10 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 ?>
-		</div><!-- .wrapper-->
-		<hr class="divider" />
-		<div id="footer">
+			</div><!-- .wrapper -->
+		</div><!-- #main -->
+		<hr class="lofi" />
+		<div id="footer" class="section">
 			<div class="wrapper">		
 				<p id="generator-link"><?php _e('Proudly powered by <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a></span> and <span id="theme-link"><a href="http://carringtontheme.com" title="Carrington theme for WordPress">Carrington</a></span>.', 'carrington-blog'); ?></p>
 <?php

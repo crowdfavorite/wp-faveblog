@@ -16,29 +16,21 @@
 */
 
 /* hasLayout fixes */
-#content,
-#sidebar,
-#navigation,
-#navigation ul,
-#navigation li,
-#all-categories ul,
-#all-categories li,
+.nav,
+.nav ul,
+.nav li,
 .full,
 .entry-content,
 .entry-summary,
-h2#comments,
 .comment,
-ol.comments-list li.hentry,
-#comment-form,
-#comment-form .section,
+ol.commentlist li.hentry,
 .widget,
 .pagination,
+#all-categories,
+#content,
+#sidebar,
+h2#comments,
 #carrington-about .about {zoom:1;}
-
-/* Since we have to give layout to the .full div, the box model is different, messing with spacing. */
-.full{
-	margin-bottom:0;
-}
 
 /* Border dotted looks like junk in IE. */
 ol.archive,
@@ -50,19 +42,4 @@ ol.commentlist li.hentry,
 #carrington-archives ul,
 #carrington-archives li {
 	border-style:solid;
-}
-
-/* IE6 doesn't understand inherit */
-address.author {
-	font-style:normal;
-}
-
-/* IE doesn't comprehend the short-notation override */
-#navigation ul,
-#all-categories ul {list-style-image: none;}
-
-/* lo-fi png fix */
-#footer p#developer-link a,
-#footer p#developer-link a:visited {
-	background-image: url(../img/ie/by-crowd-favorite.gif);
 }
