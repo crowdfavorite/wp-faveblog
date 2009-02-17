@@ -22,11 +22,13 @@ global $previousday, $authordata;
 $previousday = -1;
 
 ?>
-<div id="post-content-<?php the_ID() ?>" class="hentry full <?php sandbox_post_class() ?>">
-	<h1 class="entry-title full-title"><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title_attribute() ?>" rel="bookmark" rev="post-<?php the_ID(); ?>"><?php the_title() ?></a></h1>
+<div id="post-content-<?php the_ID() ?>" <?php post_class('full'); ?>>
+	<h1 class="entry-title full-title"><?php the_title() ?></h1>
+	
 	<div class="entry-content full-content">
 		<?php the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); link_pages('<p class="pages-link">'.__('Pages: ', 'carrington-blog'), "</p>\n", 'number'); ?>
 	</div><!--/entry-content-->
+	
 	<div class="by-line">
 		<address class="author vcard full-author">
 			<?php printf(__('<span class="by">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_link(false, get_the_author_ID(), $authordata->user_nicename).'" title="View all posts by ' . attribute_escape($authordata->display_name) . '">'.get_the_author().'</a>') ?>

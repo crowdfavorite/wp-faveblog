@@ -291,7 +291,11 @@ h1.page-title {
 	float:right;
 }
 #all-categories {
-	width:720px;
+	padding:1px 0;
+	width:760px;
+}
+#all-categories .nav {
+	margin-left:6em;
 }
 #all-categories .heading {
 	float: left;
@@ -304,12 +308,13 @@ h1.page-title {
 }
 #content {
 	float: left;
-	padding-bottom: 3em;
+	padding-bottom: 24px;
 	width: 550px;
 }
 #sidebar {
 	background:url(../img/sidebar-background.gif) no-repeat left top;
-	float: right;
+	float:left;
+	margin-left:24px;
 	padding:14px;
 	width: 358px;
 }
