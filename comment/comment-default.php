@@ -21,7 +21,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 global $comment;
 
 ?>
-<div id="div-comment-<?php comment_ID(); ?>" class="<?php cfct_comment_class(); ?>">
+<div id="div-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 <?php
 if ($comment->comment_approved == '0') {
 ?>
@@ -61,6 +61,6 @@ printf(
 );
 ?>
 		</span><!--.date-->
-		<?php edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="comment-editlink">', '</div>'); ?>
+		<?php edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="edit">', '</div>'); ?>
 	</div>
 </div><!--.comment-->

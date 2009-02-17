@@ -181,7 +181,8 @@ li ol {
 	margin-bottom: 0;
 }
 li,
-dd {
+dd,
+.tight {
 	margin-bottom:9px;
 }
 ul li {
@@ -198,7 +199,17 @@ acronym,
 .plain,
 .plain li {
 	background:transparent;
+	border:0;
 	list-style:none;
 	margin:0;
 	padding:0;
+}
+.alt-font {
+	color: #999;
+	font-family: Georgia, Palatino, "Palatino Linotype", Baskerville, serif;
+	font-style:italic;
+}
+.alt-font a {
+	font-family:helvetica, arial, sans-serif;
+	font-style:normal;
 }

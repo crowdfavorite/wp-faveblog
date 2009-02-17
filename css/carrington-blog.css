@@ -363,6 +363,28 @@ h1.page-title {
 .entry-summary {
 	overflow:auto;
 }
+.edit{
+	background:#900;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	-moz-border-radius:4px;
+	font-size: 11.5px;
+	opacity:.60;
+	padding:4px 7px 2px;
+	left:-32697px;
+	position:absolute;
+	top:0;
+}
+.hentry:hover .edit {
+	left: auto;
+	right:0;
+}
+.edit a,
+.edit a:visited,
+.edit a:hover{
+	color:#fff;
+}
 
 .full {
 	background:url(../img/divider-ornament-wide.gif) no-repeat center bottom;
@@ -377,7 +399,7 @@ body.page .full {
 }
 .full .full-content {
 	clear:both;
-	padding-top: .75em;
+	padding-top: 9px;
 	width: 510px;
 }
 .full .pages-link {
@@ -393,23 +415,8 @@ body.page .full {
 	border-color:#999;
 	text-decoration:none;
 }
-.full .by,
-.full .filed {
-	color: #999;
-	font: italic 1em/1.5 Georgia, serif;
-}
 .full p.filed {
 	clear:both;
-	margin-bottom:.375em;
-}
-.full .filed a,
-.full .filed a:visited {
-	font-family:helvetica, arial, sans-serif;
-	font-style:normal;
-}
-.full .filed .categories,
-.full .filed .tags {
-	display:block;
 }
 .full .by-line {
 	clear:both;
@@ -433,29 +440,6 @@ body.page .full {
 	background: url(../img/comment.gif) no-repeat left center;
 	padding: 1px 0 0 20px;
 }
-.full .entry-editlink, .comment .comment-editlink {
-	background:#900;
-	border-radius:4px;
-	-webkit-border-radius:4px;
-	-khtml-border-radius:4px;
-	-moz-border-radius:4px;
-	font-size: .8em;
-	opacity:.60;
-	padding:4px 7px 2px;
-	left:-32697px;
-	position:absolute;
-	top:0;
-}
-.full:hover .entry-editlink, .comment:hover .comment-editlink {
-	left: auto;
-	right:0;
-}
-.full .entry-editlink a,
-.full .entry-editlink a:visited,
-.comment .comment-editlink a,
-.comment .comment-editlink a:visited {
-	color:#fff;
-}
 
 ol.archive {
 	border-top: 1px dotted #cecfd1;
@@ -463,15 +447,14 @@ ol.archive {
 	margin: 1.5em 0 0;
 }
 .excerpt {
-	background: url(../img/arrow-bullet.gif) no-repeat 5px 15px;
+	background: url(../img/arrow-bullet.gif) no-repeat 0 12px;
 	border-bottom: 1px dotted #cecfd1;
 	color: #999;
-	padding: 10px 146px 10px 20px;
+	padding: 12px 146px 12px 20px;
 	position:relative;
 }
 .excerpt strong.entry-title {
-	font-size: 1.16666667em;
-	line-height: 1.28571429;
+	font-size: 14px;
 }
 .excerpt strong.entry-title a,
 .excerpt strong.entry-title a:visited {
@@ -489,8 +472,6 @@ ol.archive {
 }
 .excerpt .date {
 	display: block;
-	font-size: .9em;
-	line-height: 2;
 	width: 140px;
 }
 .excerpt .date,
@@ -508,15 +489,6 @@ ol.archive {
 .excerpt .comments-link a,
 .excerpt .comments-link a:visited {
 	background: url(../img/comment.gif) no-repeat left center;
-}
-.excerpt .categories {
-	font-family:georgia, serif;
-	font-style:italic;
-}
-.excerpt .categories a,
-.excerpt .categories a:visited {
-	font-family:helvetica, arial, sans-serif;
-	font-style:normal;
 }
 
 #content .search {
@@ -541,10 +513,7 @@ ol.commentlist{
 }
 ol.commentlist li.hentry {
 	border-top:1px dotted #cecfd1;
-
-}
-#content ol.commentlist li{
-	margin:0; /* Override article list styles */
+	margin-bottom:0;
 }
 .comment {
 	overflow:hidden;
@@ -595,26 +564,10 @@ ol.commentlist li.hentry {
 /* trackbacks and pingbacks */
 .pingback,
 .trackback {
-	border-top:1px dotted #cecfd1;
-	padding:10px 10px 10px 10px;
+	padding:12px;
 }
-.pingback .vcard,
-.trackback .vcard{
-	font-size:1em;
-	line-height:1;
-}
-.pingback .linked-to-this-post,
-.trackback .linked-to-this-post,
-.pingback .date,
-.trackback .date {
-	color:#999;
-	font-family:Georgia, serif;
-	font-style:italic;
-}
-.pingback blockquote.entry-summary,
-.trackback blockquote.entry-summary,
-.pingback blockquote.entry-summary p,
-.trackback blockquote.entry-summary p {
+.ping blockquote.entry-summary,
+.ping blockquote.entry-summary p {
 	border:0;
 	margin:0;
 	padding:0;
@@ -709,7 +662,10 @@ form.comment-form {
 	border-top: 1px dotted #cecfd1;
 }
 #carrington-archives li {
-	background:url(../img/arrow-bullet.gif) no-repeat left center;
+	background-position:left 6px;
 	border-bottom: 1px dotted #cecfd1;
-	padding:5px 0 5px 10px;
+}
+#carrington-archives li a {
+	display:block;
+	padding:6px 0;
 }

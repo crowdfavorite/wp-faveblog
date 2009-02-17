@@ -21,12 +21,12 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 global $comments, $comment;
 
 ?>
-	<ol class="pings-list hfeed">
+	<ol class="pinglist commentlist hfeed">
 <?php
 foreach ($comments as $comment) {
 	if (get_comment_type() != 'comment') {
 ?>
-		<li class="hentry <?php cfct_comment_list_class(); ?>">
+		<li class="hentry">
 <?php
 		cfct_comment();
 ?>

@@ -31,9 +31,12 @@ get_header();
 
 cfct_loop();
 
-comments_template();
-
 ?>
+	<div id="comments">
+<?php
+	comments_template();
+?>
+	</div><!--#comments-->
 </div><!--#content-->
 
 <?php 

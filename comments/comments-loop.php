@@ -26,7 +26,7 @@ global $comments, $comment;
 foreach ($comments as $comment) {
 	if (get_comment_type() == 'comment') {
 ?>
-		<li class="hentry comment <?php cfct_comment_list_class(); ?>">
+		<li class="hentry">
 <?php
 		cfct_comment();
 ?>
