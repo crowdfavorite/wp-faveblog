@@ -363,6 +363,9 @@ h1.page-title {
 .entry-summary {
 	overflow:auto;
 }
+.hentry {
+	position:relative;
+}
 .edit{
 	background:#900;
 	border-radius:4px;
@@ -390,7 +393,6 @@ h1.page-title {
 	background:url(../img/divider-ornament-wide.gif) no-repeat center bottom;
 	margin-bottom:24px;
 	padding-bottom:18px;
-	position:relative;
 }
 body.single .full,
 body.page .full {
