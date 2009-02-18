@@ -56,7 +56,7 @@ address {
 body {
 	background: #fff;
 	color: #51555c;
-	font: 12px/18px helvetica, arial, sans-serif; /* Set in percentages so IE6 can still resize. The percentage notation also fixes a strange quirk where IE dramaticly scales text. */
+	font: 12px/18px helvetica, arial, sans-serif;
 }
 code {
 	font-family: "Lucida Console", Monaco, monospace;
@@ -84,8 +84,7 @@ pre {
 	overflow: auto;
 }
 textarea {
-	font-family: helvetica, arial, sans-serif;
-	line-height: 1.5;
+	font: 12px/18px helvetica, arial, sans-serif;
 	padding: 3px;
 }
 /* Links */
@@ -147,17 +146,24 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3 {
+	display:block;
 	margin-bottom:9px;
 }
-h1 {
+h1,
+.h1 {
 	font-size: 24px;
 	line-height:1;
 }
-h2 {
+h2,
+.h2 {
 	font-size: 18px;
 }
-h3 {
+h3,
+.h3 {
 	font-size: 14px;
 }
 p,
@@ -200,6 +206,7 @@ acronym,
 .plain li {
 	background:transparent;
 	border:0;
+	font-style:normal;
 	list-style:none;
 	margin:0;
 	padding:0;

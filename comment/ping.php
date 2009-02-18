@@ -22,11 +22,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 <div id="div-ping-<?php comment_ID(); ?>" <?php comment_class('ping'); ?>>
 <?php
 
-add_filter('get_comment_author_link', 'cfct_hcard_ping_author_link');
-
-printf(__('<cite class="vcard author entry-title">%s <span class="linked-to-this-post alt-font">linked to this post</span></cite>', 'carrington-blog'), get_comment_author_link());
-
-remove_filter('get_comment_author_link', 'cfct_hcard_ping_author_link');
+printf(__('<cite class="vcard author fn entry-title">%s</cite> <span class="linked-to-this-post alt-font">linked to this post</span>', 'carrington-blog'), get_comment_author_link());
 
 ?> 
 	<span class="date alt-font">

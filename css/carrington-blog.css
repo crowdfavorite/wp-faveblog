@@ -366,7 +366,8 @@ h1.page-title {
 .hentry {
 	position:relative;
 }
-.edit{
+
+.hentry .edit{
 	background:#900;
 	border-radius:4px;
 	-webkit-border-radius:4px;
@@ -379,7 +380,8 @@ h1.page-title {
 	position:absolute;
 	top:0;
 }
-.hentry:hover .edit {
+.hentry:hover .edit-post,
+.hentry:hover .edit-comment {
 	left: auto;
 	right:0;
 }
@@ -393,11 +395,6 @@ h1.page-title {
 	background:url(../img/divider-ornament-wide.gif) no-repeat center bottom;
 	margin-bottom:24px;
 	padding-bottom:18px;
-}
-body.single .full,
-body.page .full {
-	background:transparent;
-	padding-bottom:0;
 }
 .full .full-content {
 	clear:both;
@@ -492,7 +489,6 @@ ol.archive {
 .excerpt .comments-link a:visited {
 	background: url(../img/comment.gif) no-repeat left center;
 }
-
 #content .search {
 	border-top: 1px dotted #cecfd1;
 }
@@ -500,26 +496,29 @@ ol.archive {
 	margin-top:1em;
 }
 /* =====Comments and comment form===== */
-h2.comments {
+h2.comments-title {
 	background:url(../img/comments-divider.gif) no-repeat center 9px;
-	clear:both;
-	font-size: 2em; /* 24 */
-	line-height: .75;
-	margin: 0 0 .375em 0;
 	padding-top:71px;
 }
-ol.commentlist{
+.commentlist{
 	clear:both;
 	list-style:none;
 	margin:0;
 }
-ol.commentlist li.hentry {
-	border-top:1px dotted #cecfd1;
+.commentlist li.comment {
+	background:url(../images/);
 	margin-bottom:0;
+	position:relative;
 }
-.comment {
-	overflow:hidden;
-	padding:10px; /* 2 units + 4px for gravatar */
+.commentlist li.comment .hentry {
+	border:1px solid #e9eaea;
+	margin-bottom:9px;
+	padding:9px 9px 9px 54px;
+}
+.commentlist li.comment .photo img{
+	top:9px;
+	left:9px;
+	position:absolute;
 }
 .comment .author {
 	font-size:14px;
@@ -527,46 +526,41 @@ ol.commentlist li.hentry {
 .comment cite.fn {
 	font-weight:bold;
 }
-.comment .comment-author .photo img{
-	float:left;
-	margin-right:10px;
-}
 .comment .comment-content {
 	margin-bottom:3px;
 	margin-top:3px;
 }
-.comment .comment-content p:last-child {
+.comment .comment-content p:last-child,
+.comment .comment-content p.last-child {
 	margin-bottom:0;
-}
-.comment .comment-content,
-.comment-meta {
-	margin-left:64px;
 }
 .comment-meta {
 	color:#999;
 }
 .comment .notification {
 	background:#EFEFF1 url(../img/watermark-light.gif);
-	margin:0 0 10px;
-	padding:10px;
+	margin:0 0 9px;
+	padding:9px;
 }
-
+.comment-reply-link {
+	font-size:11.5px;
+	margin-left:10px;
+	position:absolute;
+	top:52px;
+}
 /* author comments */
-.bypostauthor,
-.post-author {
+.commentlist li.bypostauthor .hentry {
 	background:#51555c url(../img/author-comment.jpg) no-repeat left top;
 	color:#fff;
 }
 .bypostauthor a,
-.bypostauthor a:visited,
-.post-author a,
-.post-author a:visited {
+.bypostauthor a:visited{
 	color:#8593ae;
 }
 /* trackbacks and pingbacks */
-.pingback,
-.trackback {
-	padding:12px;
+.ping {
+	border-top:1px dotted #cecfd1;
+	padding:9px;
 }
 .ping blockquote.entry-summary,
 .ping blockquote.entry-summary p {
@@ -578,37 +572,44 @@ ol.commentlist li.hentry {
 form.comment-form {
 	background:#efeff1 url(../img/watermark-light.gif) repeat-x left top;
 	border:1px solid #e9eaea;
-	clear:both;
-	color:#999;
-	margin-top:1.5em;
-	padding:10px 9px;
+	margin-bottom:18px;
+	margin-top:9px;
+	padding:9px;
 }
-.comment-form .section {
-	margin-bottom:10px;
+.comment-form p {
+	overflow:hidden;
+	margin:0 0 9px;
 }
-.comment-form .section label {
+.comment-form label {
 	color:#51555c;
 	font-weight:bold;
 }
-.comment-form p.section input {
-	width:162px;
+.comment-form-user-info input {
+	margin-right:10px;
+	width:200px;
 }
-.comment-form .comment-form-comment label {
-	font-size: 1.16666667em; /* 14 */
-	line-height: 1.28571429;
+.comment-form em {
+	color:#999;
+	font-weight:normal;
+	font-style:normal;
 }
-
+.comment-form-comment-area {
+	background:#DFDFE1;
+	float:left;
+}
+.comment-form .some-html-is-ok {
+	margin:0 6px;
+}
 .comment-form textarea{
-	display:block;
 	height:9em;
-	width:400px;
+	width:510px;
 }
 
 /* =====Sidebar and Widgets===== */
 .widget {
 	margin-bottom:1.5em;
 }
-.widget h2.title,
+h2.widget-title,
 .widget_search label {
 	font-size: 1.16666667em; /* 14 */
 	line-height: 1.28571429;
@@ -622,12 +623,12 @@ form.comment-form {
 	font-weight:bold;
 }
 .widget_search input {
-	margin-bottom:.5em;
+	margin-bottom:6px;
 }
 #carrington-subscribe {
 	background: url(../img/divider-ornament.gif) no-repeat center bottom;
 	overflow:hidden;	
-	padding-bottom:2em;
+	padding-bottom:24px;
 }
 #carrington-subscribe h2.widget-title {
 	color:#999;

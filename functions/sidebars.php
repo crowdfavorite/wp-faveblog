@@ -23,7 +23,7 @@ if (function_exists('register_sidebar')) {
 			'name' => 'Primary Sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
-			'before_title' => '<h2 class="title">',
+			'before_title' => '<h2 class="widget-title">',
 			'after_title' => '</h2>'
 		)
 	);
@@ -32,7 +32,7 @@ if (function_exists('register_sidebar')) {
 			'name' => 'Secondary Sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
-			'before_title' => '<h2 class="title">',
+			'before_title' => '<h2 class="widget-title">',
 			'after_title' => '</h2>'
 		)
 	);

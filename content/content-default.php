@@ -45,5 +45,5 @@ $previousday = -1;
 	<div class="clear"></div>
 	<div id="post-comments-<?php the_ID(); ?>-target"></div>
 	
-	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit">', '</div>'); ?>
+	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit-post edit">', '</div>'); ?>
 </div><!-- .post -->

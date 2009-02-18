@@ -21,7 +21,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 global $comment;
 
 ?>
-<div id="div-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+<div id="div-comment-<?php comment_ID(); ?>" <?php comment_class('hentry'); ?>>
 <?php
 if ($comment->comment_approved == '0') {
 ?>
@@ -34,12 +34,11 @@ if ($comment->comment_approved == '0') {
 <?php 
 if (function_exists('get_avatar')) { 
 ?>
-		<span class="photo avatar"><?php echo get_avatar($comment, 54) ?></span>
+		<span class="photo avatar"><?php echo get_avatar($comment, 36) ?></span>
 <?php
 }
-add_filter('get_comment_author_link', 'cfct_hcard_comment_author_link');
-printf(__('%s <span class="said">said</span>', 'carrington-blog'), '<cite class="fn">'.get_comment_author_link().'</cite>');
-remove_filter('get_comment_author_link', 'cfct_hcard_comment_author_link');
+
+printf(__('%s <span class="says">says</span>', 'carrington-blog'), '<cite class="fn">'.get_comment_author_link().'</cite>');
 ?>
 	</address><!--.vcard-->
 
@@ -51,16 +50,19 @@ remove_filter('get_comment_author_link', 'cfct_hcard_comment_author_link');
 		<span class="date comment-date">
 <?php
 printf(
-	__('<span class="on">on</span> <abbr class="published" title="%s"><a title="Permanent link to this comment" rel="bookmark" href="%s#comment-%s">%s</a></abbr>'
+	__('<span class="on">on</span> <abbr class="published" title="%s">%s <span class="at">at</span> <a title="Permanent link to this comment" rel="bookmark" href="%s#comment-%s">%s</a></abbr>'
 	, 'carrington'
 	)
 	, get_comment_date('Y-m-d\TH:i:sO')
+	, get_comment_date()
 	, get_permalink()
 	, get_comment_ID()
-	, get_comment_date()
+	, get_comment_time()
 );
 ?>
 		</span><!--.date-->
-		<?php edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="edit">', '</div>'); ?>
+<?php
+		edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="edit-comment edit">', '</div>');
+?>
 	</div>
 </div><!--.comment-->

@@ -29,7 +29,7 @@ if ($comments || 'open' == $post->comment_status) {
 
 ?>
 
-<h2 class="comments"><?php echo $comment_title; ?></h2>
+<h2 class="h1 comments-title"><?php echo $comment_title; ?></h2>
 
 <p><?php printf(__('Stay in touch with the conversation, subscribe to the <a class="feed" rel="alternate" href="%s"><acronym title="Really Simple Syndication">RSS</acronym> feed for comments on this post</a>.', 'carrington-blog'), get_post_comments_feed_link($post->ID, '')); ?></p>
 
@@ -59,7 +59,7 @@ if ($comments || 'open' == $post->comment_status) {
 		}
 	}
 	
-	cfct_form('comment');
+	echo '<div id="respond">', cfct_form('comment'), '</div>';
 }
 
 ?>

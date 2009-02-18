@@ -34,7 +34,7 @@ if (!empty($about_text)) {
 ?>
 	<div id="carrington-about" class="widget">
 		<div class="about">
-			<h2 class="title"><?php printf(__('About %s', 'carrington-blog'), get_bloginfo('name')); ?></h2>
+			<h2 class="widget-title"><?php printf(__('About %s', 'carrington-blog'), get_bloginfo('name')); ?></h2>
 <?php
 	echo $about_text;
 ?>
@@ -50,7 +50,7 @@ $post = $orig_post;
 if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Primary Sidebar') ) {
 ?>
 		<div id="carrington-archives" class="widget">
-			<h2 class="title">Archives</h2>
+			<h2 class="widget-title">Archives</h2>
 			<ul>
 				<?php wp_get_archives(); ?>
 			</ul>
@@ -65,7 +65,7 @@ $post = $orig_post;
 if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar') ) { 
 ?>
 		<div id="carrington-tags" class="widget">
-			<h2 class="title">Tags</h2>
+			<h2 class="widget-title">Tags</h2>
 			<?php wp_tag_cloud('smallest=10&largest=18&unit=px'); ?>
 		</div><!--.widget-->
 <?php

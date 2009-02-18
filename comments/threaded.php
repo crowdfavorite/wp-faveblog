@@ -18,32 +18,19 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
-global $comments, $comment;
+global $post, $comment;
+
+extract($data);
 
 ?>
-	<ol class="commentlist hfeed">
-<?php
-if (function_exists('wp_list_comments')) {
-	wp_list_comments('type=comment&callback=cfct_threaded_comment');
-} else {
-	foreach ($comments as $comment) {
-		if (get_comment_type() == 'comment') {
-?>
-		<li id="comment-<?php comment_ID(); ?>" class="comment">
+
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+	<div id="comment-<?php comment_ID(); ?>">
 <?php
 		cfct_comment();
 ?>
-		</li><!--.hentry-->
+	</div>
 <?php
-		}
-	}
-}
-?>
-	</ol>
-	
-<?php
-if(function_exists('previous_comments_link')){
-	previous_comments_link();
-	next_comments_link();
-}
+	comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'])), $comment, $post);
+// Dropped </li> is intentional: WordPress figures out where to place the </li> so it can nest comment lists.
 ?>

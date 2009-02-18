@@ -24,7 +24,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 		<hr class="lofi" />
 		<div id="footer" class="section">
 			<div class="wrapper">		
-				<p id="generator-link"><?php _e('Proudly powered by <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a></span> and <span id="theme-link"><a href="http://carringtontheme.com" title="Carrington theme for WordPress">Carrington</a></span>.', 'carrington-blog'); ?></p>
+				<p id="generator-link"><?php _e('Proudly powered by <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a> and <a href="http://carringtontheme.com" title="Carrington theme for WordPress">Carrington</a>.', 'carrington-blog'); ?></p>
 <?php
 if (cfct_get_option('cfct_credit') == 'yes') {
 ?>

@@ -35,11 +35,16 @@ if ('open' == $post->comment_status) {
 ?>
 
 <form action="<?php echo trailingslashit(get_bloginfo('wpurl')); ?>wp-comments-post.php" method="post" class="comment-form">
-	<p>
-		<label for="comment-p<?php echo $post->ID; ?>"><?php _e('Post a comment', 'carrington-blog'); ?></label>
-		<span>
-			<em class="alignright some-html-is-ok"><abbr title="<?php printf(__('You can use: %s', 'carrington-blog'), allowed_tags()); ?>"><?php _e('Some HTML is OK', 'carrington-blog'); ?></abbr></em><br />
-			<textarea id="comment-p<?php echo $post->ID; ?>" name="comment-p<?php echo $post->ID; ?>" rows="8" cols="40"></textarea>
+	<p class="comment-form-comment">
+		<label class="h3" for="comment-p<?php echo $post->ID; ?>"><?php if(function_exists('comment_form_title')) {
+			comment_form_title();
+		} else {
+			_e('Post a comment', 'carrington-blog');
+		}?></label>
+		<br class="lofi" />
+		<span class="comment-form-comment-area">
+			<textarea id="comment-p<?php echo $post->ID; ?>" name="comment-p<?php echo $post->ID; ?>" rows="8" cols="40"></textarea><br />
+			<em class="some-html-is-ok"><abbr title="<?php printf(__('You can use: %s', 'carrington-blog'), allowed_tags()); ?>"><?php _e('Some HTML is OK', 'carrington-blog'); ?></abbr></em>
 		</span>
 	</p>
 <?php // if you're logged in...
@@ -75,11 +80,15 @@ if ('open' == $post->comment_status) {
 	<p>
 		<input name="submit" type="submit" value="<?php _e('Post comment', 'carrington-blog'); ?>" />
 		<span class="comment-form-trackback"><?php printf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', 'carrington-blog'), get_trackback_url()); ?></span>
-		<input type="hidden" name="comment_post_ID" value="<?php echo $post->ID; ?>" />
 	</p>
-<?php
-do_action('comment_form', $post->ID);
-?>
+	<?php
+		if(function_exists('comment_id_fields')) {
+			comment_id_fields();
+		} else {
+			echo '<input type="hidden" name="comment_post_ID" value="'.$post->ID.'" />';
+		}
+		do_action('comment_form', $post->ID);
+	?>
 </form>
 <?php 
 	} // If registration required and not logged in 
