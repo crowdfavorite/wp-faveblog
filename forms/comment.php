@@ -38,9 +38,10 @@ if ('open' == $post->comment_status) {
 	<p class="comment-form-comment">
 		<label class="h3" for="comment-p<?php echo $post->ID; ?>"><?php if(function_exists('comment_form_title')) {
 			comment_form_title();
+			echo ' <em id="cancel-comment-reply">', cancel_comment_reply_link(), '</em>';
 		} else {
 			_e('Post a comment', 'carrington-blog');
-		}?></label>
+		} ?></label>
 		<br class="lofi" />
 		<span class="comment-form-comment-area">
 			<textarea id="comment-p<?php echo $post->ID; ?>" name="comment-p<?php echo $post->ID; ?>" rows="8" cols="40"></textarea><br />

@@ -568,7 +568,6 @@ h2.comments-title {
 	margin:0;
 	padding:0;
 }
-
 form.comment-form {
 	background:#efeff1 url(../img/watermark-light.gif) repeat-x left top;
 	border:1px solid #e9eaea;
@@ -592,6 +591,7 @@ form.comment-form {
 	color:#999;
 	font-weight:normal;
 	font-style:normal;
+	font-size:12px;
 }
 .comment-form-comment-area {
 	background:#DFDFE1;
