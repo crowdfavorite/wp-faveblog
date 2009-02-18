@@ -285,17 +285,14 @@ h1.page-title {
 
 #sub-header {
 	background: #e9eaea url(../img/sub-header-border-bottom.gif) repeat-x bottom;
-	padding: 9px 0 10px;
+	padding: 9px 0;
 }
 #sub-header form#cfct-search {
 	float:right;
 }
 #all-categories {
-	padding:1px 0;
+	padding:2px 0 0;
 	width:760px;
-}
-#all-categories .nav {
-	margin-left:6em;
 }
 #all-categories .heading {
 	float: left;
@@ -497,8 +494,8 @@ ol.archive {
 }
 /* =====Comments and comment form===== */
 h2.comments-title {
-	background:url(../img/comments-divider.gif) no-repeat center 9px;
-	padding-top:71px;
+	background:url(../img/comments-divider.gif) no-repeat center top;
+	padding-top:53px;
 }
 .commentlist{
 	clear:both;
@@ -562,8 +559,8 @@ h2.comments-title {
 	border-top:1px dotted #cecfd1;
 	padding:9px;
 }
-.ping blockquote.entry-summary,
-.ping blockquote.entry-summary p {
+.ping .entry-summary,
+.ping .entry-summary p {
 	border:0;
 	margin:0;
 	padding:0;
@@ -574,6 +571,10 @@ form.comment-form {
 	margin-bottom:18px;
 	margin-top:9px;
 	padding:9px;
+}
+form.comment-form a,
+form.comment-form a:visited {
+	color:#a00004;
 }
 .comment-form p {
 	overflow:hidden;

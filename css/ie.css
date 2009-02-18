@@ -16,6 +16,7 @@
 */
 
 /* hasLayout fixes */
+ul li,
 .nav ul,
 .nav li,
 .full,
@@ -30,15 +31,3 @@ ol.commentlist li.hentry,
 #sidebar,
 h2#comments,
 #carrington-about .about {zoom:1;}
-
-/* Border dotted looks like junk in IE. */
-ol.archive,
-.excerpt,
-#content .search,
-ol.commentlist li.hentry,
-.pingback,
-.trackback,
-#carrington-archives ul,
-#carrington-archives li {
-	border-style:solid;
-}

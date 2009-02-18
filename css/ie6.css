@@ -1,3 +1,15 @@
+/* Border dotted looks like junk in IE. */
+ol.archive,
+.excerpt,
+#content .search,
+ol.commentlist li.hentry,
+.pingback,
+.trackback,
+#carrington-archives ul,
+#carrington-archives li {
+	border-style:solid;
+}
+
 /* lo-fi png fix */
 #footer p#developer-link a,
 #footer p#developer-link a:visited {
