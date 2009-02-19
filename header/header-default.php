@@ -51,10 +51,6 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie6.css" type="text/css" media="screen" />
 	<![endif]-->
 	
-	<?php
-	// Javascript for threaded comments
-	if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
-	
 	<?php wp_head(); ?>
 </head>
 

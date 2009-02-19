@@ -92,6 +92,8 @@ add_action('init', 'cfct_blog_init');
 
 wp_enqueue_script('jquery');
 wp_enqueue_script('carrington', get_bloginfo('template_directory').'/js/carrington.js', 'jquery', '1.0');
+// Javascript for threaded comments
+wp_enqueue_script( 'comment-reply' );
 
 function cfct_blog_head() {
 // see enqueued style in cfct_blog_init, we'll activate that in the future
