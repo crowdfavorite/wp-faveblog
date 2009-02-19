@@ -44,24 +44,24 @@ if ('open' == $post->comment_status) {
 		} ?></label>
 		<br class="lofi" />
 		<span class="comment-form-comment-area">
-			<textarea id="comment-p<?php echo $post->ID; ?>" name="comment-p<?php echo $post->ID; ?>" rows="8" cols="40"></textarea><br />
+			<textarea id="comment-p<?php echo $post->ID; ?>" name="comment" rows="8" cols="40"></textarea><br />
 			<em class="some-html-is-ok"><abbr title="<?php printf(__('You can use: %s', 'carrington-blog'), allowed_tags()); ?>"><?php _e('Some HTML is OK', 'carrington-blog'); ?></abbr></em>
 		</span>
 	</p>
 <?php // if you're logged in...
 		if ($user_ID) {
 ?>
-	<p class="logged-in"><?php printf(__('Logged in as <a href="%s">%s</a>. ', 'carrington-blog'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); wp_loginout() ?> </p>
+	<p class="logged-in"><?php printf(__('Logged in as <a href="%s">%s</a>. ', 'carrington-blog'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); wp_loginout(); ?>.</p>
 <?php
 		}
 		else { 
 ?>
 	<p class="comment-form-user-info">
-		<input type="text" id="author-p<?php echo $post->ID; ?>" name="author-p<?php echo $post->ID; ?>" value="<?php echo $comment_author; ?>" size="22" />
+		<input type="text" id="author-p<?php echo $post->ID; ?>" name="author" value="<?php echo $comment_author; ?>" size="22" />
 		<label for="author-p<?php echo $post->ID; ?>"><?php _e('Name', 'carrington-blog'); if ($req) { echo ' <em>' , _e('(required)', 'carrington-blog'), '</em>'; } ?></label>
 	</p><!--/name-->
 	<p class="comment-form-user-info">
-		<input type="text" id="email-p<?php echo $post->ID; ?>" name="email-p<?php echo $post->ID; ?>" value="<?php echo $comment_author_email; ?>" size="22" />
+		<input type="text" id="email-p<?php echo $post->ID; ?>" name="email" value="<?php echo $comment_author_email; ?>" size="22" />
 		<label for="email-p<?php echo $post->ID; ?>"><?php _e('Email', 'carrington-blog');
 					if ($req) {
 						echo ' <em>', _e('(required, but never shared)', 'carrington-blog'), '</em>';
@@ -72,7 +72,7 @@ if ('open' == $post->comment_status) {
 		?></label>
 	</p><!--/email-->
 	<p class="comment-form-user-info">
-		<input type="text" id="url-p<?php echo $post->ID; ?>" name="url-p<?php echo $post->ID; ?>" value="<?php echo $comment_author_url; ?>" size="22" />
+		<input type="text" id="url-p<?php echo $post->ID; ?>" name="url" value="<?php echo $comment_author_url; ?>" size="22" />
 		<label title="<?php _e('Your website address', 'carrington-blog'); ?>" for="url-p<?php echo $post->ID; ?>"><?php _e('Web', 'carrington-blog'); ?></label>
 	</p><!--/url-->
 <?php 

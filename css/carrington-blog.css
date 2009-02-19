@@ -451,25 +451,28 @@ h1.page-title {
 	list-style:none;
 	margin:0;
 }
-.commentlist li.comment,
-.commentlist li.ping{
+li.li-comment{
 	background:transparent;
-	margin-bottom:0;
+	margin:0;
+	padding:0;
 	position:relative;
 }
-.commentlist li.comment .hentry {
+li.li-comment li.li-comment {
+	background:url(../img/comment-thread.gif) no-repeat 5px top;
+	padding-left:24px;
+}
+.commentlist .hentry {
 	margin-bottom:9px;
+	overflow:hidden;
 	padding:9px 9px 9px 66px;
 }
-.commentlist li.comment .photo img{
+.commentlist .comment .photo img{
 	top:9px;
 	left:9px;
 	position:absolute;
 }
-.comment .author {
-	font-size:14px;
-}
 .comment cite.fn {
+	font-size:14px;
 	font-weight:bold;
 }
 .comment .comment-content {
@@ -483,25 +486,22 @@ h1.page-title {
 .comment-meta {
 	color:#999;
 }
-.comment .notification {
-	background:#EFEFF1 url(../img/watermark-light.gif);
-	margin:0 0 9px;
-	padding:9px;
+.comment-meta .date {
+	float:right;
 }
-.comment-reply-link {display:none;
-	font-size:11.5px;
-	margin-left:10px;
-	position:absolute;
-	top:66px;
+.comment-reply-link {
+	background:url(../img/comment-reply.gif) no-repeat;
+	display:block;
+	height:14px;
+	text-indent:-32000px;
+	width:38px;
+	opacity:.7;
 }
 /* author comments */
-.commentlist li.bypostauthor .hentry {
+.commentlist .bypostauthor {
 	background:#51555c url(../img/watermark-light.gif) no-repeat left top;
 }
-.bypostauthor a,
-.bypostauthor a:visited{
-	color:#8593ae;
-}
+
 /* trackbacks and pingbacks */
 .ping {
 	border-top:1px dotted #cecfd1;
@@ -519,10 +519,6 @@ form.comment-form {
 	margin-bottom:18px;
 	margin-top:9px;
 	padding:9px;
-}
-form.comment-form a,
-form.comment-form a:visited {
-	color:#a00004;
 }
 .comment-form p {
 	overflow:hidden;
@@ -542,16 +538,13 @@ form.comment-form a:visited {
 	font-style:normal;
 	font-size:12px;
 }
-.comment-form-comment-area {
+/*.comment-form-comment-area {
 	background:#DFDFE1;
-	float:left;
-}
-.comment-form .some-html-is-ok {
-	margin:0 6px;
-}
+	display:block;
+}*/
 .comment-form textarea{
 	height:9em;
-	width:510px;
+	width:95%;
 }
 
 /* Sidebar and Widgets

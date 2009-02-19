@@ -29,7 +29,7 @@ if (function_exists('wp_list_comments')) {
 	foreach ($comments as $comment) {
 		if (get_comment_type() == 'comment') {
 ?>
-		<li id="comment-<?php comment_ID(); ?>" class="comment">
+		<li id="li-comment-<?php comment_ID(); ?>" class="li-comment">
 <?php
 		cfct_comment();
 ?>
