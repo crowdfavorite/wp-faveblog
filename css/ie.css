@@ -24,11 +24,19 @@ ul li,
 .commentlist .hentry,
 .widget,
 .pagination,
+.comment-form,
 #content,
 #sidebar,
 #carrington-about .about {zoom:1;}
 
+.entry-content {
+	width:100%;
+}
+
 /* Margin float fix */
 .full p.comments-link{
 	margin:0;
+}
+.comment-reply-link {
+	filter:alpha(opacity=70);
 }

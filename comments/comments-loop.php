@@ -42,8 +42,7 @@ if (function_exists('wp_list_comments')) {
 	</ol>
 	
 <?php
-if(function_exists('previous_comments_link')){
-	previous_comments_link();
-	next_comments_link();
+if(function_exists('paginate_comments_links')){
+	echo '<p class="comment-pagination">', paginate_comments_links(), '</p>';
 }
 ?>

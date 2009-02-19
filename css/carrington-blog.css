@@ -363,14 +363,18 @@ h1.page-title {
 	padding-top: 9px;
 	width: 510px;
 }
-.full .pages-link {
+.full .pages-link,
+.page-numbers {
 	font-weight:bold;
 }
 .full .pages-link a,
-.full .pages-link a:visited{
+a.page-numbers {
 	border:1px solid #cecfd1;
 	font-weight:normal;
-	padding:2px 4px;
+}
+.full .pages-link a,
+.page-numbers{
+	padding:2px 6px;
 }
 .full .pages-link a:hover {
 	border-color:#999;
@@ -461,7 +465,7 @@ li.li-comment li.li-comment {
 	background:url(../img/comment-thread.gif) no-repeat 5px top;
 	padding-left:24px;
 }
-.commentlist .hentry {
+.commentlist .comment {
 	margin-bottom:9px;
 	overflow:hidden;
 	padding:9px 9px 9px 66px;
