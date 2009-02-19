@@ -325,7 +325,8 @@ h1.page-title {
 	width:240px;
 }
 
-/* =====Posts===== */
+/* Posts
+ =============================== */
 .entry-content,
 .entry-summary {
 	overflow:auto;
@@ -456,7 +457,9 @@ h1.page-title {
 #content .search h2.entry-title {
 	margin-top:1em;
 }
-/* =====Comments and comment form===== */
+
+/* Comments and comment form
+=================================== */
 .commentlist{
 	clear:both;
 	list-style:none;
@@ -563,7 +566,8 @@ form.comment-form a:visited {
 	width:510px;
 }
 
-/* =====Sidebar and Widgets===== */
+/* Sidebar and Widgets
+============================== */
 .widget {
 	margin-bottom:1.5em;
 }
