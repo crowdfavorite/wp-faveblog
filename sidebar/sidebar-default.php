@@ -22,7 +22,7 @@ global $post;
 $orig_post = $post;
 
 ?>
-
+<hr class="lofi" />
 <div id="sidebar">
 	<div id="carrington-subscribe" class="widget">
 		<h2 class="widget-title"><?php _e('Subscribe', 'carrington-blog'); ?></h2>

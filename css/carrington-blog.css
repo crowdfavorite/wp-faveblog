@@ -462,8 +462,7 @@ h1.page-title {
 	list-style:none;
 	margin:0;
 }
-.commentlist li.comment {
-	background:url(../images/);
+.commentlist li.hentry{
 	margin-bottom:0;
 	position:relative;
 }
