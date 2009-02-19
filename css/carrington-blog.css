@@ -439,7 +439,7 @@ h1.page-title {
 	padding-left: 20px;
 	width:120px;
 }
-#content .search {
+.search {
 	border-top: 1px dotted #cecfd1;
 	padding-top:18px;
 }

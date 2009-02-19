@@ -1,7 +1,7 @@
 /* Border dotted looks like junk in IE. */
 .archive,
 .excerpt,
-#content .search,
+.search,
 ol.commentlist li.hentry,
 .ping,
 #carrington-archives ul,
