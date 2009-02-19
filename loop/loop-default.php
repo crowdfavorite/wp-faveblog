@@ -22,6 +22,9 @@ if (have_posts()) {
 	while (have_posts()) {
 		the_post();
 		cfct_content();
+?>
+<div class="rule"><hr /></div>
+<?php
 	}
 }
 

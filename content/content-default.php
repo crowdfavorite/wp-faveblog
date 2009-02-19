@@ -46,4 +46,3 @@ $previousday = -1;
 	
 	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit-post edit">', '</div>'); ?>
 </div><!-- .post -->
-<div class="rule"><hr /></div>
