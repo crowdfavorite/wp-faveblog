@@ -441,9 +441,7 @@ h1.page-title {
 }
 #content .search {
 	border-top: 1px dotted #cecfd1;
-}
-#content .search h2.entry-title {
-	margin-top:1em;
+	padding-top:18px;
 }
 
 /* Comments and comment form

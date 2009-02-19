@@ -22,7 +22,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 <div id="post-excerpt-<?php the_ID() ?>" <?php post_class('excerpt'); ?>>
 	<strong class="entry-title"><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title_attribute() ?>" rel="bookmark" rev="post-<?php the_ID(); ?>"><?php the_title(); ?></a></strong>
 	
-	<span class="date small"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_time('F j, Y'); ?></abbr></span>
+	<span class="date small"><abbr class="published" title="<?php the_time('Y-m-d\TH:i'); ?>"><?php the_time('F j, Y'); ?></abbr></span>
 	
 	<p class="categories filed alt-font"><?php _e('Posted in ', 'carrington-blog'); the_category(', ') ?>.</p>
 	
