@@ -18,30 +18,11 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
-get_header();
-
-?>
-
-<div id="content">
-<?php
-	cfct_loop();
-?>
-	<div id="comments">
-<?php
-	comments_template();
-?>
-	</div><!--#comments-->
-
-	<div class="pagination_single">
-		<span class="previous"><?php previous_post_link() ?></span>
-		<span class="next"><?php next_post_link() ?></span>
-	</div>
-
-</div><!--#content-->
-
-<?php 
-get_sidebar();
-
-get_footer();
+if (have_posts()) {
+	while (have_posts()) {
+		the_post();
+		cfct_template_file('content','single');
+	}
+}
 
 ?>

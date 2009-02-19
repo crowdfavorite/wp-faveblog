@@ -28,28 +28,13 @@
 }
 .clear {
 	clear: both;
+	display: block;
 	float: none;
-}
-/* http://www.positioniseverything.net/easyclearing.html */
-
-.clearfix:after {
-	clear: both;
-	content: '.';
-	display: block;
+	font-size: 0;
+	overflow: hidden;
 	visibility: hidden;
+	width: 0;
 	height: 0;
-}
-
-.clearfix {
-	display: inline-block;
-}
-
-* html .clearfix {
-	height: 1%;
-}
-
-.clearfix {
-	display: block;
 }
 /* http://www.positioniseverything.net/easyclearing.html */
 .clearfix:after {
@@ -59,28 +44,14 @@
 	visibility: hidden;
 	height: 0;
 }
-
 .clearfix {
 	display: inline-block;
 }
-
 * html .clearfix {
 	height: 1%;
 }
-
 .clearfix {
 	display: block;
-}
-
-hr.rule-alternate {
-	background:url(../img/divider-ornament.gif) no-repeat center;
-	border:0;
-	height:1.5em;
-}
-hr.rule {
-	background:url(../img/divider-ornament-wide.gif) no-repeat center;
-	border:0;
-	height:1.5em;
 }
 
 h1.page-title {
@@ -377,8 +348,8 @@ h1.page-title {
 	position:absolute;
 	top:0;
 }
-.hentry:hover .edit-post,
-.hentry:hover .edit-comment {
+.post:hover .edit-post,
+.comment .hentry:hover .edit-comment {
 	left: auto;
 	right:0;
 }
@@ -389,9 +360,7 @@ h1.page-title {
 }
 
 .full {
-	background:url(../img/divider-ornament-wide.gif) no-repeat center bottom;
-	margin-bottom:24px;
-	padding-bottom:18px;
+	margin-bottom:18px;
 }
 .full .full-content {
 	clear:both;
@@ -421,12 +390,6 @@ h1.page-title {
 .full .full-date {
 	background:url(../img/ndash.gif) no-repeat left center;
 	padding-left:16px;
-}
-.full hr {
-	border: 1px solid #ccc;
-	border-width: 1px 0 0 0;
-	margin: 20px 30px;
-	padding: 0;
 }
 .full p.comments-link {
 	text-align:right;
@@ -493,10 +456,6 @@ ol.archive {
 	margin-top:1em;
 }
 /* =====Comments and comment form===== */
-h2.comments-title {
-	background:url(../img/comments-divider.gif) no-repeat center top;
-	padding-top:53px;
-}
 .commentlist{
 	clear:both;
 	list-style:none;
@@ -508,9 +467,8 @@ h2.comments-title {
 	position:relative;
 }
 .commentlist li.comment .hentry {
-	border:1px solid #e9eaea;
 	margin-bottom:9px;
-	padding:9px 9px 9px 54px;
+	padding:9px 9px 9px 66px;
 }
 .commentlist li.comment .photo img{
 	top:9px;
@@ -539,16 +497,15 @@ h2.comments-title {
 	margin:0 0 9px;
 	padding:9px;
 }
-.comment-reply-link {
+.comment-reply-link {display:none;
 	font-size:11.5px;
 	margin-left:10px;
 	position:absolute;
-	top:52px;
+	top:66px;
 }
 /* author comments */
 .commentlist li.bypostauthor .hentry {
-	background:#51555c url(../img/author-comment.jpg) no-repeat left top;
-	color:#fff;
+	background:#51555c url(../img/watermark-light.gif) no-repeat left top;
 }
 .bypostauthor a,
 .bypostauthor a:visited{

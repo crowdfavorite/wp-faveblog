@@ -34,7 +34,7 @@ if ($comment->comment_approved == '0') {
 <?php 
 if (function_exists('get_avatar')) { 
 ?>
-		<span class="photo avatar"><?php echo get_avatar($comment, 36) ?></span>
+		<span class="photo avatar"><?php echo get_avatar($comment, 48) ?></span>
 <?php
 }
 

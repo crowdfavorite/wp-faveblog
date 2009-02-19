@@ -17,14 +17,10 @@
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
-
-global $previousday, $authordata;
-$previousday = -1;
-
 ?>
-<div id="post-content-<?php the_ID() ?>" <?php post_class('full'); ?>>
+<div id="post-content-<?php the_ID() ?>" <?php post_class('full single'); ?>>
 	
-	<h1 class="entry-title full-title"><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title_attribute() ?>" rel="bookmark" rev="post-<?php the_ID(); ?>"><?php the_title() ?></a></h1>
+	<h1 class="entry-title full-title"><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title_attribute() ?>" rel="bookmark"><?php the_title() ?></a></h1>
 	
 	<div class="entry-content full-content">
 		<?php the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); link_pages('<p class="pages-link">'.__('Pages: ', 'carrington-blog'), "</p>\n", 'number'); ?>
@@ -39,13 +35,9 @@ $previousday = -1;
 		</address>
 		<span class="date full-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_date(); ?></abbr></span>
 	</div><!--/by-line-->
-	
-	<p class="comments-link"><?php comments_popup_link(__('No comments', 'carrington-blog'), __('1 comment', 'carrington-blog'), __('% comments', 'carrington-blog')); ?></p>
-	
+
 	<div class="clear"></div>
-	<div id="post-comments-<?php the_ID(); ?>-target"></div>
 	
 	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit-post edit">', '</div>'); ?>
-	
-	<div class="rule"><hr /></div>
+
 </div><!-- .post -->

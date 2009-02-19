@@ -25,7 +25,8 @@ del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend{
+fieldset, form, label, legend,
+hr{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -201,6 +202,32 @@ acronym,
 .small {
 	font-size: 11.5px;
 }
+hr {
+	background:#ccc;
+	color:#ccc;
+	height:1px;
+	margin:0 30px 18px 30px;
+}
+.rule-minor {
+	background:url(../img/divider-ornament.gif) no-repeat center;
+	height:1.5em;
+}
+.rule {
+	background:url(../img/divider-ornament-wide.gif) no-repeat center;
+	height:1.5em;
+	margin:0 0 18px;
+}
+.rule-major {
+	background:url(../img/comments-divider.gif) no-repeat center;
+	height:35px;
+	margin:0 0 18px;
+}
+.rule hr,
+.rule-minor hr,
+.rule-major hr {
+	display:none;
+}
+
 /* No formatting class */
 .plain,
 .plain li {

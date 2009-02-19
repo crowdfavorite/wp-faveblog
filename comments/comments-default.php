@@ -29,6 +29,8 @@ if ($comments || 'open' == $post->comment_status) {
 
 ?>
 
+<div class="rule-major"><hr /></div>
+
 <h2 class="h1 comments-title"><?php echo $comment_title; ?></h2>
 
 <p><?php printf(__('Stay in touch with the conversation, subscribe to the <a class="feed" rel="alternate" href="%s"><acronym title="Really Simple Syndication">RSS</acronym> feed for comments on this post</a>.', 'carrington-blog'), get_post_comments_feed_link($post->ID, '')); ?></p>
