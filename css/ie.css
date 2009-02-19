@@ -28,3 +28,8 @@ ol.commentlist li.hentry,
 #content,
 #sidebar,
 #carrington-about .about {zoom:1;}
+
+/* Margin float fix */
+.full p.comments-link{
+	margin:0;
+}
