@@ -1,5 +1,5 @@
 /* Border dotted looks like junk in IE. */
-ol.archive,
+.archive,
 .excerpt,
 #content .search,
 ol.commentlist li.hentry,

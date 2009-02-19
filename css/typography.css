@@ -179,7 +179,9 @@ blockquote {
 	margin:0 9px 9px;
 	padding-left:10px;
 }
-ol,
+ol {
+	margin-left:36px;
+}
 dd {
 	margin-left:18px;
 }

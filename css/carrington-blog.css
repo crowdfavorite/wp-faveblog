@@ -57,7 +57,6 @@
 h1.page-title {
 	color: #999;
 	font: italic 14px Georgia, serif;
-	margin:24px 0 9px 0;
 }
 
 /* General horizontal navigation lists with dropdown magic */
@@ -265,7 +264,7 @@ h1.page-title {
 	padding:2px 0 0;
 	width:760px;
 }
-#all-categories .heading {
+#all-categories-title {
 	float: left;
 	font-weight:normal;
 	margin-right:12px;
@@ -359,9 +358,6 @@ h1.page-title {
 	color:#fff;
 }
 
-.full {
-	margin-bottom:18px;
-}
 .full .full-content {
 	clear:both;
 	padding-top: 9px;
@@ -395,15 +391,22 @@ h1.page-title {
 	text-align:right;
 }
 .full .comments-link a,
-.full .comments-link a:visited{
+.full .comments-link a:visited,
+.full .comments-link span{
 	background: url(../img/comment.gif) no-repeat left center;
 	padding: 1px 0 0 20px;
 }
 
-ol.archive {
+.archive {
 	border-top: 1px dotted #cecfd1;
 	list-style: none;
 	margin: 1.5em 0 0;
+}
+.archive li {
+	margin-bottom:0;
+}
+.archive .full {
+	margin-top:18px;
 }
 .excerpt {
 	background: url(../img/arrow-bullet.gif) no-repeat 0 12px;
@@ -440,14 +443,12 @@ ol.archive {
 	top:10px;
 }
 .excerpt .comments-link a,
-.excerpt .comments-link a:visited{
+.excerpt .comments-link a:visited,
+.excerpt .comments-link span{
+	background: url(../img/comment.gif) no-repeat left center;
 	display:block;
 	padding-left: 20px;
 	width:120px;
-}
-.excerpt .comments-link a,
-.excerpt .comments-link a:visited {
-	background: url(../img/comment.gif) no-repeat left center;
 }
 #content .search {
 	border-top: 1px dotted #cecfd1;

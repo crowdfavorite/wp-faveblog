@@ -79,7 +79,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 			<div class="wrapper">
 				<?php cfct_form('search'); ?>
 				<div id="all-categories">
-					<strong class="heading">Categories:</strong>
+					<strong id="all-categories-title">Categories:</strong>
 					<ul class="nav clearfix">
 						<?php wp_list_categories('title_li='); ?>
 					</ul>

@@ -18,7 +18,6 @@
 /* hasLayout fixes */
 ul li,
 .nav ul,
-.nav li,
 .full,
 .entry-content,
 .entry-summary,
@@ -26,8 +25,6 @@ ul li,
 ol.commentlist li.hentry,
 .widget,
 .pagination,
-#all-categories,
 #content,
 #sidebar,
-h2#comments,
 #carrington-about .about {zoom:1;}
