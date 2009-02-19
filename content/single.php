@@ -29,14 +29,12 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<p class="filed categories alt-font tight"><?php printf(__('Posted in %s.', 'carrington-blog'), get_the_category_list(', ')); ?></p>
 	<?php the_tags(__('<p class="filed tags alt-font tight">Tagged with ', 'carrington-blog'), ', ', '.</p>'); ?>
 	
-	<div class="by-line">
-		<address class="author vcard full-author">
+	<p class="by-line">
+		<span class="author vcard full-author">
 			<?php printf(__('<span class="by alt-font">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_link(false, get_the_author_ID(), $authordata->user_nicename).'" title="View all posts by ' . attribute_escape($authordata->display_name) . '">'.get_the_author().'</a>') ?>
-		</address>
-		<span class="date full-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_date(); ?></abbr></span>
-	</div><!--/by-line-->
-
-	<div class="clear"></div>
+		</span>
+		<span class="date full-date"><span class="ndash alt-font">&ndash;</span> <abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_date(); ?></abbr></span>
+	</p><!--/by-line-->
 	
 	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit-post edit">', '</div>'); ?>
 

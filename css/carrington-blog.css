@@ -334,7 +334,6 @@ h1.page-title {
 .hentry {
 	position:relative;
 }
-
 .hentry .edit{
 	background:#900;
 	border-radius:4px;
@@ -377,19 +376,8 @@ h1.page-title {
 	border-color:#999;
 	text-decoration:none;
 }
-.full p.filed {
-	clear:both;
-}
-.full .by-line {
-	clear:both;
-	float:left
-}
-.full .full-date {
-	background:url(../img/ndash.gif) no-repeat left center;
-	padding-left:16px;
-}
 .full p.comments-link {
-	text-align:right;
+	float:right;
 }
 .full .comments-link a,
 .full .comments-link a:visited,
@@ -465,7 +453,9 @@ h1.page-title {
 	list-style:none;
 	margin:0;
 }
-.commentlist li.hentry{
+.commentlist li.comment,
+.commentlist li.ping{
+	background:transparent;
 	margin-bottom:0;
 	position:relative;
 }
