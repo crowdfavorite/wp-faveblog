@@ -1,3 +1,7 @@
+/* hasLayout fixes */
+.pagination,
+.pagination-single{zoom:1;}
+
 /* Border dotted looks like junk in IE. */
 .archive,
 .excerpt,

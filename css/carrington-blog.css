@@ -117,16 +117,19 @@ h1.page-title {
 	left: auto;
 }
 
-.pagination, .pagination_single {
+.pagination,
+.pagination-single {
 	background:url(../img/grey-to-white-gradient.png) repeat-x top;
 	margin-top: 20px;
 	overflow:hidden;
 }
-.pagination .previous a, .pagination_single .previous {
+.pagination .previous a,
+.pagination-single .previous {
 	float:left;
 	padding:18px;
 }
-.pagination .next a, .pagination_single .next {
+.pagination .next a,
+.pagination-single .next {
 	float:right;
 	padding:18px;
 }
