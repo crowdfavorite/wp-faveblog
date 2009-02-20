@@ -528,8 +528,7 @@ li.li-comment li.li-comment {
 form.comment-form {
 	background:#efeff1 url(../img/watermark-light.gif) repeat-x left top;
 	border:1px solid #e9eaea;
-	margin-bottom:18px;
-	margin-top:9px;
+	margin-bottom:2px;
 	padding:9px;
 }
 .comment-form p {
