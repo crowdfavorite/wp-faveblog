@@ -83,7 +83,7 @@ function cfct_blog_init() {
 		cfct_ajax_load();
 	}
 	if (cfct_get_option('cfct_lightbox') != 'no') {
-		wp_enqueue_script('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/jquery.lightbox.js', 'jquery', '1.0');
+		wp_enqueue_script('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/jquery.lightbox.js', array('jquery'), '1.0');
 // in the future we'll use this, but for now we want 2.5 compatibility
 //		wp_enqueue_style('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/css/lightbox.css');
 	}
@@ -91,7 +91,7 @@ function cfct_blog_init() {
 add_action('init', 'cfct_blog_init');
 
 wp_enqueue_script('jquery');
-wp_enqueue_script('carrington', get_bloginfo('template_directory').'/js/carrington.js', 'jquery', '1.0');
+wp_enqueue_script('carrington', get_bloginfo('template_directory').'/js/carrington.js', array('jquery'), '1.0');
 // Javascript for threaded comments
 wp_enqueue_script( 'comment-reply' );
 
