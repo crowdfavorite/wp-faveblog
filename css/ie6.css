@@ -2,6 +2,11 @@
 .pagination,
 .pagination-single{zoom:1;}
 
+/* Harden text widgets against italics problem */
+.textwidget {
+	overflow:visible;
+}
+
 /* Border dotted looks like junk in IE. */
 .archive,
 .excerpt,

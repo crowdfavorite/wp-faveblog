@@ -60,9 +60,7 @@ if ($comments || 'open' == $post->comment_status) {
 			cfct_template_file('comments', 'pings-loop');
 		}
 	}
-	echo '<div id="respond">';
-		cfct_form('comment');
-	echo '</div>';
+	cfct_form('comment');
 }
 
 ?>

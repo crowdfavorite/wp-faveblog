@@ -28,6 +28,7 @@ $previousday = -1;
 	
 	<div class="entry-content full-content">
 		<?php the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); link_pages('<p class="pages-link">'.__('Pages: ', 'carrington-blog'), "</p>\n", 'number'); ?>
+		<div class="clear"></div>
 	</div><!-- .entry-content-->
 	
 	<p class="filed categories alt-font tight"><?php printf(__('Posted in %s.', 'carrington-blog'), get_the_category_list(', ')); ?></p>
@@ -43,6 +44,7 @@ $previousday = -1;
 	</p><!--/by-line-->
 
 	<div id="post-comments-<?php the_ID(); ?>-target"></div>
+	<div class="clear"></div>
 	
 	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit-post edit">', '</div>'); ?>
 </div><!-- .post -->

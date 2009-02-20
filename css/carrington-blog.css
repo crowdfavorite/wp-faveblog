@@ -465,23 +465,23 @@ li.li-comment{
 }
 li.li-comment li.li-comment {
 	background:url(../img/comment-thread.gif) no-repeat 5px 6px;
-	padding-left:24px;
+	padding-left:30px;
 }
 .commentlist .comment {
 	margin-bottom:2px;
 	overflow:hidden;
-	padding:8px 12px 8px 72px;
+	padding:0 0 0 60px;
 }
 .commentlist .comment .photo img{
-	top:8px;
-	left:12px;
-	position:absolute;
+	float:left;
+	margin-left:-60px;
 }
 .comment cite.fn {
 	font-size:14px;
 	font-weight:bold;
 }
 .comment .comment-content {
+	overflow:hidden;
 	margin-bottom:3px;
 	margin-top:3px;
 }
@@ -495,17 +495,23 @@ li.li-comment li.li-comment {
 .comment-meta .date {
 	float:right;
 }
-.comment-reply-link {
-	background:url(../img/comment-reply.gif) no-repeat;
-	display:block;
-	height:14px;
-	text-indent:-32000px;
-	width:38px;
+.comment-reply-link,
+.comment-reply-link:visited,
+.comment-reply-link:hover {
+	background:#900;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	-moz-border-radius:4px;
+	color:#fff;
+	font-size:10.5px;
 	opacity:.7;
+	padding:1px 4px;
 }
 /* author comments */
 .commentlist .bypostauthor {
 	background:#51555c url(../img/watermark-light.gif) no-repeat left top;
+	padding:12px 12px 12px  72px;
 }
 
 /* trackbacks and pingbacks */
@@ -556,7 +562,9 @@ form.comment-form {
 /* Sidebar and Widgets
 ============================== */
 .widget {
-	margin-bottom:1.5em;
+	margin-bottom:18px;
+	overflow:hidden;
+	width:100%;
 }
 h2.widget-title,
 .widget_search label {
