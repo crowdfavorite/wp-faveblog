@@ -455,7 +455,7 @@ a.page-numbers {
 .commentlist{
 	clear:both;
 	list-style:none;
-	margin:0;
+	margin:0 0 18px;
 }
 li.li-comment{
 	background:transparent;
