@@ -464,11 +464,11 @@ li.li-comment{
 	position:relative;
 }
 li.li-comment li.li-comment {
-	background:url(../img/comment-thread.gif) no-repeat 5px 6px;
-	padding-left:30px;
+	background:url(../img/comment-thread.gif) no-repeat 0 3px;
+	padding-left:24px;
 }
 .commentlist .comment {
-	margin-bottom:2px;
+	margin-bottom:8px;
 	overflow:hidden;
 	padding:0 0 0 60px;
 }
@@ -482,8 +482,7 @@ li.li-comment li.li-comment {
 }
 .comment .comment-content {
 	overflow:hidden;
-	margin-bottom:3px;
-	margin-top:3px;
+	margin-bottom:5px;
 }
 .comment .comment-content p:last-child,
 .comment .comment-content p.last-child {
@@ -491,6 +490,7 @@ li.li-comment li.li-comment {
 }
 .comment-meta {
 	color:#999;
+	font-size: 10.5px;
 }
 .comment-meta .date {
 	float:right;
@@ -510,8 +510,8 @@ li.li-comment li.li-comment {
 }
 /* author comments */
 .commentlist .bypostauthor {
-	background:#51555c url(../img/watermark-light.gif) no-repeat left top;
-	padding:12px 12px 12px  72px;
+	background:#efeff1 url(../img/watermark-light.gif) no-repeat left top;
+	padding:8px 12px 6px 72px;
 }
 
 /* trackbacks and pingbacks */
