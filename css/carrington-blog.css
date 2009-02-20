@@ -468,12 +468,12 @@ li.li-comment li.li-comment {
 	padding-left:24px;
 }
 .commentlist .comment {
-	margin-bottom:12px;
+	margin-bottom:2px;
 	overflow:hidden;
-	padding:12px 12px 12px 72px;
+	padding:8px 12px 8px 72px;
 }
 .commentlist .comment .photo img{
-	top:12px;
+	top:8px;
 	left:12px;
 	position:absolute;
 }
