@@ -631,8 +631,13 @@ h2.widget-title,
 
 /* Misc
 =================================== */
-/*#lightbox #prevLink:hover, #prevLink:visited:hover { background: url(../img/lightbox/prevlabel.gif) left 50% no-repeat; }
+#lightbox #prevLink:hover, #prevLink:visited:hover { background: url(../img/lightbox/prevlabel.gif) left 50% no-repeat; }
 #lightbox #nextLink:hover, #nextLink:visited:hover { background: url(../img/lightbox/nextlabel.gif) right 50% no-repeat; }
 #lightbox #numberDisplay {
 	color:#999;
-}*/
+	font-family: Georgia, Palatino, "Palatino Linotype", Baskerville, serif;
+	font-style:italic;
+}
+#lightbox #bottomNav {
+	display:none;
+}
