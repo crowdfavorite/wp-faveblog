@@ -146,7 +146,6 @@ h1.page-title {
 .close {
 	background: url(../img/watermark-light.gif) top center;
 	border-bottom: 1px solid #ddd;
-	margin-top: -1.6em;
 	padding: 8px 0 6px;
 	text-align: center;
 }
@@ -436,7 +435,7 @@ a.page-numbers {
 .excerpt .comments-link {
 	position:absolute;
 	right:0;
-	top:10px;
+	top:14px;
 }
 .excerpt .comments-link a,
 .excerpt .comments-link a:visited,
@@ -465,17 +464,17 @@ li.li-comment{
 	position:relative;
 }
 li.li-comment li.li-comment {
-	background:url(../img/comment-thread.gif) no-repeat 5px top;
+	background:url(../img/comment-thread.gif) no-repeat 5px 6px;
 	padding-left:24px;
 }
 .commentlist .comment {
-	margin-bottom:9px;
+	margin-bottom:12px;
 	overflow:hidden;
-	padding:9px 9px 9px 66px;
+	padding:12px 12px 12px 72px;
 }
 .commentlist .comment .photo img{
-	top:9px;
-	left:9px;
+	top:12px;
+	left:12px;
 	position:absolute;
 }
 .comment cite.fn {
@@ -622,3 +621,11 @@ h2.widget-title,
 	display:block;
 	padding:6px 0;
 }
+
+/* Misc
+=================================== */
+/*#lightbox #prevLink:hover, #prevLink:visited:hover { background: url(../img/lightbox/prevlabel.gif) left 50% no-repeat; }
+#lightbox #nextLink:hover, #nextLink:visited:hover { background: url(../img/lightbox/nextlabel.gif) right 50% no-repeat; }
+#lightbox #numberDisplay {
+	color:#999;
+}*/
