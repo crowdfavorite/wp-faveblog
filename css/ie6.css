@@ -23,6 +23,9 @@ ol.commentlist li.li-comment,
 #footer p#developer-link a:visited {
 	background-image: url(../img/ie/by-crowd-favorite.gif);
 }
+#TB_title{
+	background: #51555c;
+}
 
 /* Hide shadow for IE: pngfix.htc fails to render it correctly. IE6 refuses background:transparent; here is a stupendous fix. */
 #header,
