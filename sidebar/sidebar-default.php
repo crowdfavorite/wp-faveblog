@@ -74,4 +74,5 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar'
 }
 ?>
 	</div><!--#secondary-sidebar-->
+	<div class="clear"></div>
 </div><!--#sidebar-->
