@@ -504,9 +504,9 @@ li.li-comment li.li-comment {
 	-khtml-border-radius:4px;
 	-moz-border-radius:4px;
 	color:#fff;
-	font-size:10.5px;
+	font-size:9.5px;
 	opacity:.7;
-	padding:1px 4px;
+	padding:3px 5px 2px;
 }
 /* author comments */
 .commentlist .bypostauthor {
