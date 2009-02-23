@@ -631,13 +631,24 @@ h2.widget-title,
 
 /* Misc
 =================================== */
-#lightbox #prevLink:hover, #prevLink:visited:hover { background: url(../img/lightbox/prevlabel.gif) left 50% no-repeat; }
-#lightbox #nextLink:hover, #nextLink:visited:hover { background: url(../img/lightbox/nextlabel.gif) right 50% no-repeat; }
-#lightbox #numberDisplay {
+#TB_secondLine {
 	color:#999;
 	font-family: Georgia, Palatino, "Palatino Linotype", Baskerville, serif;
 	font-style:italic;
 }
-#lightbox #bottomNav {
-	display:none;
+#TB_title{
+	background: #51555c url(../img/header/texture-dark.png) no-repeat center bottom;
+	color:#fff;
+}
+#TB_title a,
+#TB_title a:visited {
+	color:#fff;
+}
+a#TB_prev:hover {
+	background:url(../img/lightbox/prevlabel.gif) no-repeat left center;
+	height:100%;
+}
+a#TB_next:hover {
+	background:url(../img/lightbox/nextlabel.gif) no-repeat right center;
+	height:100%;
 }
