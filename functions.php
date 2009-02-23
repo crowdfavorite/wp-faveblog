@@ -43,7 +43,6 @@ $cfct_options = array(
 	'cfct_custom_colors',
 	'cfct_header_image_type',
 	'cfct_footer_image_type',
-	'cfct_header_image',
 );
 
 $cfct_color_options = array(
