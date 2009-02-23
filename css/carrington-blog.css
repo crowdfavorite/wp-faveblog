@@ -639,6 +639,8 @@ h2.widget-title,
 #TB_title{
 	background: #51555c url(../img/header/texture-dark.png) no-repeat center bottom;
 	color:#fff;
+	font-size:11.5px;
+	line-height:18px;
 }
 #TB_title a,
 #TB_title a:visited {
