@@ -43,6 +43,7 @@ $cfct_options = array(
 	'cfct_custom_colors',
 	'cfct_header_image_type',
 	'cfct_footer_image_type',
+	'cfct_header_image',
 );
 
 $cfct_color_options = array(
@@ -187,6 +188,21 @@ a:visited {
 }
 </style>
 <?php
+	}
+	$header_image = cfct_get_option('cfct_header_image');
+	if ($header_image != 0) {
+		$img = wp_get_attachment_image_src($header_image, 'large');
+		if ($img) {
+?>
+<style type="text/css">
+#header .wrapper {
+	background-image: url(<?php echo $img[0]; ?>);
+	background-repeat: no-repeat;
+	height: <?php echo $img[2]; ?>px;
+}
+</style>
+<?php
+		}
 	}
 }
 add_action('wp_head', 'cfct_blog_head');

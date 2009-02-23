@@ -84,7 +84,7 @@ function cfct_blog_settings_form() {
 									<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
 								</p>
 							</fieldset>
-							<p>TODO: Header Image</p>
+							'.cfct_header_image_form().'
 						</fieldset>
 					</td>
 				</tr>
