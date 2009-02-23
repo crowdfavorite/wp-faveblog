@@ -26,11 +26,17 @@
 .lofi {
 	display:none;
 }
-.clear {
+/* http://sonspring.com/journal/clearing-floats */
+html body div.clear,
+html body span.clear {
+	background: none;
+	border: 0;
 	clear: both;
 	display: block;
 	float: none;
 	font-size: 0;
+	margin: 0;
+	padding: 0;
 	overflow: hidden;
 	visibility: hidden;
 	width: 0;
@@ -85,14 +91,9 @@ h1.page-title {
 	padding:6px 9px;
 }
 .nav li li {
-	background:url(../img/dropdown-divider.gif) no-repeat center top;
 	float: none;
 	margin-right:0;
 	position: relative;
-}
-.nav li li:first-child,
-.nav li li.first-child {
-	background:transparent;
 }
 .nav li li ul {
 	margin-left:200px;
@@ -119,7 +120,7 @@ h1.page-title {
 
 .pagination,
 .pagination-single {
-	background:url(../img/grey-to-white-gradient.png) repeat-x top;
+	background-color:#e9eaea;
 	margin-top: 20px;
 	overflow:hidden;
 }
@@ -144,7 +145,7 @@ h1.page-title {
 	padding: 17px 32px 0;
 }
 .close {
-	background: url(../img/watermark-light.gif) top center;
+	background-color:#e9eaea;
 	border-bottom: 1px solid #ddd;
 	padding: 8px 0 6px;
 	text-align: center;
@@ -210,14 +211,11 @@ h1.page-title {
 }
 #header {
 	background-color: #51555c;
-	background-image:url(../img/header/gradient-dark.png);
 	background-repeat:repeat-x;
 	background-position:left bottom;
 	color: #cecfd1;
-
 }
 #header .wrapper {
-	background-image:url(../img/header/texture-dark.png);
 	background-repeat:repeat-x;
 	background-position:center bottom;
 	overflow: hidden;
@@ -256,7 +254,7 @@ h1.page-title {
 }
 
 #sub-header {
-	background: #e9eaea url(../img/sub-header-border-bottom.gif) repeat-x bottom;
+	background-color: #e9eaea;
 	padding: 9px 0;
 }
 #sub-header form#cfct-search {
@@ -281,7 +279,7 @@ h1.page-title {
 	width: 550px;
 }
 #sidebar {
-	background:url(../img/sidebar-background.gif) no-repeat left top;
+	background-color:#e9eaea;
 	float:left;
 	margin-left:24px;
 	padding:14px;
@@ -296,7 +294,9 @@ h1.page-title {
 	margin-right:12px;
 }
 #footer {
-	background: #51555c url(../img/footer/gradient-dark.png) repeat-x left top;
+	background-color: #51555c;
+	background-repeat:repeat-x;
+	background-position:left top;
 	clear: both;
 	color: #999;
 	padding: 32px 0 64px;
@@ -306,7 +306,6 @@ h1.page-title {
 	color: #CECFD1;
 }
 #footer .wrapper {
-	background: url(../img/footer/divider-ornament-wide-light.png) no-repeat center bottom;
 	overflow:hidden;
 	padding-bottom:28px;
 }
@@ -317,14 +316,6 @@ h1.page-title {
 #footer p#developer-link {
 	display:block;
 	text-indent:-32697px;
-}
-#footer p#developer-link a,
-#footer p#developer-link a:visited {
-	background:url(../img/footer/by-crowd-favorite-light.png) no-repeat left top;
-	float:right;
-	height:30px;
-	text-indent:-32697px;
-	width:240px;
 }
 
 /* Posts
@@ -385,12 +376,6 @@ a.page-numbers {
 .full p.comments-link {
 	float:right;
 }
-.full .comments-link a,
-.full .comments-link a:visited,
-.full .comments-link span{
-	background: url(../img/comment.gif) no-repeat left center;
-	padding: 1px 0 0 20px;
-}
 
 .archive {
 	border-top: 1px dotted #cecfd1;
@@ -427,7 +412,10 @@ a.page-numbers {
 .excerpt p {
 	margin:0;
 }
-.excerpt .date {
+.excerpt .date,
+.excerpt .comments-link a,
+.excerpt .comments-link a:visited,
+.excerpt .comments-link span {
 	display: block;
 	width: 140px;
 }
@@ -436,14 +424,6 @@ a.page-numbers {
 	position:absolute;
 	right:0;
 	top:14px;
-}
-.excerpt .comments-link a,
-.excerpt .comments-link a:visited,
-.excerpt .comments-link span{
-	background: url(../img/comment.gif) no-repeat left center;
-	display:block;
-	padding-left: 20px;
-	width:120px;
 }
 .search {
 	border-top: 1px dotted #cecfd1;
@@ -510,7 +490,7 @@ li.li-comment li.li-comment {
 }
 /* author comments */
 .commentlist .bypostauthor {
-	background:#efeff1 url(../img/watermark-light.gif) no-repeat left top;
+	background-color:#efeff1;
 	padding:8px 12px 6px 72px;
 }
 
@@ -526,7 +506,7 @@ li.li-comment li.li-comment {
 	padding:0;
 }
 form.comment-form {
-	background:#efeff1 url(../img/watermark-light.gif) repeat-x left top;
+	background-color:#efeff1;
 	border:1px solid #e9eaea;
 	margin-bottom:2px;
 	padding:9px;
@@ -549,10 +529,6 @@ form.comment-form {
 	font-style:normal;
 	font-size:12px;
 }
-/*.comment-form-comment-area {
-	background:#DFDFE1;
-	display:block;
-}*/
 .comment-form textarea{
 	height:9em;
 	width:95%;
@@ -582,7 +558,6 @@ h2.widget-title,
 	margin-bottom:6px;
 }
 #carrington-subscribe {
-	background: url(../img/divider-ornament.gif) no-repeat center bottom;
 	overflow:hidden;	
 	padding-bottom:24px;
 }
@@ -593,20 +568,17 @@ h2.widget-title,
 	margin:7px 0 0;
 	text-transform:uppercase;
 }
-#carrington-subscribe a,
-#carrington-subscribe a:visited {
-	background:url(../img/rss-button.gif) no-repeat left top;
+#carrington-subscribe a{
 	float:right;
 	height:26px;
 	text-indent:-32697px;
 	width:130px;
 }
 #carrington-about {
-	background: url(../img/divider-ornament.gif) no-repeat center bottom;
 	padding-bottom:2em;
 }
 #carrington-about .about{
-	background:url(../img/watermark-light.gif) repeat-x left top;
+	background-color:#cecfd1;
 	overflow:hidden;
 	padding:12px;
 }
@@ -637,7 +609,7 @@ h2.widget-title,
 	font-style:italic;
 }
 #TB_title{
-	background: #51555c url(../img/header/texture-dark.png) no-repeat center bottom;
+	background-color: #51555c;
 	color:#fff;
 	font-size:11.5px;
 	line-height:18px;
@@ -646,11 +618,7 @@ h2.widget-title,
 #TB_title a:visited {
 	color:#fff;
 }
-a#TB_prev:hover {
-	background:url(../img/lightbox/prevlabel.gif) no-repeat left center;
-	height:100%;
-}
+a#TB_prev:hover,
 a#TB_next:hover {
-	background:url(../img/lightbox/nextlabel.gif) no-repeat right center;
 	height:100%;
 }

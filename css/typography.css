@@ -210,17 +210,18 @@ hr {
 	height:1px;
 	margin:0 30px 18px 30px;
 }
+.rule,
+.rule-major,
 .rule-minor {
-	background:url(../img/divider-ornament.gif) no-repeat center;
-	height:1.5em;
+	background-color:#e9eaea;
 }
-.rule {
-	background:url(../img/divider-ornament-wide.gif) no-repeat center;
-	height:1.5em;
+.rule,
+.rule-minor {
+	height:9px;
 	margin:0 0 18px;
 }
 .rule-major {
-	background:url(../img/comments-divider.gif) no-repeat center;
+	border-top:1px solid #cecfd1;
 	height:35px;
 	margin:0 0 18px;
 }

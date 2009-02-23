@@ -29,12 +29,12 @@ $previousday = -1;
 		<?php the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); link_pages('<p class="pages-link">'.__('Pages: ', 'carrington-blog'), "</p>\n", 'number'); ?>
 	</div><!--/entry-content-->
 	
-	<div class="by-line">
-		<address class="author vcard full-author">
+	<p class="by-line">
+		<span class="author vcard full-author">
 			<?php printf(__('<span class="by">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_link(false, get_the_author_ID(), $authordata->user_nicename).'" title="View all posts by ' . attribute_escape($authordata->display_name) . '">'.get_the_author().'</a>') ?>
-		</address>
+		</span>
 		<span class="date full-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_time(); ?></abbr></span>
-	</div><!--/by-line-->
+	</p><!--/by-line-->
 	<div class="clear"></div>
 	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit">', '</div>'); ?>
 </div><!-- .post -->
