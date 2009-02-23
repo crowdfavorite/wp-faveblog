@@ -3,6 +3,7 @@
 .rule-minor {
 	background-repeat:no-repeat;
 	background-position:center;
+	border:0;
 }
 .rule {
 	background-image:url(../img/divider-ornament.gif);
@@ -10,7 +11,6 @@
 }
 .rule-major {
 	background-image:url(../img/comments-divider.gif);
-	border:0;
 }
 .rule-minor {
 	background-image:url(../img/divider-ornament.gif);

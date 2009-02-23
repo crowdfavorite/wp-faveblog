@@ -210,13 +210,12 @@ hr {
 	height:1px;
 	margin:0 30px 18px 30px;
 }
-.rule,
-.rule-major,
-.rule-minor {
+.rule-major{
 	background-color:#e9eaea;
 }
 .rule,
 .rule-minor {
+	border-top:1px solid #cecfd1;
 	height:9px;
 	margin:0 0 18px;
 }

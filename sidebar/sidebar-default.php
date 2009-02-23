@@ -26,7 +26,9 @@ $orig_post = $post;
 <div id="sidebar">
 	<div id="carrington-subscribe" class="widget">
 		<h2 class="widget-title"><?php _e('Subscribe', 'carrington-blog'); ?></h2>
-		<a class="feed" title="RSS 2.0 feed for posts" rel="alternate" href="<?php bloginfo('rss2_url') ?>"><?php _e('Site <acronym title="Really Simple Syndication">RSS</acronym> feed', 'carrington-blog'); ?></a>
+		<a class="feed alignright" title="RSS 2.0 feed for posts" rel="alternate" href="<?php bloginfo('rss2_url') ?>">
+			<img src="<?php bloginfo('template_directory'); ?>/img/rss-button.gif" alt="<?php printf( __( '%s latest posts', 'carrington' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" title="<?php printf( __( '%s latest posts', 'carrington' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+		</a>
 	</div><!--.widget-->
 <?php
 $about_text = cfct_about_text();

@@ -557,10 +557,6 @@ h2.widget-title,
 .widget_search input {
 	margin-bottom:6px;
 }
-#carrington-subscribe {
-	overflow:hidden;	
-	padding-bottom:24px;
-}
 #carrington-subscribe h2.widget-title {
 	color:#999;
 	float:left;
@@ -568,14 +564,8 @@ h2.widget-title,
 	margin:7px 0 0;
 	text-transform:uppercase;
 }
-#carrington-subscribe a{
-	float:right;
-	height:26px;
-	text-indent:-32697px;
-	width:130px;
-}
 #carrington-about {
-	padding-bottom:2em;
+	padding-bottom:24px;
 }
 #carrington-about .about{
 	background-color:#cecfd1;
