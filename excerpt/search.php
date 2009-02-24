@@ -24,7 +24,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<div class="entry-content">
 		<?php the_excerpt() ?>
 	</div><!--.entry-content-->
-	<p class="by-line tight">
+	<p class="by-line">
 		<span class="author vcard">
 			<?php printf(__('<span class="by alt-font">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_link(false, get_the_author_ID(), $authordata->user_nicename).'" title="View all posts by ' . attribute_escape($authordata->display_name) . '">'.get_the_author().'</a>'); ?>
 		</span>
