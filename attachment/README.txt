@@ -9,7 +9,7 @@ A "default" template is required, and will be used when there are no other templ
 
 ### Supported Override Filenames
 
-- image-default.php (or default.php)
+- attachment-default.php (or default.php)
 - single-author-{username}.php
 - single-cat-{slug}.php
 - single-role-{rolename}.php
