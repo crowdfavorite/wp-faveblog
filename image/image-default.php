@@ -23,16 +23,17 @@ global $post;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes() ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
 	<title><?php wp_title( '-', true, 'right' ); echo wp_specialchars( get_bloginfo('name'), 1 ); ?></title>
-	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
+	<meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	
 	<link href="<?php bloginfo('url') ?>" rel="home" />
 	
-	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'sandbox' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
-	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'sandbox' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'carrington' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'carrington' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
+	<?php wp_get_archives('type=monthly&format=link'); ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/image.css" />
 
@@ -47,12 +48,12 @@ global $post;
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <div id="gallery-header">
-	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment">&larr; back to &#8220;<?php echo get_the_title($post->post_parent); ?>&#8221;</a>
+	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="up post">&larr; <?php printf(__('back to &#8220;%s&#8221;', 'carrington-blog'), get_the_title($post->post_parent)); ?></a>
 </div>
 
 <div id="gallery-content" class="figure">
 	<div class="entry-attachment">
-		<a title="Link to original file" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'full' ); ?></a>
+		<a title="<?php _e('Link to original file','carrington-blog'); ?>" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'full' ); ?></a>
 	</div>
  	<div class="figure-info">
 		<div class="caption">
@@ -75,11 +76,9 @@ global $post;
 ?>
 </div>
 
-<?php endwhile; else: ?>
-
-		<p>Sorry, no attachments matched your criteria.</p>
-
-<?php endif; ?>
+<?php endwhile; else:
+	cfct_template_file('misc','no-results.php');
+endif; ?>
 
 <?php wp_footer() ?>
 </body>
