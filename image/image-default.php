@@ -36,6 +36,7 @@ global $post;
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/attachment.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/img.css" />
 	
 	<!--[if lte IE 6]>
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/attachment-ie6.css" />
@@ -43,15 +44,15 @@ global $post;
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body id="attachment">
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div id="gallery-header">
-	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="up post">&larr; <?php printf(__('back to &#8220;%s&#8221;', 'carrington-blog'), get_the_title($post->post_parent)); ?></a>
+<div id="header">
+	<a class="wrapper" href="<?php echo get_permalink($post->post_parent); ?>" rev="up post">&larr; <?php printf(__('back to &#8220;%s&#8221;', 'carrington-blog'), get_the_title($post->post_parent)); ?></a>
 </div>
 
-<div id="gallery-content" class="figure">
+<div id="attachment-content" class="figure">
 	<div class="entry-attachment">
 		<a title="<?php _e('Link to original file','carrington-blog'); ?>" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'full' ); ?></a>
 	</div>
