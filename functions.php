@@ -93,6 +93,9 @@ add_action('init', 'cfct_blog_init');
 wp_enqueue_script('jquery');
 wp_enqueue_script('carrington', get_bloginfo('template_directory').'/js/carrington.js', array('jquery'), '1.0');
 
+// Filter comment reply link to work with namespaced comment-reply javascript.
+add_filter('cancel_comment_reply_link', 'cfct_get_cancel_comment_reply_link', 10, 3);
+
 function cfct_blog_head() {
 // see enqueued style in cfct_blog_init, we'll activate that in the future
 	echo '

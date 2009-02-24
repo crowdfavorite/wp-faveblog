@@ -84,11 +84,6 @@ if ('open' == $post->comment_status) {
 			<span class="comment-form-trackback"><?php printf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', 'carrington-blog'), get_trackback_url()); ?></span>
 		</p>
 		<?php
-/*			if(function_exists('comment_id_fields')) {
-				comment_id_fields();
-			} else {
-				echo '<input type="hidden" name="comment_post_ID" value="'.$post->ID.'" />';
-			} */
 			cfct_comment_id_fields();
 			do_action('comment_form', $post->ID);
 		?>

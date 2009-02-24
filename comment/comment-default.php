@@ -20,7 +20,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 global $post, $comment;
 
-extract($data);
+extract($data); // for comment reply link
 ?>
 
 <div id="comment-<?php comment_ID(); ?>" <?php comment_class('hentry'); ?>>
