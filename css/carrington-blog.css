@@ -453,8 +453,8 @@ li.li-comment li.li-comment {
 	padding:0 0 0 60px;
 }
 .commentlist .comment .photo img{
-	float:left;
 	margin-left:-60px;
+	position:absolute;
 }
 .comment cite.fn {
 	font-size:14px;
@@ -462,7 +462,7 @@ li.li-comment li.li-comment {
 }
 .comment .comment-content {
 	overflow:hidden;
-	margin-bottom:5px;
+	margin-bottom:4px;
 }
 .comment .comment-content p:last-child,
 .comment .comment-content p.last-child {
@@ -508,7 +508,7 @@ li.li-comment li.li-comment {
 form.comment-form {
 	background-color:#efeff1;
 	border:1px solid #e9eaea;
-	margin-bottom:2px;
+	margin-bottom:8px;
 	padding:9px;
 }
 .comment-form p {
