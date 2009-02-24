@@ -35,6 +35,7 @@ global $post;
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/image.css" />
+
 	<!--[if lte IE 6]>
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/image-ie6.css" />
 	<![endif]-->
@@ -45,11 +46,11 @@ global $post;
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div id="header">
+<div id="gallery-header">
 	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment">&larr; back to &#8220;<?php echo get_the_title($post->post_parent); ?>&#8221;</a>
 </div>
 
-<div id="content" class="figure">
+<div id="gallery-content" class="figure">
 	<div class="entry-attachment">
 		<a title="Link to original file" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'full' ); ?></a>
 	</div>

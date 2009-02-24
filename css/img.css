@@ -94,6 +94,31 @@ form.comment-form {
 	background:url(../img/watermark-light.gif) repeat-x left top;
 }
 
+/* Gallery
+=================================== */
+
+#gallery-header {
+	background-image:url(../img/header/gradient-dark.png);
+	background-repeat:repeat-x;
+	background-position:center bottom;
+}
+#gallery-header a {
+	background: url(../img/header/texture-dark.png) no-repeat center bottom;
+}
+.figure-info {
+	background:transparent url(../img/divider-ornament-wide-dark.png) no-repeat scroll center top;
+}
+.previous-attachment,
+.next-attachment {
+	padding-bottom:13px;
+}
+.previous-attachment {
+	background:url(../img/image/150px-flourish-left-dark.png) no-repeat right bottom;
+}
+.next-attachment{
+	background:url(../img/image/150px-flourish-right-dark.png) no-repeat left bottom;
+}
+
 /* Misc
 =================================== */
 
