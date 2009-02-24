@@ -23,6 +23,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<h2 class="entry-title"><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title_attribute() ?>" rel="bookmark"><?php the_title() ?></a></h2>
 	<div class="entry-content">
 		<?php the_excerpt() ?>
+		<div class="clear"></div>
 	</div><!--.entry-content-->
 	<p class="by-line">
 		<span class="author vcard">
