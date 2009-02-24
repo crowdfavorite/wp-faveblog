@@ -39,7 +39,7 @@ if ('open' == $post->comment_status) {
 
 <div id="respond-p<?php echo $post->ID; ?>">
 	<form action="<?php echo trailingslashit(get_bloginfo('wpurl')); ?>wp-comments-post.php" method="post" class="comment-form">
-		<p class="comment-form-comment">
+		<p class="comment-form-comment tight">
 			<label class="h3" for="comment-p<?php echo $post->ID; ?>"><?php if(function_exists('comment_form_title')) {
 				comment_form_title();
 				echo ' <em id="cancel-comment-reply">', cancel_comment_reply_link(), '</em>';
@@ -55,16 +55,16 @@ if ('open' == $post->comment_status) {
 	<?php // if you're logged in...
 			if ($user_ID) {
 	?>
-		<p class="logged-in"><?php printf(__('Logged in as <a href="%s">%s</a>. ', 'carrington-blog'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); wp_loginout(); ?>.</p>
+		<p class="logged-in tight"><?php printf(__('Logged in as <a href="%s">%s</a>. ', 'carrington-blog'), get_bloginfo('wpurl').'/wp-admin/profile.php', $user_identity); wp_loginout(); ?>.</p>
 	<?php
 			}
 			else { 
 	?>
-		<p class="comment-form-user-info">
+		<p class="comment-form-user-info tight">
 			<input type="text" id="author-p<?php echo $post->ID; ?>" name="author" value="<?php echo $comment_author; ?>" size="22" />
 			<label for="author-p<?php echo $post->ID; ?>"><?php _e('Name', 'carrington-blog'); if ($req) { echo ' <em>' , _e('(required)', 'carrington-blog'), '</em>'; } ?></label>
 		</p><!--/name-->
-		<p class="comment-form-user-info">
+		<p class="comment-form-user-info tight">
 			<input type="text" id="email-p<?php echo $post->ID; ?>" name="email" value="<?php echo $comment_author_email; ?>" size="22" />
 			<label for="email-p<?php echo $post->ID; ?>"><?php _e('Email ', 'carrington-blog');
 						if ($req) {
@@ -75,14 +75,14 @@ if ('open' == $post->comment_status) {
 						}
 			?></label>
 		</p><!--/email-->
-		<p class="comment-form-user-info">
+		<p class="comment-form-user-info tight">
 			<input type="text" id="url-p<?php echo $post->ID; ?>" name="url" value="<?php echo $comment_author_url; ?>" size="22" />
 			<label title="<?php _e('Your website address', 'carrington-blog'); ?>" for="url-p<?php echo $post->ID; ?>"><?php _e('Web', 'carrington-blog'); ?></label>
 		</p><!--/url-->
 	<?php 
 			} 
 	?>
-		<p>
+		<p class="tight">
 			<input name="submit" type="submit" value="<?php _e('Post comment', 'carrington-blog'); ?>" />
 			<span class="comment-form-trackback"><?php printf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', 'carrington-blog'), get_trackback_url()); ?></span>
 		</p>

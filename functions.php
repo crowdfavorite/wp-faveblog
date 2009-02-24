@@ -176,6 +176,16 @@ a:hover,
 a:visited {
 	color: #<?php echo get_option('cfct_link_color'); ?>;
 }
+.hentry .edit,
+.hentry .edit a,
+.hentry .edit a:visited,
+.hentry .edit a:hover,
+.comment-reply-link,
+.comment-reply-link:visited,
+.comment-reply-link:hover {
+	background-color: #<?php echo get_option('cfct_header_background_color'); ?>;
+	color: #<?php echo get_option('cfct_header_link_color'); ?>;
+}
 #footer {
 	background-color: #<?php echo get_option('cfct_footer_background_color'); ?>;
 	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/gradient-<?php echo $footer_img_type; ?>.png);

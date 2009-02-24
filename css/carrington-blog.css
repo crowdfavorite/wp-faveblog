@@ -325,7 +325,7 @@ h1.page-title {
 	position:relative;
 }
 .hentry .edit{
-	background:#900;
+	background-color:#900;
 	border-radius:4px;
 	-webkit-border-radius:4px;
 	-khtml-border-radius:4px;
@@ -508,16 +508,12 @@ form.comment-form {
 	margin-bottom:8px;
 	padding:9px 9px 0;
 }
-.comment-form p {
-	overflow:hidden;
-	margin:0 0 9px;
-}
 .comment-form label {
 	color:#51555c;
 	font-weight:bold;
 }
 .comment-form-user-info input {
-	margin-right:10px;
+	margin-right:9px;
 	width:200px;
 }
 .comment-form em {
