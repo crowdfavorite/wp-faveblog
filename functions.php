@@ -149,7 +149,8 @@ jQuery(function($) {
 #header .wrapper {
 	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/texture-<?php echo $header_img_type; ?>.png);
 }
-#sub-header {
+#sub-header,
+.nav ul{
 	background-color: #<?php echo get_option('cfct_header_nav_background_color'); ?>;
 	color: #<?php echo get_option('cfct_header_nav_text_color'); ?>;
 }
