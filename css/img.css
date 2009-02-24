@@ -1,6 +1,7 @@
 .rule,
 .rule-major,
 .rule-minor {
+	background-color:#fff;
 	background-repeat:no-repeat;
 	background-position:center;
 	border:0;
@@ -25,7 +26,7 @@
 .pagination,
 .pagination-single {
 	background-image:url(../img/grey-to-white-gradient.png);
-	background-repeat:no-repeat;
+	background-repeat:repeat-x;
 	background-position:left top;
 }
 .close {
@@ -39,7 +40,7 @@
 .excerpt .comments-link a:visited,
 .excerpt .comments-link span{
 	background: url(../img/comment.gif) no-repeat left center;
-	padding: 0 0 0 20px;
+	padding: 1px 0 0 20px;
 }
 .excerpt .comments-link a,
 .excerpt .comments-link a:visited,
