@@ -113,10 +113,10 @@ form.comment-form {
 	padding-bottom:13px;
 }
 .previous-attachment {
-	background:url(../img/image/150px-flourish-left-dark.png) no-repeat right bottom;
+	background:url(../img/attachment/150px-flourish-left-dark.png) no-repeat right bottom;
 }
 .next-attachment{
-	background:url(../img/image/150px-flourish-right-dark.png) no-repeat left bottom;
+	background:url(../img/attachment/150px-flourish-right-dark.png) no-repeat left bottom;
 }
 
 /* Misc
