@@ -36,7 +36,7 @@ global $post;
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/attachment.css" />
-2
+	
 	<!--[if lte IE 6]>
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/attachment-ie6.css" />
 	<![endif]-->
