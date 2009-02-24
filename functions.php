@@ -183,8 +183,7 @@ a:visited {
 .comment-reply-link,
 .comment-reply-link:visited,
 .comment-reply-link:hover {
-	background-color: #<?php echo get_option('cfct_header_background_color'); ?>;
-	color: #<?php echo get_option('cfct_header_link_color'); ?>;
+	background-color: #<?php echo get_option('cfct_link_color'); ?>;
 }
 #footer {
 	background-color: #<?php echo get_option('cfct_footer_background_color'); ?>;
