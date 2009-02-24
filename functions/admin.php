@@ -29,6 +29,7 @@ function cfct_blog_settings_form() {
 	$settings = array(
 		'cfct_ajax_load',
 		'cfct_custom_colors',
+		'cfct_custom_header_image',
 		'cfct_lightbox',
 	);
 	foreach ($values as $k => $v) {
@@ -48,6 +49,7 @@ function cfct_blog_settings_form() {
 		$cfct_posts_per_archive_page = 25;
 	}
 	cfct_get_option('cfct_custom_colors') == 'no' ? $colors_class = 'hidden' : $colors_class = '';
+	cfct_get_option('cfct_custom_header_image') == 'no' ? $header_image_class = 'hidden' : $header_image_class = '';
 	$html = '
 		<table class="form-table">
 			<tbody>
@@ -60,7 +62,7 @@ function cfct_blog_settings_form() {
 								<select name="cfct_custom_colors" id="cfct_custom_colors">'.$cfct_custom_colors_options.'</select>
 							</p>
 							<fieldset class="'.$colors_class.'" id="cfct_color_options_panel">
-								<legend>Custom Colors</legend>
+								<legend>'.__('Custom Colors', 'carrington-blog').'</legend>
 	';
 	foreach ($cfct_color_options as $option => $default) {
 		$value = get_option($option);
@@ -84,7 +86,13 @@ function cfct_blog_settings_form() {
 									<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
 								</p>
 							</fieldset>
+							<p>
+								<label for="cfct_custom_header_image">'.__('Customize Header Image:', 'carrington-blog').'</label>
+								<select name="cfct_custom_header_image" id="cfct_custom_header_image">'.$cfct_custom_header_image_options.'</select>
+							</p>
+							<fieldset class="'.$header_image_class.'" id="cfct_header_image_panel">
 							'.cfct_header_image_form().'
+							</fieldset>
 						</fieldset>
 					</td>
 				</tr>
@@ -155,6 +163,14 @@ jQuery(function($) {
 			$('#cfct_color_options_panel').slideUp();
 		}
 	});
+	$('#cfct_custom_header_image').change(function() {
+		if ($(this).val() == 'yes') {
+			$('#cfct_header_image_panel').slideDown();
+		}
+		else {
+			$('#cfct_header_image_panel').slideUp();
+		}
+	});
 	$('#reset_colors').click(function() {
 		cfct_reset_colors();
 		return false;
@@ -203,8 +219,12 @@ function cfct_blog_admin_css() {
 	border: 1px solid #ccc;
 	padding: 0 20px;
 }
-#cfct_color_options_panel legend {
+#cfct_color_options_panel legend{
+	font-weight: bold;
 	padding: 0 5px;
+}
+#cfct_header_image_panel {
+	padding: 0;
 }
 </style>
 <?php

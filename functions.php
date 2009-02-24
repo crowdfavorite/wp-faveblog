@@ -41,8 +41,10 @@ $cfct_options = array(
 	'cfct_lightbox',
 	'cfct_posts_per_archive_page',
 	'cfct_custom_colors',
+	'cfct_custom_header_image',
 	'cfct_header_image_type',
 	'cfct_footer_image_type',
+	'cfct_header_image'
 );
 
 $cfct_color_options = array(
@@ -73,6 +75,7 @@ function cfct_blog_option_defaults($options) {
 	$options['cfct_latest_limit_3'] = CFCT_HOME_LATEST_LENGTH;
 	$options['cfct_ajax_load'] = 'yes';
 	$options['cfct_custom_colors'] = 'no';
+	$options['cfct_custom_header_image'] = 'no';
 	return $options;
 }
 add_filter('cfct_option_defaults', 'cfct_blog_option_defaults');
@@ -187,16 +190,24 @@ a:visited {
 </style>
 <?php
 	}
-	$header_image = cfct_get_option('cfct_header_image');
-	if ($header_image != 0) {
-		$img = wp_get_attachment_image_src($header_image, 'large');
-		if ($img) {
+	if (cfct_get_option('cfct_custom_header_image') == 'yes') {
+		$header_image = cfct_get_option('cfct_header_image');
+		if ($header_image != 0 && $img = wp_get_attachment_image_src($header_image, 'large')) {
 ?>
 <style type="text/css">
 #header .wrapper {
 	background-image: url(<?php echo $img[0]; ?>);
 	background-repeat: no-repeat;
 	height: <?php echo $img[2]; ?>px;
+}
+</style>
+<?php
+		}
+		else {
+?>
+<style type="text/css">
+#header .wrapper {
+	background-image: url();
 }
 </style>
 <?php
