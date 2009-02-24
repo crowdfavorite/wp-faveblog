@@ -509,7 +509,7 @@ form.comment-form {
 	background-color:#efeff1;
 	border:1px solid #e9eaea;
 	margin-bottom:8px;
-	padding:9px;
+	padding:9px 9px 0;
 }
 .comment-form p {
 	overflow:hidden;
