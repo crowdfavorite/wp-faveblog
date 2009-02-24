@@ -154,8 +154,10 @@ jQuery(function($) {
 	color: #<?php echo get_option('cfct_header_nav_text_color'); ?>;
 }
 #sub-header a,
-#sub-header a:visited {
-	color: #<?php echo get_option('cfct_header_nav_link_color'); ?>;
+#sub-header a:visited,
+.nav li li a,
+.nav li li a:visited {
+	color: #<?php echo get_option('cfct_header_nav_link_color'); ?> !important;
 }
 h1,
 h1 a,
