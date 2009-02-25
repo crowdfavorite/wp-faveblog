@@ -66,13 +66,10 @@ if ('open' == $post->comment_status) {
 		</p><!--/name-->
 		<p class="comment-form-user-info tight">
 			<input type="text" id="email-p<?php echo $post->ID; ?>" name="email" value="<?php echo $comment_author_email; ?>" size="22" />
-			<label for="email-p<?php echo $post->ID; ?>"><?php _e('Email ', 'carrington-blog');
-						if ($req) {
-							echo ' <em>', _e('(required, but never shared)', 'carrington-blog'), '</em>';
-						}
-						else {
-							_e('(never shared)', 'carrington-blog');
-						}
+			<label for="email-p<?php echo $post->ID; ?>"><?php
+				_e('Email ', 'carrington-blog');
+				$req ? $email_note = __('(required, but never shared)', 'carrington-jam') : $email_note = __('(never shared)', 'carrington-jam');
+				echo ' <em>'.$email_note.'</em>';
 			?></label>
 		</p><!--/email-->
 		<p class="comment-form-user-info tight">

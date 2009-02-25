@@ -23,7 +23,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 <li class="li-comment" id="li-comment-<?php comment_ID() ?>">
 	<div class="div-comment" id="div-comment-<?php comment_ID(); ?>">
 <?php
-		cfct_template_file('comment', 'comment-default', $data);
+cfct_comment($data);
 ?>
 	</div>
 <?php
