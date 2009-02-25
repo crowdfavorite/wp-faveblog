@@ -104,7 +104,7 @@ body#attachment #header {
 	background-position:center bottom;
 }
 body#attachment #header .wrapper {
-	background: url(../img/header/texture-dark.png) no-repeat center bottom;
+	background-position:center bottom;
 }
 .figure-info {
 	background:transparent url(../img/divider-ornament-wide-dark.png) no-repeat scroll center top;
