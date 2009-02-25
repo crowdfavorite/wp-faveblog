@@ -72,6 +72,7 @@ form.comment-form {
 }
 #sidebar {
 	background:url(../img/sidebar-background.gif) no-repeat left top;
+	background-color: #fff !important;
 }
 #footer {
 	background-image: url(../img/footer/gradient-dark.png);
