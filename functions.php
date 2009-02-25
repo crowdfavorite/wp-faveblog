@@ -44,7 +44,8 @@ $cfct_options = array(
 	'cfct_custom_header_image',
 	'cfct_header_image_type',
 	'cfct_footer_image_type',
-	'cfct_header_image'
+	'cfct_header_image',
+	'cfct_css_background_images',
 );
 
 $cfct_color_options = array(
@@ -76,6 +77,7 @@ function cfct_blog_option_defaults($options) {
 	$options['cfct_ajax_load'] = 'yes';
 	$options['cfct_custom_colors'] = 'no';
 	$options['cfct_custom_header_image'] = 'no';
+	$options['cfct_css_background_images'] = 'yes';
 	return $options;
 }
 add_filter('cfct_option_defaults', 'cfct_blog_option_defaults');

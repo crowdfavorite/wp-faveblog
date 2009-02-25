@@ -31,6 +31,7 @@ function cfct_blog_settings_form() {
 		'cfct_custom_colors',
 		'cfct_custom_header_image',
 		'cfct_lightbox',
+		'cfct_css_background_images',
 	);
 	foreach ($values as $k => $v) {
 		foreach ($settings as $setting) {
@@ -58,6 +59,10 @@ function cfct_blog_settings_form() {
 					<td>
 						<fieldset>
 							<p>
+								<label for="cfct_css_background_images">'.__('Show Pretty Background Images:', 'carrington-blog').'</label>
+								<select name="cfct_css_background_images" id="cfct_css_background_images">'.$cfct_css_background_images_options.'</select>
+							</p>
+							<p>
 								<label for="cfct_custom_colors">'.__('Customize Colors:', 'carrington-blog').'</label>
 								<select name="cfct_custom_colors" id="cfct_custom_colors">'.$cfct_custom_colors_options.'</select>
 							</p>
@@ -84,6 +89,7 @@ function cfct_blog_settings_form() {
 									<input type="hidden" name="cfct_header_image_type" id="cfct_header_image_type" value="dark" />
 									<input type="hidden" name="cfct_footer_image_type" id="cfct_footer_image_type" value="dark" />
 									<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
+									<input id="preview_colors" type="button" name="preview_colors" value="'.__('Preview', 'carrington-blog').'" onclick="alert(\'Coming Soon...\'); return false;" />
 								</p>
 							</fieldset>
 							<p>
@@ -225,6 +231,9 @@ function cfct_blog_admin_css() {
 }
 #cfct_header_image_panel {
 	padding: 0;
+}
+#reset_colors {
+	float: right;
 }
 </style>
 <?php

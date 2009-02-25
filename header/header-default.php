@@ -20,6 +20,8 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 is_home() ? $title_description = ' - '.get_bloginfo('description') : $title_description = '';
 
+cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes() ?>>
@@ -32,7 +34,7 @@ is_home() ? $title_description = ' - '.get_bloginfo('description') : $title_desc
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/carrington-blog.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/css.php<?php echo $css_ext; ?>" />
 
 	<!--[if lt IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" type="text/css" media="screen" />

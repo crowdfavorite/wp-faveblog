@@ -18,6 +18,8 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
+cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=attachment-noimg' : $css_ext = '?type=attachment';
+
 global $post;
 
 ?>
@@ -35,8 +37,7 @@ global $post;
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/attachment.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/img.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/css.php<?php echo $css_ext; ?>" />
 	
 	<!--[if lte IE 6]>
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/attachment-ie6.css" />
