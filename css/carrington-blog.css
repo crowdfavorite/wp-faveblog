@@ -584,6 +584,16 @@ h2.widget-title,
 
 /* Misc
 =================================== */
+
+#footer p#developer-link a,
+#footer p#developer-link a:visited {
+	background:url(../img/footer/by-crowd-favorite-light.png) no-repeat left top;
+	float:right;
+	height:30px;
+	text-indent:-32697px;
+	width:240px;
+}
+
 #TB_secondLine {
 	color:#999;
 	font-family: Georgia, Palatino, "Palatino Linotype", Baskerville, serif;

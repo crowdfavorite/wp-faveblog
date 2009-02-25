@@ -140,15 +140,6 @@ body#attachment #header .wrapper {
 /* Misc
 =================================== */
 
-#footer p#developer-link a,
-#footer p#developer-link a:visited {
-	background:url(../img/footer/by-crowd-favorite-light.png) no-repeat left top;
-	float:right;
-	height:30px;
-	text-indent:-32697px;
-	width:240px;
-}
-
 #TB_title{
 	background-image: url(../img/header/texture-dark.png);
 	background-repeat:no-repeat;
