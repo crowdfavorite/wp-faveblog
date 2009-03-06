@@ -89,7 +89,7 @@ function cfct_blog_settings_form() {
 									<input type="hidden" name="cfct_header_image_type" id="cfct_header_image_type" value="dark" />
 									<input type="hidden" name="cfct_footer_image_type" id="cfct_footer_image_type" value="dark" />
 									<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
-									<a href="#" id="preview_colors" class="thickbox button" title="Custom Color Preview">'.__('Preview', 'carrington-blog').'</a>
+									<a href="#" id="preview_colors" class="thickbox button" title="'.__('Custom Color Preview - Remember to Save!', 'carrington-blog').'">'.__('Preview', 'carrington-blog').'</a>
 								</p>
 							</fieldset>
 							<p>
