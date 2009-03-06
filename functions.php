@@ -103,9 +103,11 @@ add_filter('cancel_comment_reply_link', 'cfct_get_cancel_comment_reply_link', 10
 
 function cfct_blog_head() {
 // see enqueued style in cfct_blog_init, we'll activate that in the future
-	echo '
+	if (cfct_get_option('cfct_lightbox') != 'no') {
+		echo '
 <link rel="stylesheet" type="text/css" media="screen" href="'.get_bloginfo('template_directory').'/carrington-core/lightbox/css/thickbox.css" />
-	';
+		';
+	}
 	cfct_get_option('cfct_ajax_load') == 'no' ? $ajax_load = 'false' : $ajax_load = 'true';
 	echo '
 <script type="text/javascript">
@@ -127,92 +129,12 @@ jQuery(function($) {
 </script>
 		';
 	}
-	if (cfct_get_option('cfct_custom_colors') == 'yes') {
-		if (get_option('cfct_header_image_type') == 'light') {
-			$header_img_type = 'light';
-			$header_grad_type = 'dark';
-		}
-		else {
-			$header_img_type = 'dark';
-			$header_grad_type = 'light';
-		}
-		get_option('cfct_footer_image_type') == 'light' ? $footer_img_type = 'light' : $footer_img_type = 'dark';
-?>
-<style type="text/css">
-#header {
-	background-color: #<?php echo get_option('cfct_header_background_color'); ?>;
-	color: #<?php echo get_option('cfct_header_text_color'); ?>;
-}
-#header a,
-#header a:visited {
-	color: #<?php echo get_option('cfct_header_link_color'); ?>;
-}
-#sub-header,
-.nav ul{
-	background-color: #<?php echo get_option('cfct_header_nav_background_color'); ?>;
-	color: #<?php echo get_option('cfct_header_nav_text_color'); ?>;
-}
-#sub-header a,
-#sub-header a:visited,
-.nav li li a,
-.nav li li a:visited {
-	color: #<?php echo get_option('cfct_header_nav_link_color'); ?> !important;
-}
-h1,
-h1 a,
-h1 a:hover,
-h1 a:visited {
-	color: #<?php echo get_option('cfct_page_title_color'); ?>;
-}
-h2,
-h2 a,
-h2 a:hover,
-h2 a:visited {
-	color: #<?php echo get_option('cfct_page_subtitle_color'); ?>;
-}
-a,
-a:hover,
-a:visited {
-	color: #<?php echo get_option('cfct_link_color'); ?>;
-}
-.hentry .edit,
-.hentry .edit a,
-.hentry .edit a:visited,
-.hentry .edit a:hover,
-.comment-reply-link,
-.comment-reply-link:visited,
-.comment-reply-link:hover {
-	background-color: #<?php echo get_option('cfct_link_color'); ?>;
-}
-#footer {
-	background-color: #<?php echo get_option('cfct_footer_background_color'); ?>;
-	color: #<?php echo get_option('cfct_footer_text_color'); ?>;
-}
-#footer a,
-#footer a:visited {
-	color: #<?php echo get_option('cfct_footer_link_color'); ?>;
-}
-#footer p#developer-link a,
-#footer p#developer-link a:visited {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/by-crowd-favorite-<?php echo $footer_img_type; ?>.png);
-}
-<?php
-		if (cfct_get_option('cfct_css_background_images') != 'no') {
-?>
-#header {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/gradient-<?php echo $header_grad_type; ?>.png);
-}
-#header .wrapper {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/texture-<?php echo $header_img_type; ?>.png);
-}
-#footer {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/gradient-<?php echo $footer_img_type; ?>.png);
-}
-<?php
-		}
-?>
-</style>
-<?php
+// preview
+	if (isset($_GET['cfct_action']) && $_GET['cfct_action'] == 'custom_color_preview' && current_user_can('manage_options')) {
+		cfct_custom_colors('preview');
+	}
+	else if (cfct_get_option('cfct_custom_colors') == 'yes') {
+		cfct_custom_colors();
 	}
 	if (cfct_get_option('cfct_custom_header_image') == 'yes') {
 		$header_image = cfct_get_option('cfct_header_image');
@@ -239,6 +161,114 @@ a:visited {
 	}
 }
 add_action('wp_head', 'cfct_blog_head');
+
+function cfct_custom_colors($type = 'option') {
+	$colors = cfct_get_custom_colors($type);
+	if (get_option('cfct_header_image_type') == 'light') {
+		$header_img_type = 'light';
+		$header_grad_type = 'dark';
+	}
+	else {
+		$header_img_type = 'dark';
+		$header_grad_type = 'light';
+	}
+	get_option('cfct_footer_image_type') == 'light' ? $footer_img_type = 'light' : $footer_img_type = 'dark';
+?>
+<style type="text/css">
+#header {
+	background-color: #<?php echo $colors['cfct_header_background_color']; ?>;
+	color: #<?php echo $colors['cfct_header_text_color']; ?>;
+}
+#header a,
+#header a:visited {
+	color: #<?php echo $colors['cfct_header_link_color']; ?>;
+}
+#sub-header,
+.nav ul{
+	background-color: #<?php echo $colors['cfct_header_nav_background_color']; ?>;
+	color: #<?php echo $colors['cfct_header_nav_text_color']; ?>;
+}
+#sub-header a,
+#sub-header a:visited,
+.nav li li a,
+.nav li li a:visited {
+	color: #<?php echo $colors['cfct_header_nav_link_color']; ?> !important;
+}
+h1,
+h1 a,
+h1 a:hover,
+h1 a:visited {
+	color: #<?php echo $colors['cfct_page_title_color']; ?>;
+}
+h2,
+h2 a,
+h2 a:hover,
+h2 a:visited {
+	color: #<?php echo $colors['cfct_page_subtitle_color']; ?>;
+}
+a,
+a:hover,
+a:visited {
+	color: #<?php echo $colors['cfct_link_color']; ?>;
+}
+.hentry .edit,
+.hentry .edit a,
+.hentry .edit a:visited,
+.hentry .edit a:hover,
+.comment-reply-link,
+.comment-reply-link:visited,
+.comment-reply-link:hover {
+	background-color: #<?php echo $colors['cfct_link_color']; ?>;
+}
+#footer {
+	background-color: #<?php echo $colors['cfct_footer_background_color']; ?>;
+	color: #<?php echo $colors['cfct_footer_text_color']; ?>;
+}
+#footer a,
+#footer a:visited {
+	color: #<?php echo $colors['cfct_footer_link_color']; ?>;
+}
+#footer p#developer-link a,
+#footer p#developer-link a:visited {
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/by-crowd-favorite-<?php echo $footer_img_type; ?>.png);
+}
+<?php
+	if (cfct_get_option('cfct_css_background_images') != 'no') {
+?>
+#header {
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/gradient-<?php echo $header_grad_type; ?>.png);
+}
+#header .wrapper {
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/texture-<?php echo $header_img_type; ?>.png);
+}
+#footer {
+	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/gradient-<?php echo $footer_img_type; ?>.png);
+}
+<?php
+	}
+?>
+</style>
+<?php
+
+
+}
+
+function cfct_get_custom_colors($type = 'option') {
+	global $cfct_color_options;
+	$colors = array();
+	foreach ($cfct_color_options as $option => $value) {
+		switch ($type) {
+			case 'preview':
+				!empty($_GET[$option]) ? $colors[$option] = strip_tags(stripslashes($_GET[$option])) : $colors[$option] = '';
+				break;
+			case 'option':
+			default:
+				$colors[$option] = cfct_get_option($option);
+				break;
+		}
+	}
+	return $colors;
+}
 
 include_once(CFCT_PATH.'functions/admin.php');
 include_once(CFCT_PATH.'functions/sidebars.php');

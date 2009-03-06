@@ -84,12 +84,14 @@ function cfct_blog_settings_form() {
 								</p>
 		';
 	}
+// 									<input id="preview_colors" type="button" name="preview_colors" value="'.__('Preview', 'carrington-blog').'" />
+
 	$html .= '
 								<p class="submit">
 									<input type="hidden" name="cfct_header_image_type" id="cfct_header_image_type" value="dark" />
 									<input type="hidden" name="cfct_footer_image_type" id="cfct_footer_image_type" value="dark" />
 									<input id="reset_colors" type="reset" name="reset_button" value="'.__('Reset to Default Colors', 'carrington-blog').'" />
-									<input id="preview_colors" type="button" name="preview_colors" value="'.__('Preview', 'carrington-blog').'" onclick="alert(\'Coming Soon...\'); return false;" />
+									<a href="#" id="preview_colors" class="thickbox" name="preview_colors">'.__('Preview', 'carrington-blog').'</a>
 								</p>
 							</fieldset>
 							<p>
@@ -181,6 +183,17 @@ jQuery(function($) {
 		cfct_reset_colors();
 		return false;
 	});
+// 	$('#preview_colors').click(function() {
+// 		var preview_url = '<?php echo trailingslashit(bloginfo('home')); ?>?cfct_action=custom_color_preview';
+// <?php
+// foreach ($cfct_color_options as $k => $v) {
+// 	echo 'preview_url += "&'.$k.'=" + encodeURIComponent($("#'.$k.'").val());';
+// }
+// ?>
+// 		$(this).val('href', preview_url);
+// 
+/// 		return false;
+// 	});
 });
 cfct_reset_colors = function() {
 <?php
@@ -208,11 +221,28 @@ cfct_color_preview = function(elem, hex) {
 		color: color
 	});
 	cfct_set_image_types();
+	cfct_set_preview_url();
+}
+cfct_set_preview_url = function() {
+	var preview_url = '<?php echo trailingslashit(bloginfo('home')); ?>?cfct_action=custom_color_preview';
+<?php
+foreach ($cfct_color_options as $k => $v) {
+echo 'preview_url += "&'.$k.'=" + encodeURIComponent(jQuery("#'.$k.'").val());';
+}
+?>
+	var H = jQuery(window).height();
+	var W = jQuery(window).width();
+	jQuery('#preview_colors').attr('href', preview_url + '&TB_iframe=true' + '&width=' + ( W - 110 ) + '&height=' + ( H - 100 ));
+
 }
 </script>
 <?php
 }
 add_action('admin_head', 'cfct_blog_admin_js');
+
+if (is_admin()) {
+	wp_enqueue_script('thickbox');
+}
 
 function cfct_blog_admin_css() {
 // override default WP admin setting
@@ -222,10 +252,11 @@ function cfct_blog_admin_css() {
 	-moz-box-sizing:content-box;
 }
 #cfct_color_options_panel {
+	background: #fff;
 	border: 1px solid #ccc;
 	padding: 0 20px;
 }
-#cfct_color_options_panel legend{
+#cfct_color_options_panel legend {
 	font-weight: bold;
 	padding: 0 5px;
 }
