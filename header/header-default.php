@@ -18,7 +18,8 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
-is_home() ? $title_description = ' - '.get_bloginfo('description') : $title_description = '';
+$blog_desc = get_bloginfo('description');
+(is_home() && !empty($blog_desc)) ? $title_description = ' - '.$blog_desc : $title_description = '';
 
 cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 

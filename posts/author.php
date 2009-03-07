@@ -41,7 +41,7 @@ if (have_posts()) {
 		<h2><?php printf(__('About %s', 'carrington-blog'), get_author_name($authordata->ID)); ?></h2>
 	
 <?php 
-			echo apply_filters('the_content', get_the_author_description()); 
+			echo cfct_basic_content_formatting(get_the_author_description()); 
 ?>
 	
 	</div>
