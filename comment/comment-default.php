@@ -54,7 +54,7 @@ printf(__('%s <span class="says">says</span>', 'carrington-blog'), '<cite class=
 		if (function_exists('comment_reply_link')) {
 			comment_reply_link(array_merge( $args, array('respond_id' => 'respond-p' . $post->ID, 'depth' => $depth, 'max_depth' => $args['max_depth'])), $comment, $post);
 		}
-		edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="edit-comment edit">', '</div>');
+		edit_comment_link(__('Edit', 'carrington-blog'), '<div class="edit-comment edit">', '</div>');
 ?>
 	</div>
 </div><!--.comment-->

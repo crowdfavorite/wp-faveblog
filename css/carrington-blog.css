@@ -322,7 +322,7 @@ h1.page-title {
 .hentry {
 	position:relative;
 }
-.hentry .edit{
+.hentry .edit {
 	background-color:#900;
 	border-radius:4px;
 	-webkit-border-radius:4px;
@@ -330,22 +330,25 @@ h1.page-title {
 	-moz-border-radius:4px;
 	font-size: 11.5px;
 	opacity:.60;
-	padding:4px 7px 2px;
+	padding:3px 5px 1px;
 	left:-32697px;
 	position:absolute;
 	top:0;
 }
 .post:hover .edit-post,
-.comment .hentry:hover .edit-comment {
+.comment.hentry:hover .edit-comment {
 	left: auto;
 	right:0;
+}
+.comment.hentry.bypostauthor:hover .edit-comment {
+	top: 2px;
+	right: 2px;
 }
 .edit a,
 .edit a:visited,
 .edit a:hover{
 	color:#fff;
 }
-
 .full .full-content {
 	clear:both;
 	padding-top: 9px;
@@ -520,7 +523,7 @@ form.comment-form {
 	font-style:normal;
 	font-size:12px;
 }
-.comment-form textarea{
+.comment-form textarea {
 	height:9em;
 	width:95%;
 }

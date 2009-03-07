@@ -36,5 +36,5 @@ $previousday = -1;
 		<span class="date full-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_time(); ?></abbr></span>
 	</p><!--/by-line-->
 	<div class="clear"></div>
-	<?php edit_post_link(__('Edit This', 'carrington-blog'), '<div class="edit">', '</div>'); ?>
+	<?php edit_post_link(__('Edit', 'carrington-blog'), '<div class="edit">', '</div>'); ?>
 </div><!-- .post -->

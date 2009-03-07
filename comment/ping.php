@@ -29,5 +29,5 @@ printf(__('<cite class="vcard author fn entry-title">%s</cite> <span class="link
 		<span class="on"><?php _e('on'); ?></span> <abbr class="published" title="<?php comment_date('Y-m-d\TH:i:sO'); ?>"><?php comment_date(); ?></abbr>
 	</span>
 	<blockquote class="entry-summary" cite="<?php comment_author_url(); ?>"><?php comment_text() ?></blockquote> 
-	<?php edit_comment_link(__('Edit This', 'carrington-blog'), '<div class="edit edit-comment">', '</div>'); ?>
+	<?php edit_comment_link(__('Edit', 'carrington-blog'), '<div class="edit edit-comment">', '</div>'); ?>
 </div><!--.ping-->
