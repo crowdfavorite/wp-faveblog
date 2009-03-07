@@ -55,7 +55,7 @@ global $post;
 
 <div id="attachment-content" class="figure">
 	<div class="entry-attachment">
-		<a title="<?php _e('Link to original file','carrington-blog'); ?>" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'full' ); ?></a>
+		<a title="<?php _e('Link to original file','carrington-blog'); ?>" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?></a>
 	</div>
  	<div class="figure-info">
 		<div class="caption">

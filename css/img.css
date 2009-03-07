@@ -145,9 +145,3 @@ body#attachment #header .wrapper {
 	background-repeat:no-repeat;
 	background-position:center bottom;
 }
-a#TB_prev:hover {
-	background:url(../img/lightbox/prevlabel.gif) no-repeat left center;
-}
-a#TB_next:hover {
-	background:url(../img/lightbox/nextlabel.gif) no-repeat right center;
-}
