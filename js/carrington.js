@@ -12,7 +12,7 @@ cfct.ajax_post_content = function() {
 		var excerpt = jQuery('#post-excerpt-' + post_id);
 		var target = jQuery('#post-content-' + post_id + '-target');
 		excerpt.hide();
-		target.hide().html(cfct.loading()).load(CFCT_URL + '/index.php?cfct_action=post_content&id=' + post_id, function() {
+		target.html(cfct.loading()).show().load(CFCT_URL + '/index.php?cfct_action=post_content&id=' + post_id, function() {
 			cfct.ajax_post_comments();
 			jQuery('#post_close_' + post_id + ' a').click(function() {
 				target.slideUp(function() {
@@ -20,7 +20,7 @@ cfct.ajax_post_content = function() {
 				});
 				return false;
 			});
-			jQuery(this).slideDown();
+			jQuery(this).hide().slideDown();
 		});
 		return false;
 	});
@@ -31,8 +31,8 @@ cfct.ajax_post_comments = function() {
 		var a = jQuery(this);
 		var post_id = a.attr('rev').replace('post-', '');
 		var target = jQuery('#post-comments-' + post_id + '-target');
-		target.hide().html(cfct.loading()).load(CFCT_URL + '/index.php?cfct_action=post_comments&id=' + post_id, function() {
-			jQuery(this).slideDown(function() {
+		target.html(cfct.loading()).show().load(CFCT_URL + '/index.php?cfct_action=post_comments&id=' + post_id, function() {
+			jQuery(this).hide().slideDown(function() {
 				a.attr('rel', a.html()).html('Hide Comments').unbind().click(function() {
 					target.slideUp(function() {
 						a.html(a.attr('rel'));
