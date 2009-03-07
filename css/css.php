@@ -15,6 +15,8 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 // **********************************************************************
 
+define('ABSPATH', dirname(__FILE__) . '/');
+
 $css_files = array(
 	'attachment' => 'attachment.css',
 	'carrington-blog' => 'carrington-blog.css',
@@ -49,7 +51,7 @@ header("Cache-Control: public");
 header('Expires: '.gmdate('D, d M Y H:i:s', time() + 86400) . 'GMT'); 
 
 foreach ($load as $file) {
-	readfile($css_files[$file]);
+	include(ABSPATH.$css_files[$file]);
 	echo "\n\n";
 }
 
