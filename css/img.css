@@ -71,7 +71,7 @@
 }
 
 form.comment-form {
-	background-color: url(../img/watermark-light.gif) repeat-x left top;
+	background-image: url(../img/watermark-light.gif);
 	background-repeat:repeat-x;
 	background-position:left top;
 }
