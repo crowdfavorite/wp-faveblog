@@ -27,6 +27,10 @@ $css_files = array(
 // set default
 $load = array('typography', 'carrington-blog', 'img');
 
+if (!isset($_GET['type'])) {
+	$_GET['type'] = 'main';
+}
+
 switch ($_GET['type']) {
 	case 'attachment':
 		$load = array('typography', 'attachment', 'img');
