@@ -20,7 +20,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 get_header();
 
-$tag_title = '<a href="'.get_tag_link(intval(get_query_var('tag_id'))).'" title="">'.single_tag_title('', false).'</a>';
+$tag_title = '<a href="'.get_tag_link(intval(get_query_var('tag_id'))).'">'.single_tag_title('', false).'</a>';
 
 
 ?>

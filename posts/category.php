@@ -20,7 +20,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 get_header();
 
-$cat_title = '<a href="'.get_category_link(intval(get_query_var('cat'))).'" title="">'.single_cat_title('', false).'</a>';
+$cat_title = '<a href="'.get_category_link(intval(get_query_var('cat'))).'">'.single_cat_title('', false).'</a>';
 
 ?>
 

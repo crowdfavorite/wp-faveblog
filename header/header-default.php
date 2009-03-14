@@ -62,11 +62,11 @@ cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg'
 
 <body>
 	<div id="page">
-		<div id="top"><a class="accessibility" href="#content" title="<?php _e( 'Skip to content', 'sandbox' ) ?>"><?php _e( 'Skip to content', 'carrington' ); ?></a></div>
+		<div id="top"><a class="accessibility" href="#content"><?php _e( 'Skip to content', 'carrington' ); ?></a></div>
 		<hr class="lofi" />
 		<div id="header" class="section">
 			<div class="wrapper">
-				<strong id="blog-title"><a href="<?php bloginfo('url') ?>/" title="Home" rel="home"><?php bloginfo('name') ?></a></strong>
+				<strong id="blog-title"><a href="<?php bloginfo('url') ?>/" rel="home"><?php bloginfo('name') ?></a></strong>
 				<p id="blog-description"><?php bloginfo('description'); ?></p>
 				<div id="navigation">
 					<ul class="nav clearfix">
