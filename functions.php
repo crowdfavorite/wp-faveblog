@@ -131,10 +131,10 @@ jQuery(function($) {
 	}
 // preview
 	if (isset($_GET['cfct_action']) && $_GET['cfct_action'] == 'custom_color_preview' && current_user_can('manage_options')) {
-		cfct_custom_colors('preview');
+		cfct_blog_custom_colors('preview');
 	}
 	else if (cfct_get_option('cfct_custom_colors') == 'yes') {
-		cfct_custom_colors();
+		cfct_blog_custom_colors();
 	}
 	if (cfct_get_option('cfct_custom_header_image') == 'yes') {
 		$header_image = cfct_get_option('cfct_header_image');
