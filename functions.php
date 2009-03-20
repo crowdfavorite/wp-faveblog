@@ -253,23 +253,6 @@ a:visited {
 
 }
 
-function cfct_get_custom_colors($type = 'option') {
-	global $cfct_color_options;
-	$colors = array();
-	foreach ($cfct_color_options as $option => $value) {
-		switch ($type) {
-			case 'preview':
-				!empty($_GET[$option]) ? $colors[$option] = strip_tags(stripslashes($_GET[$option])) : $colors[$option] = '';
-				break;
-			case 'option':
-			default:
-				$colors[$option] = cfct_get_option($option);
-				break;
-		}
-	}
-	return $colors;
-}
-
 include_once(CFCT_PATH.'functions/admin.php');
 include_once(CFCT_PATH.'functions/sidebars.php');
 
