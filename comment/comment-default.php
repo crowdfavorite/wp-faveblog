@@ -37,13 +37,14 @@ printf(__('%s <span class="says">says</span>', 'carrington-blog'), '<cite class=
 	</address><!--.vcard-->
 
 	<div class="entry-content comment-content">
-		<?php if ($comment->comment_approved == '0') {
-		?>
+<?php
+if ($comment->comment_approved == '0') {
+?>
 			<p class="notification"><strong><?php _e('(Your comment is awaiting moderation)', 'carrington-blog'); ?></strong></p>
-		<?php 
-		}
-		?>
-		<?php comment_text() ?>
+<?php 
+}
+comment_text();
+?>
 	</div><!--.entry-content-->
 	<div class="clear"></div>
 	<div class="comment-meta commentmetadata small">
@@ -51,10 +52,10 @@ printf(__('%s <span class="says">says</span>', 'carrington-blog'), '<cite class=
 			<abbr class="published" title="<?php comment_time('Y-m-d\TH:i') ?>"><?php comment_date(); ?>, <a title="<?php _e('Permanent link to this comment','carrington-blog'); ?>" rel="bookmark" href="<?php the_permalink(); ?>#comment-<?php comment_ID(); ?>"><?php comment_time(); ?></a></abbr>
 		</span><!--.date-->
 <?php
-		if (function_exists('comment_reply_link')) {
-			comment_reply_link(array_merge( $args, array('respond_id' => 'respond-p' . $post->ID, 'depth' => $depth, 'max_depth' => $args['max_depth'])), $comment, $post);
-		}
-		edit_comment_link(__('Edit', 'carrington-blog'), '<div class="edit-comment edit">', '</div>');
+if (function_exists('comment_reply_link')) {
+	comment_reply_link(array_merge( $args, array('respond_id' => 'respond-p' . $post->ID, 'depth' => $depth, 'max_depth' => $args['max_depth'])), $comment, $post);
+}
+edit_comment_link(__('Edit', 'carrington-blog'), '<div class="edit-comment edit">', '</div>');
 ?>
 	</div>
 </div><!--.comment-->

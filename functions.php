@@ -162,7 +162,7 @@ jQuery(function($) {
 }
 add_action('wp_head', 'cfct_blog_head');
 
-function cfct_custom_colors($type = 'option') {
+function cfct_blog_custom_colors($type = 'option') {
 	$colors = cfct_get_custom_colors($type);
 	if (get_option('cfct_header_image_type') == 'light') {
 		$header_img_type = 'light';
@@ -249,7 +249,6 @@ a:visited {
 ?>
 </style>
 <?php
-
 
 }
 
