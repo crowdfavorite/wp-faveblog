@@ -62,7 +62,7 @@ cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg'
 
 <body>
 	<div id="page">
-		<div id="top"><a class="accessibility" href="#content"><?php _e( 'Skip to content', 'carrington' ); ?></a></div>
+		<div id="top"><a class="accessibility" href="#content"><?php _e( 'Skip to content', 'carrington-blog' ); ?></a></div>
 		<hr class="lofi" />
 		<div id="header" class="section">
 			<div class="wrapper">
