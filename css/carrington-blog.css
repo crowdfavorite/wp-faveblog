@@ -89,14 +89,13 @@ h1.page-title {
 	color: #a00004 !important; /* These need to retain a contrasting color with dropdown background */
 	padding:6px 9px;
 }
+.nav li ul,
 .nav li li {
-	float: none;
 	margin-right:0;
-	position: relative;
+	width: 200px;
 }
 .nav li li ul {
-	margin-left:200px;
-	top:-1px;
+	margin:-31px 0 0 200px;
 }
 .nav li.secondary {
 	float:right;
@@ -106,14 +105,18 @@ h1.page-title {
 /* dropdown action */
 .nav li ul,
 .nav li:hover li ul,
-.nav li li:hover li ul {
+.nav li li:hover li ul,
+.nav li.hover li ul,
+.nav li li.hover li ul {
 	left: -32697px;
 	position: absolute;
-	width: 200px;
 }
 .nav li:hover ul,
 .nav li li:hover ul,
-.nav li li li:hover ul {
+.nav li li li:hover ul,
+.nav li.hover ul,
+.nav li li.hover ul,
+.nav li li li.hover ul {
 	left: auto;
 }
 
@@ -217,7 +220,6 @@ h1.page-title {
 #header .wrapper {
 	background-repeat:repeat-x;
 	background-position:center bottom;
-	overflow: hidden;
 	padding: 13px 10px 10px;
 }
 #header a,

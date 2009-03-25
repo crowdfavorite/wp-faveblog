@@ -32,6 +32,10 @@ ul li,
 	width:100%;
 }
 
+/* Suckerfish dropdowns stick in IE7 without this bit */
+*:first-child+html .nav {height: 1%;} 
+*:first-child+html .nav li {height: 1%;}
+
 /* Margin float fix */
 .full p.comments-link{
 	margin:0;

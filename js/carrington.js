@@ -95,7 +95,7 @@ addComment = {
 	}
 }
 
-jQuery(document).ready(function($) {
+jQuery(function($) {
 	// :first-child fix for IE on nav
 	$('.nav li:first-child').addClass('first-child');
 	// :first-child fix for IE
@@ -107,9 +107,19 @@ jQuery(document).ready(function($) {
 	$('.full').mouseout(function() {
 		$(this).removeClass('hover');
 	});
+
+	// Suckerfish dropdowns IE :hover fix
+	$('.nav li').mouseover(function() {
+		$(this).addClass('hover');
+	});
+	$('.nav li').mouseout(function() {
+		$(this).removeClass('hover');
+	});
+	
 	if ((!$.browser.msie || $.browser.version.substr(0,1) != '6') && typeof CFCT_AJAX_LOAD != 'undefined' && CFCT_AJAX_LOAD) {
 		cfct.ajax_post_content();
 		cfct.ajax_post_comments();
 	}
-	$('#navigation li a, #all-categories li a').removeAttr('title');
+	$('.nav li a').removeAttr('title');
+	
 });
