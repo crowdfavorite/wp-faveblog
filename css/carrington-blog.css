@@ -335,6 +335,7 @@ h1.page-title {
 	position:absolute;
 	top:0;
 }
+.hentry:hover .edit,
 .post:hover .edit-post,
 .comment.hentry:hover .edit-comment {
 	left: auto;
