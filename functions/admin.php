@@ -227,7 +227,8 @@ echo 'preview_url += "&'.$k.'=" + encodeURIComponent(jQuery("#'.$k.'").val());';
 }
 add_action('admin_head', 'cfct_blog_admin_js');
 
-if (is_admin()) {
+// our copy of thickbox used for color previews
+if (is_admin() && $_GET['page'] == 'carrington-settings') {
 	wp_enqueue_script('cfct_thickbox', get_bloginfo('template_directory').'/carrington-core/lightbox/thickbox.js', array('jquery'), '1.0');
 }
 
