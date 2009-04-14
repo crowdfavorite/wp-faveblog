@@ -24,11 +24,11 @@ get_header();
 
 <div id="content">
 <?php
-	cfct_loop();
+cfct_loop();
 ?>
 	<div id="comments">
 <?php
-	comments_template();
+comments_template();
 ?>
 	</div><!--#comments-->
 
@@ -39,7 +39,8 @@ get_header();
 
 </div><!--#content-->
 
-<?php 
+<?php
+
 get_sidebar();
 
 get_footer();
