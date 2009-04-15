@@ -343,6 +343,10 @@ h1.page-title {
 	left: auto;
 	right:0;
 }
+.hentry:hover .edit-comment {
+	left:-32697px;
+	right: auto;
+}
 .comment.hentry.bypostauthor:hover .edit-comment {
 	top: 2px;
 	right: 2px;
