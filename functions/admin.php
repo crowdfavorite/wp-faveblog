@@ -225,7 +225,9 @@ echo 'preview_url += "&'.$k.'=" + encodeURIComponent(jQuery("#'.$k.'").val());';
 </script>
 <?php
 }
-add_action('admin_head', 'cfct_blog_admin_js');
+if ($_GET['page'] == 'carrington-settings') {
+	add_action('admin_head', 'cfct_blog_admin_js');
+}
 
 function cfct_blog_admin_css() {
 // override default WP admin setting
