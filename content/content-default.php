@@ -27,7 +27,15 @@ $previousday = -1;
 	<h1 class="entry-title full-title"><a href="<?php the_permalink() ?>" title="Permanent link to <?php the_title_attribute() ?>" rel="bookmark" rev="post-<?php the_ID(); ?>"><?php the_title() ?></a></h1>
 	
 	<div class="entry-content full-content">
-		<?php the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); link_pages('<p class="pages-link">'.__('Pages: ', 'carrington-blog'), "</p>\n", 'number'); ?>
+<?php 
+		the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); 
+		$args = array(
+			'before' => '<p class="pages-link">'. __('Pages: ', 'carrington-blog'),
+			'after' => "</p>\n",
+			'next_or_number' => 'number'
+		);
+		wp_link_pages($args);
+?>
 		<div class="clear"></div>
 	</div><!-- .entry-content-->
 	
