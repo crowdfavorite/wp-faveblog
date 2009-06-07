@@ -81,7 +81,7 @@ cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg'
 			<div class="wrapper">
 				<?php cfct_form('search'); ?>
 				<div id="all-categories">
-					<strong id="all-categories-title">Categories:</strong>
+					<strong id="all-categories-title"><?php _e('Categories:', 'carrington-blog'); ?></strong>
 					<ul class="nav clearfix">
 						<?php wp_list_categories('title_li='); ?>
 					</ul>
