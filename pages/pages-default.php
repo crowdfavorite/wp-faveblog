@@ -1,9 +1,5 @@
 <?php
 
-/*
-Template Name: Default
-*/
-
 // This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
