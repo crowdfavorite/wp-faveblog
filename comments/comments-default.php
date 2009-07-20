@@ -20,7 +20,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 global $post, $wp_query, $comments, $comment;
 
-if ($comments || 'open' == $post->comment_status) {
+if (have_comments() || 'open' == $post->comment_status) {
 	if (empty($post->post_password) || $_COOKIE['wp-postpass_' . COOKIEHASH] == $post->post_password) {
 		$comments = $wp_query->comments;
 		$comment_count = count($comments);
