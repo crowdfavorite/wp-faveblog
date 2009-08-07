@@ -48,7 +48,7 @@ $use_background_img == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_belatedPNG.js"></script>
 		<script type="text/javascript">
-			DD_belatedPNG.fix('img, <?php if ($use_background_img == 'yes') { echo '#header, #footer, #header .wrapper, #footer .wrapper, '; } ?>#developer-link a');
+			DD_belatedPNG.fix('img, <?php if ($use_background_img == 'yes') { echo '#header, #footer, #header .wrapper, #footer .wrapper, #TB_title, '; } ?>#developer-link a');
 		</script>
 	<![endif]-->
 	
