@@ -40,7 +40,10 @@ global $post;
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/css.php<?php echo $css_ext; ?>" />
 	
 	<!--[if lte IE 6]>
-		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/css/attachment-ie6.css" />
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_belatedPNG.js"></script>
+		<script type="text/javascript">
+			DD_belatedPNG.fix('img, #header, #header .wrapper, .figure-info, .previous-attachment, .next-attachment');
+		</script>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>

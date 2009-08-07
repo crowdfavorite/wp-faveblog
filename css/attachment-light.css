@@ -46,7 +46,7 @@
 }
 .figure-info .title {
  	margin:0;
-	word-wrap: break-word; /* works in IE, Safari and FF 3.1 beta */
+	word-wrap: break-word; /* works in IE, Safari and FF 3 */
 }
 .figure-info .caption {
 	color:#777;

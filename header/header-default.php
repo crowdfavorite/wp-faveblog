@@ -43,19 +43,12 @@ cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg'
 	<![endif]-->
 	
 	<!--[if lt IE 7]>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/iepngfix_tilebg.js"></script>
-		<script type="text/javascript">
-			var CFCT_BLANKIMG = '<?php bloginfo('template_url'); ?>/img/ie/blank.gif';
-		</script>
-		<style type="text/css" media="screen">
-			/* IE6 PNG fix */
-			img,
-			#header .wrapper,
-			#footer .wrapper{
-				behavior: url(<?php bloginfo('template_url') ?>/css/iepngfix.htc);
-			}
-		</style>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie6.css" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_belatedPNG.js"></script>
+		<script type="text/javascript">
+			DD_belatedPNG.fix('img, #header, #footer, #header .wrapper, #footer .wrapper, #developer-link a');
+		</script>
 	<![endif]-->
 	
 	<?php wp_head(); ?>
