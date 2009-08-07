@@ -18,7 +18,8 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
-cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=attachment-noimg' : $css_ext = '?type=attachment';
+$use_background_img = cfct_get_option('cfct_css_background_images');
+$use_background_img == 'no' ? $css_ext = '?type=attachment-noimg' : $css_ext = '?type=attachment';
 
 global $post;
 
@@ -39,12 +40,15 @@ global $post;
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/css.php<?php echo $css_ext; ?>" />
 	
+	<?php if ($use_background_img == 'yes'): ?>
 	<!--[if lte IE 6]>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_belatedPNG.js"></script>
 		<script type="text/javascript">
 			DD_belatedPNG.fix('img, #header, #header .wrapper, .figure-info, .previous-attachment, .next-attachment');
 		</script>
 	<![endif]-->
+	<?php endif; ?>
+
 	<?php wp_head(); ?>
 </head>
 

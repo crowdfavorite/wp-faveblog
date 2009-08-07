@@ -21,7 +21,8 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 $blog_desc = get_bloginfo('description');
 (is_home() && !empty($blog_desc)) ? $title_description = ' - '.$blog_desc : $title_description = '';
 
-cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
+$use_background_img = cfct_get_option('cfct_css_background_images');
+$use_background_img == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -38,16 +39,16 @@ cfct_get_option('cfct_css_background_images') == 'no' ? $css_ext = '?type=noimg'
 	
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/css.php<?php echo $css_ext; ?>" />
 
-	<!--[if lt IE 8]>
+	<!--[if lte IE 7]>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" type="text/css" media="screen" />
 	<![endif]-->
 	
-	<!--[if lt IE 7]>
+	<!--[if lte IE 6]>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie6.css" type="text/css" media="screen" />
-		
+
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_belatedPNG.js"></script>
 		<script type="text/javascript">
-			DD_belatedPNG.fix('img, #header, #footer, #header .wrapper, #footer .wrapper, #developer-link a');
+			DD_belatedPNG.fix('img, <?php if ($use_background_img == 'yes') { echo '#header, #footer, #header .wrapper, #footer .wrapper, '; } ?>#developer-link a');
 		</script>
 	<![endif]-->
 	
