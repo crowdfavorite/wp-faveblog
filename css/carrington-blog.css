@@ -382,6 +382,13 @@ a.page-numbers {
 	float:right;
 }
 
+.hentry ul {
+	margin-left: 20px;
+}
+.hentry ol {
+	margin-left: 32px;
+}
+
 .archive {
 	border-top: 1px dotted #cecfd1;
 	list-style: none;
@@ -590,6 +597,9 @@ h2.widget-title,
 #carrington-archives li a {
 	display:block;
 	padding:6px 0;
+}
+#sidebar ol {
+	margin-left: 26px;
 }
 
 /* Misc
