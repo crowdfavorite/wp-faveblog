@@ -225,7 +225,7 @@ echo 'preview_url += "&'.$k.'=" + encodeURIComponent(jQuery("#'.$k.'").val());';
 </script>
 <?php
 }
-if ($_GET['page'] == 'carrington-settings') {
+if (isset($_GET['page']) && $_GET['page'] == 'carrington-settings') {
 	add_action('admin_head', 'cfct_blog_admin_js');
 }
 
