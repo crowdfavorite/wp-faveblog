@@ -3,7 +3,7 @@
 // This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
-// Copyright (c) 2008-2009 Crowd Favorite, Ltd. All rights reserved.
+// Copyright (c) 2008-2010 Crowd Favorite, Ltd. All rights reserved.
 // http://crowdfavorite.com
 //
 // Released under the GPL license
@@ -74,5 +74,6 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar'
 }
 ?>
 	</div><!--#secondary-sidebar-->
+
 	<div class="clear"></div>
 </div><!--#sidebar-->
