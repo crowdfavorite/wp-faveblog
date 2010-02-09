@@ -30,7 +30,7 @@ if (have_posts()) {
 		the_post();
 ?>
 
-	<h1 class="page-title"><?php printf(__('Posts by: <a href="%s">%s</a>', 'carrington-blog'), get_author_posts_url($authordata->ID), get_author_name($authordata->ID)); ?></h1>
+	<h1 class="page-title"><?php printf(__('Posts by: <a href="%s">%s</a>', 'carrington-blog'), get_author_posts_url($authordata->ID), get_the_author_meta('display_name', $authordata->ID)); ?></h1>
 
 <?php
 		if (!empty($bio)) {
