@@ -27,7 +27,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	</div><!--.entry-content-->
 	<p class="by-line">
 		<span class="author vcard">
-			<?php printf(__('<span class="by alt-font">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_link(false, get_the_author_ID(), $authordata->user_nicename).'" title="View all posts by ' . attribute_escape($authordata->display_name) . '">'.get_the_author().'</a>'); ?>
+			<?php printf(__('<span class="by alt-font">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_posts_url(get_the_author_meta('ID')).'" title="View all posts by ' . attribute_escape(get_the_author()) . '">'.get_the_author().'</a>') ?>
 		</span>
 		<span class="date"><span class="ndash alt-font">&ndash;</span> <abbr class="published" title="<?php the_time('Y-m-d\TH:i'); ?>"><?php the_time('F j, Y'); ?></abbr></span>
 	</p>
