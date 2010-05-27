@@ -122,7 +122,7 @@ tb_pathToImage = "' . get_bloginfo('template_directory') . '/carrington-core/lig
 jQuery(function($) {
 	$("a.thickbox").each(function() {
 		var url = $(this).attr("rel");
-		var post_id = $(this).parents("div.post").attr("id");
+		var post_id = $(this).parents("div.post, div.page").attr("id");
 		$(this).attr("href", url).attr("rel", post_id);
 	});
 });
