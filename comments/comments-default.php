@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of the Carrington Blog Theme for WordPress
 // http://carringtontheme.com
 //
@@ -20,24 +19,17 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
 global $post, $wp_query, $comments, $comment;
 
-if (have_comments() || 'open' == $post->comment_status) {
-	if (empty($post->post_password) || $_COOKIE['wp-postpass_' . COOKIEHASH] == $post->post_password) {
-		$comments = $wp_query->comments;
-		$comment_count = count($comments);
-		$comment_count == 1 ? $comment_title = __('One Response', 'carrington-blog') : $comment_title = sprintf(__('%d Responses', 'carrington-blog'), $comment_count);
-	}
-
+if (have_comments() || comments_open()) {
 ?>
-
 <div class="rule-major"><hr /></div>
-
-<h2 class="h1 comments-title"><?php echo $comment_title; ?></h2>
+<h2 class="h1 comments-title" id="comments"><?php comments_number(__('No Responses (yet)', 'carrington-blog'), __('One Response', 'carrington-blog'), __('% Responses', 'carrington-blog')); ?></h2>
 
 <p><?php printf(__('Stay in touch with the conversation, subscribe to the <a class="feed" rel="alternate" href="%s"><acronym title="Really Simple Syndication">RSS</acronym> feed for comments on this post</a>.', 'carrington-blog'), get_post_comments_feed_link($post->ID, '')); ?></p>
 
 <?php 
 
-	if ($comments) {
+	if (!post_password_required()) {
+		$comments = $wp_query->comments;
 		$comment_count = 0;
 		$ping_count = 0;
 		foreach ($comments as $comment) {
@@ -49,15 +41,16 @@ if (have_comments() || 'open' == $post->comment_status) {
 			}
 		}
 		if ($comment_count) {
-			cfct_template_file('comments', 'comments-loop');
+			echo '<ol class="commentlist hfeed">', wp_list_comments('type=comment&callback=cfct_threaded_comment'), '</ol>';
+			if ( $pagination = paginate_comments_links(array('echo' => false)) ) {
+				echo '<p class="comment-pagination">'.$pagination.'</p>';
+			}
 		}
 		if ($ping_count) {
-
 ?>
 <h3 class="pings"><?php _e('Continuing the Discussion', 'carrington-blog'); ?></h3>
 <?php
-
-			cfct_template_file('comments', 'pings-loop');
+			echo '<ol class="pinglist commentlist hfeed">', wp_list_comments('type=pings&callback=cfct_threaded_comment'), '</ol>';
 		}
 	}
 	cfct_form('comment');
