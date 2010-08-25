@@ -56,7 +56,7 @@ if (comments_open()) {
 			</span>
 		</p>
 <?php // if you're not logged in...
-		if (!$user_ID) {
+		if (!is_user_logged_in()) {
 ?>
 		<p class="comment-form-user-info tight">
 			<input type="text" id="author-p<?php echo $post->ID; ?>" name="author" value="<?php echo $comment_author; ?>" size="22" />
