@@ -36,13 +36,10 @@ function cfct_blog_settings_form() {
 	foreach ($values as $k => $v) {
 		foreach ($settings as $setting) {
 			$options = $setting.'_options';
-			if ($k == cfct_get_option($setting)) {
-				$selected = 'selected="selected"';
+			if (empty($$options)) {
+				$$options = '';
 			}
-			else {
-				$selected = '';
-			}
-			$$options .= "\n\t<option value='$k' $selected>$v</option>";
+			$$options .= "\n\t".'<option value="'.$k.'" '.selected($k, cfct_get_option($setting), false).'>'.$v.'</option>';
 		}
 	}
 	$cfct_posts_per_archive_page = get_option('cfct_posts_per_archive_page');
@@ -55,7 +52,7 @@ function cfct_blog_settings_form() {
 		<table class="form-table">
 			<tbody>
 				<tr valign="top">
-					<th scope="row">'.sprintf(__('Design', 'carrington-blog'), $key).'</td>
+					<th scope="row">'.__('Design', 'carrington-blog').'</td>
 					<td>
 						<fieldset>
 							<p>
@@ -107,7 +104,7 @@ function cfct_blog_settings_form() {
 		<table class="form-table">
 			<tbody>
 				<tr valign="top">
-					<th scope="row">'.sprintf(__('Behavior', 'carrington-blog'), $key).'</td>
+					<th scope="row">'.__('Behavior', 'carrington-blog').'</td>
 					<td>
 						<fieldset>
 							<p>

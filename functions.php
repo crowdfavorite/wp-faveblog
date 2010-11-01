@@ -144,7 +144,7 @@ jQuery(function($) {
 #header .wrapper {
 	background-image: url(<?php echo $img[0]; ?>);
 	background-repeat: no-repeat;
-	height: <?php echo $img[2]; ?>px;
+	min-height: <?php echo $img[2]; ?>px;
 }
 </style>
 <?php
