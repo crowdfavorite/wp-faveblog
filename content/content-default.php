@@ -17,10 +17,6 @@
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
-
-global $previousday;
-$previousday = -1;
-
 ?>
 <div id="post-content-<?php the_ID() ?>" <?php post_class('full'); ?>>
 	
@@ -50,7 +46,7 @@ $previousday = -1;
 		<span class="author vcard full-author">
 			<?php printf(__('<span class="by alt-font">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_posts_url(get_the_author_meta('ID')).'" title="View all posts by ' . attribute_escape(get_the_author()) . '">'.get_the_author().'</a>') ?>
 		</span>
-		<span class="date full-date"><span class="ndash alt-font">&ndash;</span> <abbr class="published" title="<?php the_time('Y-m-d\TH:i'); ?>"><?php the_date(); ?></abbr></span>
+		<span class="date full-date"><span class="ndash alt-font">&ndash;</span> <abbr class="published" title="<?php the_time('Y-m-d\TH:i'); ?>"><?php the_time('F j, Y'); ?></abbr></span>
 	</p><!--/by-line-->
 
 	<div id="post-comments-<?php the_ID(); ?>-target"></div>
