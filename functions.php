@@ -397,7 +397,7 @@ class CFCT_Comment_Form {
 		$result = '';
 		
 		// Add trackback link, since this function renders right next to the submit button
-		$result .= ' <span class="comment-form-trackback">'.sprintf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', 'carrington-text'), get_trackback_url()).'</span>';
+		$result .= ' <span class="comment-form-trackback">'.sprintf(__('or, reply to this post via <a rel="trackback" href="%s">trackback</a>.', self:$i18n), get_trackback_url()).'</span>';
 		
 		// Add our customized comment ID fields
 		$result .= cfct_get_comment_id_fields($id, $replytoid);
