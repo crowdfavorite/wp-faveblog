@@ -53,7 +53,7 @@ if (have_comments() || comments_open()) {
 			echo '<ol class="pinglist commentlist hfeed">', wp_list_comments('type=pings&callback=cfct_threaded_comment'), '</ol>';
 		}
 	}
-	cfct_form('comment');
+	comment_form();
 }
 
 ?>

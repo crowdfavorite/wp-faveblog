@@ -517,7 +517,7 @@ li.li-comment li.li-comment {
 	margin:0;
 	padding:0;
 }
-form.comment-form {
+.respond {
 	background-color:#efeff1;
 	border:1px solid #e9eaea;
 	margin-bottom:8px;
@@ -531,15 +531,32 @@ form.comment-form {
 	margin-right:9px;
 	width:200px;
 }
-.comment-form em {
+.comment-form .help,
+.comment-form-title small {
 	color:#999;
 	font-weight:normal;
 	font-style:normal;
 	font-size:12px;
 }
+.comment-form-title small a {
+	color: #A00004;
+}
+.comment-form-title small a:hover {
+	text-decoration: underline;
+}
+.comment-form .some-html-is-ok {
+	display: block;
+	margin-bottom: 9px;
+}
+.comment-form-comment {
+	margin-bottom: 0;
+}
 .comment-form textarea {
 	height:9em;
 	width:95%;
+}
+.comment-form .form-submit {
+	margin-bottom: 9px;
 }
 
 /* Sidebar and Widgets
