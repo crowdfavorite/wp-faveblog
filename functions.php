@@ -23,10 +23,43 @@ define('CFCT_DEBUG', false);
 define('CFCT_PATH', trailingslashit(TEMPLATEPATH));
 define('CFCT_HOME_LIST_LENGTH', 5);
 define('CFCT_HOME_LATEST_LENGTH', 250);
+define('CFCT_VER', '1.1');
 
 include_once(CFCT_PATH.'functions/admin.php');
-include_once(CFCT_PATH.'functions/sidebars.php');
 include_once(CFCT_PATH.'carrington-core/carrington.php');
+
+/**
+ * Load in assets at wp_enqueue_scripts hook
+ * This function loads a file that contains calls to wp_enqueue_script
+ * and wp_enqueue_style, etc.
+ */
+function cfct_load_front_end_assets() {
+	cfct_template_file('assets', 'load');
+}
+add_action('wp_enqueue_scripts', 'cfct_load_front_end_assets');
+
+/**
+ * Theme setup work
+ */
+function cfct_setup() {
+	$sidebar_defaults = array(
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '<div class="clear"></div></div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>'
+	);
+	
+	register_sidebar(array_merge(
+		$sidebar_defaults,
+		array('name' => 'Primary Sidebar')
+	));
+	
+	register_sidebar(array_merge(
+		$sidebar_defaults,
+		array('name' => 'Secondary Sidebar')
+	));
+}
+add_action('after_setup_theme', 'cfct_setup');
 
 $cfct_options = array(
 	'cfct_home_column_1_cat',
@@ -86,175 +119,8 @@ function cfct_blog_option_defaults($options) {
 }
 add_filter('cfct_option_defaults', 'cfct_blog_option_defaults');
 
-
-function cfct_blog_init() {
-	if (cfct_get_option('cfct_ajax_load') == 'yes') {
-		cfct_ajax_load();
-	}
-	if (cfct_get_option('cfct_lightbox') != 'no' && !is_admin()) {
-		wp_enqueue_script('cfct_thickbox', get_bloginfo('template_directory').'/carrington-core/lightbox/thickbox.js', array('jquery'), '1.0');
-// in the future we'll use this, but for now we want 2.5 compatibility
-//		wp_enqueue_style('jquery-lightbox', get_bloginfo('template_directory').'/carrington-core/lightbox/css/lightbox.css');
-	}
-}
-add_action('init', 'cfct_blog_init');
-
-wp_enqueue_script('jquery');
-wp_enqueue_script('carrington', get_bloginfo('template_directory').'/js/carrington.js', array('jquery'), '1.0');
-
 // Filter comment reply link to work with namespaced comment-reply javascript.
 add_filter('cancel_comment_reply_link', 'cfct_get_cancel_comment_reply_link', 10, 3);
-
-function cfct_blog_head() {
-// see enqueued style in cfct_blog_init, we'll activate that in the future
-	if (cfct_get_option('cfct_lightbox') != 'no') {
-		echo '
-<link rel="stylesheet" type="text/css" media="screen" href="'.get_bloginfo('template_directory').'/carrington-core/lightbox/css/thickbox.css" />
-		';
-	}
-	cfct_get_option('cfct_ajax_load') == 'no' ? $ajax_load = 'false' : $ajax_load = 'true';
-	echo '
-<script type="text/javascript">
-var CFCT_URL = "'.get_bloginfo('url').'";
-var CFCT_AJAX_LOAD = '.$ajax_load.';
-</script>
-	';
-	if (cfct_get_option('cfct_lightbox') != 'no') {
-		echo '
-<script type="text/javascript">
-tb_pathToImage = "' . get_bloginfo('template_directory') . '/carrington-core/lightbox/img/loadingAnimation.gif";
-jQuery(function($) {
-	$("a.thickbox").each(function() {
-		var url = $(this).attr("rel");
-		var post_id = $(this).parents("div.post, div.page").attr("id");
-		$(this).attr("href", url).attr("rel", post_id);
-	});
-});
-</script>
-		';
-	}
-// preview
-	if (isset($_GET['cfct_action']) && $_GET['cfct_action'] == 'custom_color_preview' && current_user_can('manage_options')) {
-		cfct_blog_custom_colors('preview');
-	}
-	else if (cfct_get_option('cfct_custom_colors') == 'yes') {
-		cfct_blog_custom_colors();
-	}
-	if (cfct_get_option('cfct_custom_header_image') == 'yes') {
-		$header_image = cfct_get_option('cfct_header_image');
-		if ($header_image != 0 && $img = wp_get_attachment_image_src($header_image, 'large')) {
-?>
-<style type="text/css">
-#header .wrapper {
-	background-image: url(<?php echo $img[0]; ?>);
-	background-repeat: no-repeat;
-	min-height: <?php echo $img[2]; ?>px;
-}
-</style>
-<?php
-		}
-		else {
-?>
-<style type="text/css">
-#header .wrapper {
-	background-image: url();
-}
-</style>
-<?php
-		}
-	}
-}
-add_action('wp_head', 'cfct_blog_head');
-
-function cfct_blog_custom_colors($type = 'option') {
-	$colors = cfct_get_custom_colors($type);
-	if (get_option('cfct_header_image_type') == 'light') {
-		$header_img_type = 'light';
-		$header_grad_type = 'dark';
-	}
-	else {
-		$header_img_type = 'dark';
-		$header_grad_type = 'light';
-	}
-	get_option('cfct_footer_image_type') == 'light' ? $footer_img_type = 'light' : $footer_img_type = 'dark';
-?>
-<style type="text/css">
-#header {
-	background-color: #<?php echo $colors['cfct_header_background_color']; ?>;
-	color: #<?php echo $colors['cfct_header_text_color']; ?>;
-}
-#header a,
-#header a:visited {
-	color: #<?php echo $colors['cfct_header_link_color']; ?>;
-}
-#sub-header,
-.nav ul{
-	background-color: #<?php echo $colors['cfct_header_nav_background_color']; ?>;
-	color: #<?php echo $colors['cfct_header_nav_text_color']; ?>;
-}
-#sub-header a,
-#sub-header a:visited,
-.nav li li a,
-.nav li li a:visited {
-	color: #<?php echo $colors['cfct_header_nav_link_color']; ?> !important;
-}
-h1,
-h1 a,
-h1 a:hover,
-h1 a:visited {
-	color: #<?php echo $colors['cfct_page_title_color']; ?>;
-}
-h2,
-h2 a,
-h2 a:hover,
-h2 a:visited {
-	color: #<?php echo $colors['cfct_page_subtitle_color']; ?>;
-}
-a,
-a:hover,
-a:visited {
-	color: #<?php echo $colors['cfct_link_color']; ?>;
-}
-.hentry .edit,
-.hentry .edit a,
-.hentry .edit a:visited,
-.hentry .edit a:hover,
-.comment-reply-link,
-.comment-reply-link:visited,
-.comment-reply-link:hover {
-	background-color: #<?php echo $colors['cfct_link_color']; ?>;
-}
-#footer {
-	background-color: #<?php echo $colors['cfct_footer_background_color']; ?>;
-	color: #<?php echo $colors['cfct_footer_text_color']; ?>;
-}
-#footer a,
-#footer a:visited {
-	color: #<?php echo $colors['cfct_footer_link_color']; ?>;
-}
-#footer p#developer-link a,
-#footer p#developer-link a:visited {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/by-crowd-favorite-<?php echo $footer_img_type; ?>.png);
-}
-<?php
-	if (cfct_get_option('cfct_css_background_images') != 'no') {
-?>
-#header {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/gradient-<?php echo $header_grad_type; ?>.png);
-}
-#header .wrapper {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/header/texture-<?php echo $header_img_type; ?>.png);
-}
-#footer {
-	background-image: url(<?php bloginfo('template_directory'); ?>/img/footer/gradient-<?php echo $footer_img_type; ?>.png);
-}
-<?php
-	}
-?>
-</style>
-<?php
-
-}
 
 /**
  * Start and end an output buffer at specific actions that you specify.

@@ -37,21 +37,6 @@ $use_background_img == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/css.php<?php echo $css_ext; ?>" />
-
-	<!--[if lte IE 7]>
-		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" type="text/css" media="screen" />
-	<![endif]-->
-	
-	<!--[if lte IE 6]>
-		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie6.css" type="text/css" media="screen" />
-
-		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_belatedPNG.js"></script>
-		<script type="text/javascript">
-			DD_belatedPNG.fix('img, <?php if ($use_background_img == 'yes') { echo '#header, #footer, #header .wrapper, #footer .wrapper, #TB_title, '; } ?>#developer-link a');
-		</script>
-	<![endif]-->
-	
 	<?php wp_head(); ?>
 </head>
 
