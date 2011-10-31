@@ -25,22 +25,16 @@ $use_background_img = cfct_get_option('cfct_css_background_images');
 $use_background_img == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes() ?>>
-<head profile="http://gmpg.org/xfn/11">
-	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
+<!DOCTYPE html>
+<html <?php language_attributes() ?>>
+<head>
+	<meta charset="<?php bloginfo('charset') ?>" />
 
 	<title><?php wp_title( '-', true, 'right' ); echo esc_html( get_bloginfo('name') ).$title_description; ?></title>
 	
-	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ),  get_bloginfo('name'))) ?>" />
-	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php esc_attr(printf( __( '%s latest comments', 'carrington' ),  get_bloginfo('name')) ) ?>" />
-	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
-	<?php wp_get_archives('type=monthly&format=link'); ?>
-	
 	<?php wp_head(); ?>
 </head>
-
-<body>
+<body <?php body_class(); ?>>
 	<div id="page">
 		<div id="top"><a class="accessibility" href="#content"><?php _e( 'Skip to content', 'carrington-blog' ); ?></a></div>
 		<hr class="lofi" />

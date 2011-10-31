@@ -58,8 +58,15 @@ function cfct_setup() {
 		$sidebar_defaults,
 		array('name' => 'Secondary Sidebar')
 	));
+	
+	add_theme_support('automatic-feed-links');
 }
 add_action('after_setup_theme', 'cfct_setup');
+
+function cfct_add_pingback_link() {
+	echo '<link rel="pingback" href="'.get_bloginfo('pingback_url').'" />';
+}
+add_action('wp_head', 'cfct_add_pingback_link');
 
 $cfct_options = array(
 	'cfct_home_column_1_cat',
