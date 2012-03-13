@@ -31,18 +31,18 @@ global $post;
 	<title><?php wp_title( '-', true, 'right' ); echo esc_html( get_bloginfo('name') ); ?></title>
 	<meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	
-	<link href="<?php bloginfo('url') ?>" rel="home" />
+	<link href="<?php echo home_url() ?>" rel="home" />
 	
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ), get_bloginfo('name')) ) ?>" />
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php esc_attr(printf( __( '%s latest comments', 'carrington' ), get_bloginfo('name')) ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_url') ?>/css/css.php<?php echo $css_ext; ?>" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri() ?>/css/css.php<?php echo $css_ext; ?>" />
 	
 	<?php if ($use_background_img == 'yes'): ?>
 	<!--[if lte IE 6]>
-		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_belatedPNG.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/DD_belatedPNG.js"></script>
 		<script type="text/javascript">
 			DD_belatedPNG.fix('img, #header, #header .wrapper, .figure-info, .previous-attachment, .next-attachment');
 		</script>

@@ -27,7 +27,7 @@ $orig_post = $post;
 	<div id="carrington-subscribe" class="widget">
 		<h2 class="widget-title"><?php _e('Subscribe', 'carrington-blog'); ?></h2>
 		<a class="feed alignright" title="RSS 2.0 feed for posts" rel="alternate" href="<?php bloginfo('rss2_url') ?>">
-			<img src="<?php bloginfo('template_directory'); ?>/img/rss-button.gif" alt="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ), get_bloginfo('name'))) ?>" title="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ), get_bloginfo('name'))) ?>" />
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/rss-button.gif" alt="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ), get_bloginfo('name'))) ?>" title="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ), get_bloginfo('name'))) ?>" />
 		</a>
 	</div><!--.widget-->
 <?php

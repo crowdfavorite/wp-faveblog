@@ -41,6 +41,10 @@ add_action('wp_enqueue_scripts', 'cfct_load_front_end_assets');
 /**
  * Theme setup work
  */
+
+// If the content width is not defined, set it to 960px.
+if ( ! isset( $content_width ) ) $content_width = 960;
+
 function cfct_setup() {
 	$sidebar_defaults = array(
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',

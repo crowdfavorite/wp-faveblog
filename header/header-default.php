@@ -40,7 +40,7 @@ $use_background_img == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 		<hr class="lofi" />
 		<div id="header" class="section">
 			<div class="wrapper">
-				<strong id="blog-title"><a href="<?php bloginfo('url') ?>/" rel="home"><?php bloginfo('name') ?></a></strong>
+				<strong id="blog-title"><a href="<?php echo home_url() ?>/" rel="home"><?php bloginfo('name') ?></a></strong>
 				<p id="blog-description"><?php bloginfo('description'); ?></p>
 				<div id="navigation">
 					<ul class="nav clearfix">

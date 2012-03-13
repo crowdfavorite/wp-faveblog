@@ -191,6 +191,11 @@ h1.page-title {
 	padding: 0 4px 5px;
 	margin: 0;
 }
+.gallery-caption {
+	font-size:11px;
+	line-height:17px;
+	margin:0;
+}
 
 /* Structure
 ================================================
@@ -441,7 +446,10 @@ a.page-numbers {
 	border-top: 1px dotted #cecfd1;
 	padding-top:18px;
 }
-
+.sticky {
+	border:3px solid #A00004;
+	padding:10px;
+}
 /* Comments and comment form
 =================================== */
 .commentlist{
@@ -630,7 +638,6 @@ h2.widget-title,
 	text-indent:-32697px;
 	width:270px;
 }
-
 #TB_secondLine {
 	color:#999;
 	font-family: Georgia, Palatino, "Palatino Linotype", Baskerville, serif;
