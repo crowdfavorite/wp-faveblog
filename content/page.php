@@ -23,9 +23,9 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	
 	<div class="entry-content full-content">
 <?php 
-		the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); 
+		the_content('<span class="more-link">'.__('Continued...', 'fave-blog').'</span>'); 
 		$args = array(
-			'before' => '<p class="pages-link">'. __('Pages: ', 'carrington-blog'),
+			'before' => '<p class="pages-link">'. __('Pages: ', 'fave-blog'),
 			'after' => "</p>\n",
 			'next_or_number' => 'number'
 		);
@@ -36,10 +36,10 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	
 	<p class="by-line">
 		<span class="author vcard full-author">
-			<?php printf(__('<span class="by alt-font">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_posts_url(get_the_author_meta('ID')).'" title="View all posts by ' . esc_attr(get_the_author()) . '">'.get_the_author().'</a>') ?>
+			<?php printf(__('<span class="by alt-font">By</span> %s', 'fave-blog'), '<a class="url fn" href="'.get_author_posts_url(get_the_author_meta('ID')).'" title="View all posts by ' . esc_attr(get_the_author()) . '">'.get_the_author().'</a>') ?>
 		</span>
 		<span class="date full-date"><abbr class="published" title="<?php the_time('c'); ?>"><?php the_time('F j, Y'); ?></abbr></span>
 	</p><!--/by-line-->
 	<div class="clear"></div>
-	<?php edit_post_link(__('Edit', 'carrington-blog'), '<div class="edit">', '</div>'); ?>
+	<?php edit_post_link(__('Edit', 'fave-blog'), '<div class="edit">', '</div>'); ?>
 </div><!-- .post -->

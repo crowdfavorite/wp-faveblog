@@ -25,7 +25,7 @@ $cat_title = '<a href="'.get_category_link(intval(get_query_var('cat'))).'">'.si
 ?>
 
 <div id="content">
-	<h1 class="page-title"><?php printf(__('Category Archives: %s', 'carrington-blog'), $cat_title); ?></h1>
+	<h1 class="page-title"><?php printf(__('Category Archives: %s', 'fave-blog'), $cat_title); ?></h1>
 
 	<div class="description"><?php echo category_description(); ?></div>
 

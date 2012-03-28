@@ -22,9 +22,9 @@ global $post, $wp_query, $comments, $comment;
 if (have_comments() || comments_open()) {
 ?>
 <div class="rule-major"><hr /></div>
-<h2 class="h1 comments-title" id="comments"><?php comments_number(__('No Responses (yet)', 'carrington-blog'), __('One Response', 'carrington-blog'), __('% Responses', 'carrington-blog')); ?></h2>
+<h2 class="h1 comments-title" id="comments"><?php comments_number(__('No Responses (yet)', 'fave-blog'), __('One Response', 'fave-blog'), __('% Responses', 'fave-blog')); ?></h2>
 
-<p><?php printf(__('Stay in touch with the conversation, subscribe to the <a class="feed" rel="alternate" href="%s"><acronym title="Really Simple Syndication">RSS</acronym> feed for comments on this post</a>.', 'carrington-blog'), get_post_comments_feed_link($post->ID, '')); ?></p>
+<p><?php printf(__('Stay in touch with the conversation, subscribe to the <a class="feed" rel="alternate" href="%s"><acronym title="Really Simple Syndication">RSS</acronym> feed for comments on this post</a>.', 'fave-blog'), get_post_comments_feed_link($post->ID, '')); ?></p>
 
 <?php 
 
@@ -48,7 +48,7 @@ if (have_comments() || comments_open()) {
 		}
 		if ($ping_count) {
 ?>
-<h3 class="pings"><?php _e('Continuing the Discussion', 'carrington-blog'); ?></h3>
+<h3 class="pings"><?php _e('Continuing the Discussion', 'fave-blog'); ?></h3>
 <?php
 			echo '<ol class="pinglist commentlist hfeed">', wp_list_comments('type=pings&callback=cfct_threaded_comment'), '</ol>';
 		}

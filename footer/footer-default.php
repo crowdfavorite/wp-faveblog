@@ -25,11 +25,11 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 		<hr class="lofi" />
 		<div id="footer" class="section">
 			<div class="wrapper">		
-				<p id="generator-link"><?php _e('Proudly powered by <a href="http://wordpress.org/" rel="generator">WordPress</a> and <a href="http://carringtontheme.com" title="Carrington theme for WordPress">Carrington</a>.', 'carrington-blog'); ?></p>
+				<p id="generator-link"><?php _e('Proudly powered by <a href="http://wordpress.org/" rel="generator">WordPress</a> and <a href="http://carringtontheme.com" title="Carrington theme for WordPress">Carrington</a>.', 'fave-blog'); ?></p>
 <?php
 if (cfct_get_option('cfct_credit') == 'yes') {
 ?>
-				<p id="developer-link"><?php printf(__('<a href="http://crowdfavorite.com" title="Custom WordPress development, design and backup services." rel="developer designer">%s</a>', 'carrington-blog'), 'Carrington Theme by Crowd Favorite'); ?></p>
+				<p id="developer-link"><?php printf(__('<a href="http://crowdfavorite.com" title="Custom WordPress development, design and backup services." rel="developer designer">%s</a>', 'fave-blog'), 'Carrington Theme by Crowd Favorite'); ?></p>
 <?php
 }
 ?>

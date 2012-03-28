@@ -36,7 +36,7 @@ $use_background_img == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 </head>
 <body <?php body_class(); ?>>
 	<div id="page">
-		<div id="top"><a class="accessibility" href="#content"><?php _e( 'Skip to content', 'carrington-blog' ); ?></a></div>
+		<div id="top"><a class="accessibility" href="#content"><?php _e( 'Skip to content', 'fave-blog' ); ?></a></div>
 		<hr class="lofi" />
 		<div id="header" class="section">
 			<div class="wrapper">
@@ -55,7 +55,7 @@ $use_background_img == 'no' ? $css_ext = '?type=noimg' : $css_ext = '';
 			<div class="wrapper">
 				<?php cfct_form('search'); ?>
 				<div id="all-categories">
-					<strong id="all-categories-title"><?php _e('Categories:', 'carrington-blog'); ?></strong>
+					<strong id="all-categories-title"><?php _e('Categories:', 'fave-blog'); ?></strong>
 					<ul class="nav clearfix">
 						<?php wp_list_categories('title_li='); ?>
 					</ul>

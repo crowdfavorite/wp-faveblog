@@ -17,13 +17,19 @@
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 
-load_theme_textdomain('carrington-blog');
+load_theme_textdomain('fave-blog');
 
 define('CFCT_DEBUG', false);
 define('CFCT_PATH', trailingslashit(TEMPLATEPATH));
 define('CFCT_HOME_LIST_LENGTH', 5);
 define('CFCT_HOME_LATEST_LENGTH', 250);
-define('CFCT_VER', '1.1');
+/**
+ * Theme URL version.
+ * Added to query var at the end of assets to force browser cache to reload after upgrade.
+ */
+if (!(defined('CFCT_URL_VERSION'))) {
+	define('CFCT_URL_VERSION', '1.2');
+}
 
 include_once(CFCT_PATH.'functions/admin.php');
 include_once(CFCT_PATH.'carrington-core/carrington.php');
@@ -203,7 +209,7 @@ class CFCT_OB_On_Action {
  * Usage: CFCT_Comment_Form::setup();
  */
 class CFCT_Comment_Form {
-	public static $i18n = 'carrington-blog';
+	public static $i18n = 'fave-blog';
 	protected static $instance;
 	protected static $hooks_attached = false;
 	

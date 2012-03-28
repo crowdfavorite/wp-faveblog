@@ -24,9 +24,9 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	
 	<div class="entry-content full-content">
 <?php 
-		the_content('<span class="more-link">'.__('Continued...', 'carrington-blog').'</span>'); 
+		the_content('<span class="more-link">'.__('Continued...', 'fave-blog').'</span>'); 
 		$args = array(
-			'before' => '<p class="pages-link">'. __('Pages: ', 'carrington-blog'),
+			'before' => '<p class="pages-link">'. __('Pages: ', 'fave-blog'),
 			'after' => "</p>\n",
 			'next_or_number' => 'number'
 		);
@@ -35,16 +35,16 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 		<div class="clear"></div>
 	</div><!-- .entry-content-->
 	
-	<p class="filed categories alt-font tight"><?php printf(__('Posted in %s.', 'carrington-blog'), get_the_category_list(', ')); ?></p>
-	<?php the_tags(__('<p class="filed tags alt-font tight">Tagged with ', 'carrington-blog'), ', ', '.</p>'); ?>
+	<p class="filed categories alt-font tight"><?php printf(__('Posted in %s.', 'fave-blog'), get_the_category_list(', ')); ?></p>
+	<?php the_tags(__('<p class="filed tags alt-font tight">Tagged with ', 'fave-blog'), ', ', '.</p>'); ?>
 
 	<?php if (!is_singular()) { ?>
-		<p class="comments-link"><?php comments_popup_link(__('No comments', 'carrington-blog'), __('1 comment', 'carrington-blog'), __('% comments', 'carrington-blog')); ?></p>
+		<p class="comments-link"><?php comments_popup_link(__('No comments', 'fave-blog'), __('1 comment', 'fave-blog'), __('% comments', 'fave-blog')); ?></p>
 	<?php } ?>
 
 	<p class="by-line">
 		<span class="author vcard full-author">
-			<?php printf(__('<span class="by alt-font">By</span> %s', 'carrington-blog'), '<a class="url fn" href="'.get_author_posts_url(get_the_author_meta('ID')).'" title="View all posts by ' . esc_attr(get_the_author()) . '">'.get_the_author().'</a>') ?>
+			<?php printf(__('<span class="by alt-font">By</span> %s', 'fave-blog'), '<a class="url fn" href="'.get_author_posts_url(get_the_author_meta('ID')).'" title="View all posts by ' . esc_attr(get_the_author()) . '">'.get_the_author().'</a>') ?>
 		</span>
 		<span class="date full-date"><span class="ndash alt-font">&ndash;</span> <abbr class="published" title="<?php the_time('c'); ?>"><?php the_time('F j, Y'); ?></abbr></span>
 	</p><!--/by-line-->
@@ -52,5 +52,5 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	<div id="post-comments-<?php the_ID(); ?>-target"></div>
 	<div class="clear"></div>
 	
-	<?php edit_post_link(__('Edit', 'carrington-blog'), '<div class="edit-post edit">', '</div>'); ?>
+	<?php edit_post_link(__('Edit', 'fave-blog'), '<div class="edit-post edit">', '</div>'); ?>
 </div><!-- .post -->

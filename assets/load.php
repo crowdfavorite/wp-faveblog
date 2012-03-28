@@ -6,7 +6,7 @@ wp_enqueue_style(
 	'carrington',
 	CFCT_ASSETS_URL.'css/css.php',
 	array(),
-	CFCT_VER
+	CFCT_URL_VERSION
 );
 
 wp_enqueue_script('jquery');
@@ -15,7 +15,7 @@ wp_enqueue_script(
 	'carrington',
 	CFCT_ASSETS_URL.'js/carrington.js',
 	array('jquery'),
-	CFCT_VER
+	CFCT_URL_VERSION
 );
 
 if (cfct_get_option('cfct_ajax_load') == 'yes') {
@@ -26,14 +26,14 @@ if (cfct_get_option('cfct_lightbox') != 'no') {
 		'cfct_thickbox',
 		$url.'carrington-core/lightbox/thickbox.js',
 		array('jquery'),
-		CFCT_VER
+		CFCT_URL_VERSION
 	);
 	
 	wp_enqueue_style(
 		'cfct_thickbox',
 		$url.'carrington-core/lightbox/css/thickbox.css',
 		array(),
-		CFCT_VER
+		CFCT_URL_VERSION
 	);
 }
 

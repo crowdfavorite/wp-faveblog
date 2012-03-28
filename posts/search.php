@@ -32,7 +32,7 @@ else {
 ?>
 
 <div id="content">
-	<h1 class="page-title"><?php printf(__('Search Results for: %s', 'carrington-blog'), $search_title); ?></h1>
+	<h1 class="page-title"><?php printf(__('Search Results for: %s', 'fave-blog'), $search_title); ?></h1>
 <?php
 	cfct_loop();
 	cfct_misc('nav-posts');

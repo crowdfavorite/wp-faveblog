@@ -25,7 +25,7 @@ $orig_post = $post;
 <hr class="lofi" />
 <div id="sidebar">
 	<div id="carrington-subscribe" class="widget">
-		<h2 class="widget-title"><?php _e('Subscribe', 'carrington-blog'); ?></h2>
+		<h2 class="widget-title"><?php _e('Subscribe', 'fave-blog'); ?></h2>
 		<a class="feed alignright" title="RSS 2.0 feed for posts" rel="alternate" href="<?php bloginfo('rss2_url') ?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/rss-button.gif" alt="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ), get_bloginfo('name'))) ?>" title="<?php esc_attr(printf( __( '%s latest posts', 'carrington' ), get_bloginfo('name'))) ?>" />
 		</a>
@@ -36,7 +36,7 @@ if (!empty($about_text)) {
 ?>
 	<div id="carrington-about" class="widget">
 		<div class="about">
-			<h2 class="widget-title"><?php printf(__('About %s', 'carrington-blog'), get_bloginfo('name')); ?></h2>
+			<h2 class="widget-title"><?php printf(__('About %s', 'fave-blog'), get_bloginfo('name')); ?></h2>
 <?php
 	echo $about_text;
 ?>

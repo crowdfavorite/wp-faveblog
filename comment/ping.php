@@ -22,12 +22,12 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 <div id="div-ping-<?php comment_ID(); ?>" <?php comment_class('ping hentry'); ?>>
 <?php
 
-printf(__('<cite class="vcard author fn entry-title">%s</cite> <span class="linked-to-this-post alt-font">linked to this post</span>', 'carrington-blog'), get_comment_author_link());
+printf(__('<cite class="vcard author fn entry-title">%s</cite> <span class="linked-to-this-post alt-font">linked to this post</span>', 'fave-blog'), get_comment_author_link());
 
 ?> 
 	<span class="date alt-font">
 		<span class="on"><?php _e('on'); ?></span> <abbr class="published" title="<?php comment_date('Y-m-d\TH:i:sO'); ?>"><?php comment_date(); ?></abbr>
 	</span>
 	<blockquote class="entry-summary" cite="<?php comment_author_url(); ?>"><?php comment_text() ?></blockquote> 
-	<?php edit_comment_link(__('Edit', 'carrington-blog'), '<div class="edit edit-comment">', '</div>'); ?>
+	<?php edit_comment_link(__('Edit', 'fave-blog'), '<div class="edit edit-comment">', '</div>'); ?>
 </div><!--.ping-->

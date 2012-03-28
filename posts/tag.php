@@ -26,7 +26,7 @@ $tag_title = '<a href="'.get_tag_link(intval(get_query_var('tag_id'))).'">'.sing
 ?>
 
 <div id="content">
-	<h1 class="page-title"><?php printf(__('Tag Archives: %s', 'carrington-blog'), $tag_title); ?></h1>
+	<h1 class="page-title"><?php printf(__('Tag Archives: %s', 'fave-blog'), $tag_title); ?></h1>
 
 <?php
 	cfct_loop();

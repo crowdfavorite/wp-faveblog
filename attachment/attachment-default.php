@@ -57,12 +57,12 @@ global $post;
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <div id="header">
-	<a class="wrapper" href="<?php echo get_permalink($post->post_parent); ?>" rev="up post">&larr; <?php printf(__('back to &#8220;%s&#8221;', 'carrington-blog'), get_the_title($post->post_parent)); ?></a>
+	<a class="wrapper" href="<?php echo get_permalink($post->post_parent); ?>" rev="up post">&larr; <?php printf(__('back to &#8220;%s&#8221;', 'fave-blog'), get_the_title($post->post_parent)); ?></a>
 </div>
 
 <div id="attachment-content" class="figure">
 	<div class="entry-attachment">
-		<a title="<?php _e('Link to original file','carrington-blog'); ?>" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?></a>
+		<a title="<?php _e('Link to original file','fave-blog'); ?>" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?></a>
 	</div>
  	<div class="figure-info">
 		<div class="caption">

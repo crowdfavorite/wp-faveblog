@@ -24,7 +24,7 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 	
 	<span class="date small"><abbr class="published" title="<?php the_time('c'); ?>"><?php the_time('F j, Y'); ?></abbr></span>
 	
-	<p class="categories filed alt-font"><?php _e('Posted in ', 'carrington-blog'); the_category(', ') ?>.</p>
+	<p class="categories filed alt-font"><?php _e('Posted in ', 'fave-blog'); the_category(', ') ?>.</p>
 	
-	<span class="comments-link"><?php if (function_exists('akac_comments_link')) { akac_comments_link(); } else { comments_popup_link(__('No comments', 'carrington-blog'), __('1 comment', 'carrington-blog'), __('% comments', 'carrington-blog')); } ?></span>
+	<span class="comments-link"><?php if (function_exists('akac_comments_link')) { akac_comments_link(); } else { comments_popup_link(__('No comments', 'fave-blog'), __('1 comment', 'fave-blog'), __('% comments', 'fave-blog')); } ?></span>
 </div><!-- .excerpt -->
