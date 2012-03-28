@@ -10,7 +10,7 @@ wp_enqueue_style(
 );
 
 wp_enqueue_script('jquery');
-
+wp_enqueue_script( 'comment-reply' );
 wp_enqueue_script(
 	'carrington',
 	CFCT_ASSETS_URL.'js/carrington.js',

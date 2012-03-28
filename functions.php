@@ -19,10 +19,15 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 
 load_theme_textdomain('fave-blog');
 
+/**
+ * Set this to "true" to turn on debugging mode.
+ * Debug helps with development by showing you the paths of the files loaded by Carrington.
+ */
 define('CFCT_DEBUG', false);
 define('CFCT_PATH', trailingslashit(TEMPLATEPATH));
 define('CFCT_HOME_LIST_LENGTH', 5);
 define('CFCT_HOME_LATEST_LENGTH', 250);
+
 /**
  * Theme URL version.
  * Added to query var at the end of assets to force browser cache to reload after upgrade.
@@ -48,8 +53,8 @@ add_action('wp_enqueue_scripts', 'cfct_load_front_end_assets');
  * Theme setup work
  */
 
-// If the content width is not defined, set it to 960px.
-if ( ! isset( $content_width ) ) $content_width = 960;
+// If the content width is not defined, set it to 540px.
+if ( ! isset( $content_width ) ) $content_width = 540;
 
 function cfct_setup() {
 	$sidebar_defaults = array(
